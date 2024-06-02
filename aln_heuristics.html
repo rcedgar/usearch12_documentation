@@ -1,0 +1,286 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     alignment heuristics
+    </h1>
+    <span class="ManText">
+     <br/>
+     Alignment heuristic parameters control fast but approximate methods for finding the alignment with the highest score. These are distinct from
+     <a href="aln_params.html">
+      alignment scoring parameters
+     </a>
+     , which determine the score of an alignment. Ideally, changing heuristic parameters would not change the reported alignment (because the best alignment would always be found). By contrast, changing alignment scoring parameters will tend to change the alignment, e.g. increasing gap penalties will reduce the number of gaps.
+    </span>
+    <p>
+     <span class="ManText">
+      <b>
+       Full dynamic programming
+       <br/>
+      </b>
+      Heuristics can be disabled entirely by using the -
+      <a href="opt_fulldp.html">
+       fulldp
+      </a>
+      option, which specifies that full dynamic programming algorithms should be used. These algorithms (
+      <a href="http://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm">
+       Needleman-Wunsch
+      </a>
+      for global alignments and
+      <a href="http://en.wikipedia.org/wiki/Smith-Waterman_algorithm">
+       Smith-Waterman
+      </a>
+      for local alignments) are much slower than the heuristic algorithms that USEARCH uses by default, but guarantee to find alignments with the maximum possible score.
+     </span>
+    </p>
+    <p>
+     <span class="ManText c2">
+      Local alignment heuristics
+     </span>
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="5" cellspacing="0" summary="Table" width="78%">
+      <tr>
+       <td align="right" class="c3" width="136">
+        <span class="ManText c2">
+         Option
+        </span>
+       </td>
+       <td align="center" class="c4" width="92">
+        <span class="ManText">
+         Default
+        </span>
+       </td>
+       <td align="left" class="c4">
+        <span class="ManText">
+         Description
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="136">
+        <span class="ManText">
+         -xdrop_u
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="92">
+        <span class="ManText">
+         16.0
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         X-drop for ungapped extension.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="136">
+        <span class="ManText">
+         -xdrop_g
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top" width="92">
+        <span class="ManText">
+         32.0
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top">
+        <span class="ManText">
+         X-drop for gapped extension.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="136">
+        <span class="ManText">
+         -hspw
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="92">
+        <span class="ManText">
+         5 nt, 3 aa
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         Word length for seeding HSPs (ignored by
+         <a href="DELETE_URL">
+          ublast
+         </a>
+         ).
+        </span>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <p>
+     <span class="ManText c2">
+      Global alignment heuristics
+     </span>
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="5" cellspacing="0" summary="Table" width="78%">
+      <tr>
+       <td align="right" class="c3" width="136">
+        <span class="ManText c2">
+         Option
+        </span>
+       </td>
+       <td align="center" class="c4" width="92">
+        <span class="ManText">
+         Default
+        </span>
+       </td>
+       <td align="left" class="c4">
+        <span class="ManText">
+         Description
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="136">
+        <span class="ManText">
+         -xdrop_nw
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="92">
+        <span class="ManText">
+         16.0
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         X-drop for HSP-finding.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="136">
+        <span class="ManText">
+         -minhsp
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top" width="92">
+        <span class="ManText">
+         16
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top">
+        <span class="ManText">
+         Minimum HSP length. This sets an upper limit on the minimum [sic]; USEARCH will automatically reduce this limit for short sequences as needed. The default is 32 in versions through 7.0.1090.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="136">
+        <span class="ManText">
+         -band
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="92">
+        <span class="ManText">
+         16
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         Minimum band radius for filling gaps between HSPs. The width of the band is 2 x radius + 1, so default width is 33. Smaller values improve speed. Longer values produce better alignments when there are many non-terminal gaps, especially long gaps, in one sequence relative to the other.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="136">
+        <span class="ManText">
+         -hspw
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top" width="92">
+        <span class="ManText">
+         5 nt, 3 aa
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top">
+        <span class="ManText">
+         Word length for seeding HSPs.
+        </span>
+       </td>
+      </tr>
+     </table>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

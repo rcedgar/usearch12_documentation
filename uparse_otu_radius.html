@@ -1,0 +1,173 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     UPARSE OTU radius
+    </h1>
+    <p class="auto-style1">
+     <b class="ManText">
+      See also
+      <br/>
+     </b>
+     <a href="otus.html">
+      Defining and interpreting OTUs
+     </a>
+    </p>
+    <p class="ManText">
+     <b>
+      UPARSE OTUs with radius different from 3% (i.e., different from 97% identity)
+      <br/>
+     </b>
+     In previous versions of USEARCH the
+     <a href="cmd_cluster_otus.html">
+      cluster_otus command
+     </a>
+     command had an otu_radius_pct option for specifying a radius different from the default of 3%. However, please note that it is
+     <span class="c2">
+      not recommended
+     </span>
+     to use non-default values.
+    </p>
+    <p>
+     <span class="ManText">
+      The main reason is that chimera detection degrades. Each input sequence is run through
+      <a href="cmd_uparse_ref.html">
+       UPARSE-REF
+      </a>
+      using the current set of OTUs as a reference database. If the optimal model is chimeric, the sequence is discarded. If an OTU radius &gt; 3% is used, then chimera detection becomes more difficult because more true biological sequences will also be discarded when they don't create new OTUs. The set of OTU sequences becomes sparser, and the correct parents of a chimera will more often be missing from the OTU database. Chimeras can still be detected when there are OTUs which are sufficiently close to their parents, but the false negative rate will tend to increase.
+      <br/>
+      <br/>
+      Chimera detection also gets more difficult when the OTU radius is &lt;3%. This is because you get many more false positives due to "fake models" where a correct biological sequence can be exactly reconstructed from segments of two other valid sequences. This surprising result is explained in detail in the
+      <a href="citation.html">
+       UCHIME2 paper
+      </a>
+      .
+      <br/>
+      <br/>
+      <strong>
+       Recommended: make OTUs with 100% clustering identity
+       <br/>
+      </strong>
+      My current recommendation is to use the
+      <a href="unoise_algo.html">
+       UNOISE
+      </a>
+      error-correction (denoising) algorithm to reconstruct the set of correct biological sequences in the reads. These sequences are valid OTUs which I call "ZOTUs" (zero-radius OTUs). This is better than traditional 97% clustering because it has better phenotype resolution as it allows you to distinguish species and strains which would be lumped together at 97%. See
+      <a href="cmd_unoise3.html">
+       unoise2 command
+      </a>
+      for details.
+      <br/>
+      <br/>
+      <strong>
+       Recommended procedure for OTUs with clustering identity &lt;100%
+       <br/>
+      </strong>
+      To make OTUs at identities different from 97%, the best method is to use
+      <a href="unoise_algo.html">
+       UNOISE
+      </a>
+      followed by
+      <a href="uclust_algo.html">
+       UCLUST
+      </a>
+      , e.g. the
+      <a href="cmd_unoise3.html">
+       unoise3
+      </a>
+      command followed by
+      <a href="cmd_cluster_smallmem.html">
+       cluster_smallmem
+      </a>
+      . For example, to make OTUs at 100%, 99%, 97%, 95% and 90% identity:
+     </span>
+    </p>
+    <p class="ManCode">
+     usearch -unoise3 uniques.fa -zotus otus100.fa
+    </p>
+    <p class="ManCode">
+     for id in 99 97 95 90
+     <br/>
+     do
+     <br/>
+     usearch -cluster_smallmem otus100.fa -id 0.$id -centroids otus$id.fa
+     <br/>
+     done
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

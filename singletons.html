@@ -1,0 +1,224 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Singletons
+    </h1>
+    <span class="ManText">
+     <br/>
+     <b>
+      <a href="tolstoy.html">
+       <img alt="Image" class="c2" src="tolstoy_uniques.jpg"/>
+      </a>
+      See also
+      <br/>
+     </b>
+     <a href="tolstoy.html">
+      Tolstoy's rule: most unique sequences are bad
+     </a>
+     <b>
+      <br/>
+      <br/>
+      Definition of a singleton
+     </b>
+    </span>
+    <div align="left">
+     <span class="ManText">
+      A singleton is a read with a sequence that is present exactly once, i.e. is unique among the reads.
+     </span>
+    </div>
+    <div align="left">
+    </div>
+    <div align="left" class="c3">
+     <span class="ManText">
+      <b>
+       Singletons should be discarded
+       <br/>
+      </b>
+      If sequencer errors are independent and randomly distributed, then the sequence in a bad read is unlikely to be reproduced by chance and most singletons will contain at least one error. If bad sequences are unlikely to be reproduced by chance, then if the sequence of a read is found two or more times it is likely to be correct, though it could be the correct sequence of a bad amplicon, e.g. a
+      <a href="chimeras.html">
+       chimera
+      </a>
+      . Reads that are singletons after
+      <a href="readqualfiltering.html">
+       quality filtering
+      </a>
+      and
+      <a href="global_trimming.html">
+       global trimming
+      </a>
+      are therefore discarded and reads with abundances of two or more are used as input for
+      <a href="otu_bench.html">
+       OTU clustering
+      </a>
+      .
+     </span>
+    </div>
+    <div align="left">
+     <span class="ManText">
+      <br/>
+      Most singletons will map to a OTU when the OTU table is constructed (
+      <a href="cmd_otutab.html">
+       otutab command
+      </a>
+      ), so the data is not lost.
+      <br/>
+     </span>
+    </div>
+    <div align="left">
+     <span class="ManText c4">
+      USEARCH command for discarding singletons
+     </span>
+    </div>
+    <div align="left">
+    </div>
+    <div align="left">
+     <span class="ManCode">
+      <b>
+      </b>
+      usearch -sortbysize derep.fasta -output derep2.fasta -minsize 2
+     </span>
+     <span class="ManText">
+      <br/>
+      <br/>
+      <b>
+       But this reduces sensitivity, right?
+       <br/>
+      </b>
+      Maybe a little. Typically, most singletons map to a OTU. But yes, there may be a small reduction in sensitivity. Most singletons are probably good, meaning close enough to a biological sequence to be informative in downstream analysis. and some species may only be present in a single read. However, most errors are probably singletons, especially with the very large numbers of reads obtained with newer technologies such as the Illumina MiSeq machine. Discarding singletons has a small cost in sensitivity but often achieves a large improvement in specificity (reduction in error rate), as explained below.
+     </span>
+    </div>
+    <div align="left">
+    </div>
+    <div align="left">
+     <span class="ManText">
+      <b>
+       Loner tags
+       <br/>
+      </b>
+      Most singletons will have one or more errors. Consider a typical singleton (S) that has, say, one error. Usually there will be a correct read (C) of the same amplicon with higher abundance. So discarding S doesn't hurt sensitivity because we keep C. It only hurts if it is the only read for a given species. Call such a read a "loner tag".
+     </span>
+    </div>
+    <div align="left">
+    </div>
+    <div align="left">
+     <span class="ManText">
+      If you have millions of reads and the error rate is anywhere close to 1%, then inevitably you will have millions of singletons due to sequencer errors. Even if your error rate is very low, say 0.01%, you will still have thousands of singletons due to errors. is Only a tiny fraction of those, if any, will be lone singletons. So by discarding singletons, you discard thousands or millions of reads with errors, and at most perhaps one or two loner tags.
+     </span>
+    </div>
+    <div align="left">
+     <div align="left">
+     </div>
+     <div align="left">
+      <span class="ManText">
+       <b>
+        What if there are many low-abundance species?
+        <br/>
+       </b>
+       Singletons are a special case because errors are unlikely to be reproduced by chance. Singletons that give spurious OTUs arise from errors, mostly reads with &gt;3% bad bases and chimeras. Other sources of error include PCR point errors and contaminants, though these are usually rare.
+       <br/>
+       <br/>
+       If you get K spurious OTUs from N reads due to these types of error on a mock community, then you should expect to get ~K spurious OTUs from N reads in a real community. If the community is diverse and has a long tail of low-abundance species, then you will get more valid singletons, but K will not change because the same sources of error (bad reads, chimeras...) are present. The mock community results in the UPARSE paper show that K is large even with aggressive read quality filtering.
+      </span>
+     </div>
+     <div align="left">
+     </div>
+     <div align="left">
+      <span class="ManText">
+       If your community has high diversity, then you cannot assume that you will sample all species, regardless of whether you keep singletons or not. Methods to deal with undersampling such as rarefaction curves will work better if you discard singletons for the same reasons (reducing error bias towards small OTUs).
+      </span>
+     </div>
+    </div>
+    <div align="left">
+    </div>
+    <div align="left">
+     <span class="ManText c4">
+      Errors correlate
+     </span>
+    </div>
+    <div align="left">
+     <span class="ManText">
+      You might think that if the error rate is ~1% or less, then the probability of having enough errors per read to get a 3% divergence is tiny and there is no need to discard singletons. This would be true if errors were independent (then the probability can be calculated from the
+      <a href="http://en.wikipedia.org/wiki/Poisson_distribution">
+       Poisson distribution
+      </a>
+      ). However, empirically I've found that errors tend to correlate, and the number of reads with &gt;=3% errors is much larger than you would expect if errors were Poisson-distributed.
+      <br/>
+     </span>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,392 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Cross-validation by identity
+    </h1>
+    <p class="ManText">
+     <strong>
+      See also
+      <br/>
+     </strong>
+     <a href="https://drive5.com/taxxi">
+      TAXII benchmark
+     </a>
+     <br/>
+     <a href="taxonomy.html">
+      Microbial taxonomy
+     </a>
+     <br/>
+     <a href="cmd_sintax.html">
+      sintax command
+     </a>
+     <br/>
+     <a href="DELETE_URL">
+      nbc_tax command
+     </a>
+     <br/>
+     <a href="thid.html">
+      Top-hit identity distribution
+     </a>
+     <br/>
+     <a href="DELETE_URL">
+      distmx_split_identity command
+     </a>
+    </p>
+    <p class="ManText">
+     Cross-validation by identity (CVI) is a benchmark 
+	strategy for assessing accuracy of predictions of features or traits from 
+	genes or gene fragments such as 16S sequences. In the
+     <a href="https://drive5.com/taxxi">
+      TAXXI benchmark
+     </a>
+     , it was used to 
+	measure accuracy of taxonomy prediction.
+    </p>
+    <p class="ManText">
+     <strong>
+      Motivation
+     </strong>
+     <br/>
+     CVI explicitly models 
+	varying distances between query sequences and the reference database. This 
+	is because in practice, OTUs have a range of identities with the reference. 
+	OTU identities are sometimes low, creating a challenging problem for 
+	prediction algorithms. For example, with taxonomy prediction, only ~20k 16S sequences 
+	are currently known from isolate strains with reliably known 
+	taxonomies, and OTUs often have low identities (say, 90% and lower) with 
+	these sequences. Prediction is more difficult at lower identities, but in 
+	most previous 
+	benchmark tests query sequences usually have high 
+	identities with the reference and thus fail to model a realistic scenario. 
+	The range of identities between a given set of OTUs and a reference database 
+	can be summarized as a
+     <a href="thid.html">
+      top-hit identity histogram
+     </a>
+     .
+    </p>
+    <p class="ManText">
+     <strong>
+      <img class="auto-style1" src="cvi.gif" style="float: right"/>
+      Implementation
+     </strong>
+     <br/>
+     The
+     <a href="DELETE_URL">
+      distmx_split_identity command
+     </a>
+     implements CVI is as follows. A reference database with known traits (e.g., 
+	taxonomy) is split into test and training sets such that for all test 
+	sequences, the most similar training sequence has a given identity (top hit 
+	identity,
+     <em>
+      <strong>
+       d
+      </strong>
+     </em>
+     ), e.g.
+     <em>
+      <strong>
+       d
+      </strong>
+     </em>
+     =97% 
+	(see figure).
+     <em>
+      <strong>
+       R
+      </strong>
+     </em>
+     is the reference database, which is 
+	divided into disjoint subsets
+     <em>
+      <strong>
+       S
+      </strong>
+     </em>
+     ,
+     <strong>
+      <em>
+       T
+      </em>
+     </strong>
+     ,
+     <strong>
+      <em>
+       W
+      </em>
+     </strong>
+     and
+     <strong>
+      <em>
+       Z
+      </em>
+     </strong>
+     .
+     <em>
+      <strong>
+       S
+      </strong>
+     </em>
+     is the test set; the training set is
+     <em>
+      <strong>
+       A
+      </strong>
+     </em>
+     =
+     <em>
+      <strong>
+       T
+      </strong>
+     </em>
+     +
+     <em>
+      <strong>
+       W
+      </strong>
+     </em>
+     .
+     <em>
+      <strong>
+       T
+      </strong>
+     </em>
+     is the set of top hits for sequences in
+     <em>
+      <strong>
+       S
+      </strong>
+     </em>
+     , which 
+	are constrained to be in the range
+     <em>
+      <strong>
+       d
+      </strong>
+     </em>
+     +/-
+     <em>
+      delta
+     </em>
+     where
+     <em>
+      delta
+     </em>
+     specifies the maximum allowed deviation from the 
+	desired identity
+     <em>
+      <strong>
+       d
+      </strong>
+     </em>
+     .
+     <em>
+      <strong>
+       W
+      </strong>
+     </em>
+     contains reference sequences with identity &lt;
+     <strong>
+      <em>
+       d
+      </em>
+     </strong>
+     ; 
+	these are retained to create the largest possible training set.
+     <strong>
+      <em>
+       Z
+      </em>
+     </strong>
+     contains sequences which cannot be assigned to
+     <em>
+      <strong>
+       S
+      </strong>
+     </em>
+     ,
+     <em>
+      <strong>
+       T
+      </strong>
+     </em>
+     or
+     <em>
+      <strong>
+       W
+      </strong>
+     </em>
+     without violating the 
+	identity constraint.
+    </p>
+    <p class="ManText">
+     <strong>
+      Making a benchmark dataset
+     </strong>
+     <br/>
+     Construct 
+	test-training pairs for several different identities. This enables assessment of accuracy at 
+	varying distances from the reference. For example, with taxonomy, high accuracy at family 
+	rank is expected for query sequences having 100% identity with the reference 
+	database, but lower accuracy at 90%; these expectations can be validated by 
+	test/training pairs at 100% and 90% identities, respectively. Query 
+	sequences belonging to novel taxa, i.e. taxa not found in the reference, are 
+	modeled in test/training pairs with
+     <em>
+      <strong>
+       d
+      </strong>
+     </em>
+     &lt; 100%. For example, most pairs of 16S 
+	rRNA sequences in a given genus have &gt;= 95% identity. Therefore, with
+     <em>
+      <strong>
+       d
+      </strong>
+     </em>
+     = 90% 
+	most test sequences will belong to genera which are absent from the training 
+	set, and with
+     <em>
+      <strong>
+       d
+      </strong>
+     </em>
+     = 95% there will be a mix of present and absent genera. Thus, 
+	novel taxa arise naturally by construction of the test/training pairs, and 
+	the frequency of novel and known taxa at each rank is determined by identity, 
+	which can be measured for any OTU, 
+	rather than taxonomy, which is not known.
+     <br/>
+    </p>
+    <span class="ManText">
+     <br/>
+     <strong>
+      References (please cite)
+     </strong>
+     <br/>
+     <span class="ManText">
+      R.C. Edgar (2018), Accuracy of taxonomy prediction for 16S rRNA and fungal ITS sequences,
+      <a href="https://doi.org/10.7717/peerj.4652">
+       PeerJ 6:e4652
+      </a>
+     </span>
+     <span style="font-size:9pt; line-spacing:9pt;">
+      <br/>
+      <i>
+       • Cross-validation by identity, novel benchmark strategy enabling realistic accuracy estimates
+      </i>
+     </span>
+     <span style="font-size:9pt; line-spacing:9pt;">
+      <br/>
+      <i>
+       • Genus accuracy of best methods is 50% on V4 sequences
+      </i>
+     </span>
+     <span style="font-size:9pt; line-spacing:9pt;">
+      <br/>
+      <i>
+       • Recent algorithms do not improve on RDP Classifier or SINTAX
+      </i>
+     </span>
+     <br/>
+     <br/>
+     <span class="ManText">
+      R.C. Edgar (2018), Taxonomy annotation and guide tree errors in 16S rRNA databases,
+      <a href="https://doi.org/10.7717/peerj.5030">
+       PeerJ 6:e5030
+      </a>
+     </span>
+     <span style="font-size:9pt; line-spacing:9pt;">
+      <br/>
+      <i>
+       • Approx. one in five SILVA and Greengenes taxonomy annotations are wrong
+      </i>
+     </span>
+     <span style="font-size:9pt; line-spacing:9pt;">
+      <br/>
+      <i>
+       • SILVA and Greengenes trees have pervasive conflicts with type strain taxonomies
+      </i>
+     </span>
+     <br/>
+     <br/>
+    </span>
+   </div>
+  </div>
+ </body>
+</html>

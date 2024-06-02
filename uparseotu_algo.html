@@ -1,0 +1,243 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     UPARSE-OTU algorithm
+    </h1>
+    <p class="ManText">
+     <b>
+      See also
+      <br/>
+     </b>
+     <a href="otus.html">
+      Defining and interpreting OTUs
+     </a>
+     <b>
+      <br/>
+     </b>
+     <a href="uparseref_algo.html">
+      UPARSE-REF algorithm
+     </a>
+     <b>
+      <br/>
+     </b>
+     <a href="/uparse">
+      UPARSE home page
+     </a>
+     <br/>
+     <span class="Text">
+      <a href="otu_bench.html">
+       OTU benchmark results
+      </a>
+     </span>
+     <br/>
+     <b>
+     </b>
+     <a href="uparse_pipeline.html">
+      UPARSE pipeline
+     </a>
+     <b>
+      <br/>
+     </b>
+     <a href="cmd_cluster_otus.html">
+      cluster_otus command
+     </a>
+     <br/>
+     <a href="faq_uparse_or_unoise.html">
+      Should I use UPARSE or UNOISE?
+     </a>
+    </p>
+    <p class="ManText">
+     <span class="Text">
+      <b>
+       Introduction
+       <br/>
+      </b>
+      The UPARSE-OTU algorithm constructs a set of OTU representative sequences from NGS amplicon reads. It is implemented in the
+      <a href="cmd_cluster_otus.html">
+       cluster_otus
+      </a>
+      command. Reads should be pre-processed to overlap paired reads (if appropriate), strip barcodes, perform quality filtering and
+      <a href="global_trimming.html">
+       global trimming
+      </a>
+      . Post-processing is needed to map reads to OTUs and construct a OTU table. See
+      <a href="uparse_pipeline.html">
+       UPARSE pipeline
+      </a>
+      for detailed discussion of practical issues. This page describes the OTU clustering algorithm itself.
+      <a href="mapreadstootus.html">
+       Assigning reads to OTUs
+      </a>
+      is a separate task which is not addressed by UPARSE-OTU. See
+      <a href="cmd_otutab.html">
+       otutab command
+      </a>
+      and
+      <a href="otus.html">
+       defining OTUs
+      </a>
+      for more details.
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="Text">
+      <b>
+       Input sequences
+       <br/>
+      </b>
+      Input to UPARSE-OTU is a set of sequences. Each sequence is marked with an integer value indicating its abundance. In practice, the abundance is usually the number of reads having a given unique sequence, but it could also be the predicted abundance of an amplicon after a denoising step.
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="Text">
+      <b>
+       Clustering criteria
+       <br/>
+      </b>
+      The goal of UPARSE-OTU is to identify a set of OTU representative sequences (a subset of the input sequences) satisfying the following criteria.
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="Text">
+      1. All pairs of OTU sequences should have &lt;97% pair-wise sequence identity.
+      <br/>
+      <br/>
+      2. An OTU sequence should be the most abundant within a 97% neighborhood.
+     </span>
+    </p>
+    <p class="ManText">
+     3
+     <span class="Text">
+      . Chimeric sequences should be discarded.
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="Text">
+      4. All non-chimeric input sequences should match at least one OTU with &gt;= 97% identity.
+     </span>
+     <img alt="Image" border="0" height="291" src="uparseotu_algo.jpg" width="424"/>
+    </p>
+    <p class="ManText">
+     <span class="Text">
+      <b>
+       Greedy clustering
+       <br/>
+      </b>
+      UPARSE-OTU uses a greedy algorithm to find a biologically relevant solution, as follows. Since high-abundance reads are more likely to be correct amplicon sequences, and hence are more likely to be true biological sequences, UPARSE-OTU considers input sequences in order of decreasing abundance. This means that OTU centroids tend to be selected from the more abundant reads, and hence are more likely to be correct biological sequences.
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="Text">
+      Each input sequence is compared to the current OTU database, and an maximum parsimony model of the sequence is found using
+      <a href="uparseref_algo.html">
+       UPARSE-REF
+      </a>
+      (figure below). There are three cases. (a) The UPARSE-REF model is &gt;= 97% identical to an existing OTU, (b) the model is chimeric, or (c) the model is &lt;97% identical to any existing OTU. In case (a), the input sequence becomes a member of the OTU. In case (b), the input sequence is discarded. In case (c), the input sequence is added to the database and becomes the representative sequence (centroid) of a new OTU.
+     </span>
+    </p>
+    <p class="ManText">
+     <img alt="Image" border="0" src="uparseotu1.jpg"/>
+    </p>
+    <p>
+     <b>
+      <span class="ManText">
+       Reference
+      </span>
+     </b>
+     <span class="ManText">
+      <br/>
+      Edgar, R.C. (2013) UPARSE: Highly accurate OTU sequences from microbial amplicon reads,
+      <i>
+       Nature Methods
+      </i>
+      [
+      <a href="http://www.ncbi.nlm.nih.gov/pubmed/23955772">
+       Pubmed:23955772
+      </a>
+      ,
+      <a href="http://dx.doi.org/10.1038/nmeth.2604">
+       dx.doi.org/10.1038/nmeth.2604
+      </a>
+      ].
+     </span>
+     <span class="Text">
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

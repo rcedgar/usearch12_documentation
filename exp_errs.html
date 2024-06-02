@@ -1,0 +1,229 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Expected errors predicted by Phred (Q) scores
+    </h1>
+    <p class="ManText">
+     <span class="ManText">
+      <b>
+       See also
+       <br/>
+      </b>
+      <a href="cmd_fastq_filter.html">
+       fastq_filter command
+      </a>
+      <b>
+       <br/>
+      </b>
+      <a href="quality_score.html">
+       Quality scores
+      </a>
+      <br/>
+      <b>
+      </b>
+      <a href="avgq.html">
+       Average Q is a bad idea!
+      </a>
+     </span>
+     <br/>
+     <a href="faq_emax.html">
+      Setting an e.e. threshold for long reads
+     </a>
+     <br/>
+     <span class="ManText">
+      <b>
+      </b>
+      <a href="citation.html">
+       Edgar &amp; Flyvbjerg 2014 paper on expected errors and 
+  Bayesian assembly
+      </a>
+      <b>
+       <br/>
+      </b>
+     </span>
+     <b>
+      <br/>
+      Phred scores
+      <br/>
+     </b>
+     Next-generation reads specify a
+     <a href="quality_score.html">
+      Phred score
+     </a>
+     for each base, also known as a Quality or Q score. The Q score is an integer, typically in the range 2 to 40. Q indicates the probability that the base call is incorrect (P_e). For example, Q=2 means that the error probability is 63%, so the machine is reporting that the base is more likely to be wrong than right, while Q=20 corresponds to an error probability of 1%.
+    </p>
+    <p class="ManText">
+     <b>
+      Expected number of errors
+      <br/>
+     </b>
+     Assume that the Phred scores are good, in other words assume that the machine makes good estimates of the error probabilities. Now we can measure the overall quality of a read by calculating the
+     <b>
+      expected number of errors
+     </b>
+     in the read. The
+     <a href="http://en.wikipedia.org/wiki/Expected_value">
+      expected value
+     </a>
+     of a quantity under a probability distribution is a technical term in statistics, so let me explain what that means in this case.
+    </p>
+    <p class="ManText">
+     Take the error probabilities according to the Q scores in a given read, and imagine a very large number of reads containing errors that occur with those probabilities. For example, if the first base in the read has Q=20, then 1% of the reads in our collection will have errors in that position. Some of the reads will have no errors, some will have one error, and so on. The Q scores can't tell us exactly how many errors there are in a given read. However, the Q scores can tell us what the
+     <b>
+      average
+     </b>
+     number of errors would be in that large collection, and this is the definition of the expected number of errors. Because we're taking an average, the value is real rather than integer, and can be less than one.
+    </p>
+    <p class="ManText">
+     <b>
+      Calculating the expected number of errors and most probable number of errors
+      <br/>
+     </b>
+     It turns out that it is easy to calculate the expected number of errors: it is the sum of the error probabilities. The most probable number of errors (E*) is also easy to calculate. First calculate E = expected errors = sum P_e. Then round down to the nearest integer, and this is the most probable number of errors. In symbols: E* = floor(E). For example, if E &lt; 1, then the most probable number of errors is zero. Proofs of these results are given in
+     <a href="citation.html">
+      Edgar &amp; Flybjerg (2014)
+     </a>
+     .
+    </p>
+    <p class="ManText">
+     <b>
+      Quality filtering by expected errors
+      <br/>
+     </b>
+     Small E means high quality, large E means low quality. We can therefore filter low quality reads by setting a maximum number of expected errors (E_max) and discarding reads with E &gt; E_max. This is done by running the
+     <a href="cmd_fastq_filter.html">
+      fastq_filter
+     </a>
+     command.
+    </p>
+    <p class="ManText">
+     <b>
+      Choosing the maximum expected error threshold
+      <br/>
+     </b>
+     A natural choice is E_max = 1, because the most probable number of errors of a filtered read is zero. Though of course, we expect some of them to have one or more errors (this can't be entirely avoided, however stringent the filter, because Q scores are probabilities, not certainties). If you want to filter more stringently, you might choose something like E_max = 0.5 or E_max = 0.25.
+    </p>
+    <p class="ManText">
+     <b>
+      Overlapping paired reads
+      <br/>
+     </b>
+     If you have paired reads that overlap, then these can be exploited to improve the error filtering. The paired read merger (assembler) should report re-calculated Phred scores in the overlapping region to reflect that we have two independent observations of the same bases. If the forward and reverse read agree on a base, then our confidence that the base is correct should increase. The Q score should be higher, corresponding to a lower error probability. Conversely, if the base calls disagree, then the re-calculated Phred score should be lower than both the original base calls. The Q score in the merged read (contig) should be calculated as the
+     <a href="http://en.wikipedia.org/wiki/Posterior_probability">
+      posterior probability
+     </a>
+     according to
+     <a href="http://en.wikipedia.org/wiki/Bayes'_theorem">
+      Bayes theorem
+     </a>
+     where the P_e's from the forward and reverse read are the
+     <a href="http://en.wikipedia.org/wiki/Prior_probability">
+      prior probabilities
+     </a>
+     .
+    </p>
+    <p class="ManText">
+     Quality filtering by maximum expected errors should be performed as a post-processing step after reads have been merged in order to take advantage of the re-calculated Phred scores, which should be better predictions of the true error rates.
+    </p>
+    <p class="ManText">
+     It is important to use the USEARCH
+     <a href="cmd_fastq_mergepairs.html">
+      fastq_mergepairs
+     </a>
+     command for read merging because according to my tests, other read mergers do not correctly calculate the posterior Q scores, including PANDAseq, COPE, PEAR, fastq-join and FLASH. Some of these mergers also have high rates of false positive and incorrect merges, including especially PANDAseq and the make.contigs() command in mothur.
+    </p>
+    <p class="ManText">
+     <b>
+      OK, the concept is nice, but how well does this work in practice?
+      <br/>
+     </b>
+     For Illumina reads, this approach works very well, because the Illumina Q scores are pretty good (much better than 454). The accuracy of the Q scores varies with the sequencing machine, base-calling software and probably other factors such as reagents. Amplicon sequencing tends to have less accurate Q scores than shotgun, so you can't assume that results on a PhiX library will be similar to results for amplicon reads. The Q scores may systematically under- or over-estimate the error probabilities in different runs. Errors do have some tendency to correlate, i.e. to cluster in certain reads, so they're not perfectly independent as assumed by the theory. Also, Q scores can only predict sequencer error per se, they cannot predict errors introduced before sequencing, e.g. during PCR. But despite these caveats, the approach works well in practice, better than anything else I've tested.
+    </p>
+    <p class="ManText">
+     <b>
+      Long reads
+      <br/>
+     </b>
+     See this
+     <a href="faq_emax.html">
+      FAQ: Should I increase the expected error threshold for long reads?
+     </a>
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,192 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Pair-wise sequence identity
+    </h1>
+    <span class="ManText">
+     <b>
+      See also
+      <br/>
+     </b>
+     <a href="opt_id.html">
+      -id option
+     </a>
+     <b>
+      <br/>
+     </b>
+     <a href="more_clusters.html">
+      Identity and clustering
+     </a>
+     <br/>
+     <a href="accept_options.html">
+      Accept options
+     </a>
+     <br/>
+     <a href="aln_params.html">
+      Alignment parameters
+     </a>
+    </span>
+    <p>
+     <span class="ManText">
+      USEARCH uses the BLAST definition of identity, which is the number of identities divided by the number of alignment columns. This is the definition used by most bioinformatics programs.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      See
+      <a href="opt_id.html">
+       -id option
+      </a>
+      for rules that determine when a pair of letters match.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      With a
+      <a href="local_global.html">
+       global alignment
+      </a>
+      , columns containing
+      <a href="terminal_gaps.html">
+       terminal gaps
+      </a>
+      are discarded before calculating identity. Internal gaps always count as differences.
+     </span>
+    </p>
+    <p class="ManText">
+     <b>
+      <span>
+       Different programs may report different identities for the same sequences
+      </span>
+     </b>
+     <span class="c2">
+      <b>
+       <br/>
+      </b>
+      The pair-wise identity between two sequences depends on the alignment and the definition of identity. Alignments vary due to the use of different parameters such as gap penalties and substitution scores. Definitions of identity used by different programs may vary depending on the treatment of gaps and detailed rules for deciding whether letters match (e.g., upper- and lower-case and wildcards).
+     </span>
+    </p>
+    <p class="ManText">
+     <b>
+      <span>
+       USEARCH, BLAST and CD-HIT definitions of %id
+      </span>
+     </b>
+     <span>
+      <br/>
+      An "identity" is a column with two matching letters.
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="c2">
+      USEARCH and BLAST = Identities / Columns
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="c2">
+      CD-HIT = Identities / (Length of shorter sequence)
+     </span>
+    </p>
+    <p class="ManText">
+     <b>
+      <span class="c2">
+       Problems with the CD-HIT definition
+      </span>
+     </b>
+     <span>
+      <br/>
+      For historical reasons, versions 5 and earlier of USEARCH used the CD-HIT definition of identity. In versions 6 and later, the BLAST definition is used. I made the change because I felt the CD-HIT definition had several important weaknesses. The CD-HIT definition is not symmetrical between the longer and shorter sequence. Gaps in the longer sequence reduce %id but gaps in the shorter sequence do not. Gappier alignments therefore tend to have higher identities according to CD-HIT compared to other methods, and the CD-HIT %id correlates less well with evolutionary distance. A measure of %id that counts gaps as differences is more robust against the choice of alignment parameters (gap penalties and substitution matrices).
+     </span>
+    </p>
+    <p>
+     <span>
+      <a href="/usearch/cdhitv4_alignment86.html">
+       Example where CD-HIT id is 97% and USEARCH id is 86%
+      </a>
+     </span>
+    </p>
+    <p>
+     <span>
+      <a href="/usearch/cdhitv4_alignment95.html">
+       Example where CD-HIT id is 97% and USEARCH id is 95%
+      </a>
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

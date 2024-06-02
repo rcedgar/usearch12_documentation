@@ -1,0 +1,295 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     cluster_otus command
+    </h1>
+    <p class="ManText">
+     <b>
+      See also
+      <br/>
+     </b>
+     <a href="uparse_pipeline.html">
+      OTU / denoising pipeline
+     </a>
+     <br/>
+     <a href="tutorials.html">
+      Tutorials with data, scripts, and excercises with solutions
+     </a>
+     <br/>
+     <a href="otus.html">
+      Defining and interpeting OTUs
+     </a>
+     <br/>
+     <b>
+     </b>
+     <span class="Text">
+      <a href="otu_bench.html">
+       OTU benchmark results
+      </a>
+     </span>
+     <br/>
+     <b>
+     </b>
+     <a href="cmd_otutab.html">
+      Making an OTU table (otutab command)
+     </a>
+     <br/>
+     <b>
+     </b>
+     <a href="faq_uparse_or_unoise.html">
+      Should I use UPARSE or UNOISE?
+     </a>
+     <b>
+      <br/>
+     </b>
+     <span class="ManText">
+      <br/>
+      The cluster_otus command performs 97% OTU clustering using the
+      <a href="uparseotu_algo.html">
+       UPARSE-OTU algorithm
+      </a>
+      .
+     </span>
+    </p>
+    <p class="ManText">
+     Chimeras are filtered by this command. This chimera filtering is much better than using UCHIME so I do not recommend using reference-based chimera filtering as a post-processing step
+        (except perhaps for manual review), because false positives are common.
+    </p>
+    <p class="ManText">
+     For most purposes, I consider 97% OTU clustering obsolete. It is better to use the
+     <a href="cmd_unoise3.html">
+      unoise command
+     </a>
+     to recover the full set of biological sequences in the reads. These are also valid OTUs; I call them "ZOTUs" for zero-radius OTUs, to emphasize this. See
+     <a href="otus.html">
+      defining and interpreting OTUs
+     </a>
+     and the
+     <a href="citation.html">
+      UNOISE paper
+     </a>
+     for further discussions.
+    </p>
+    <p>
+     <span class="ManText">
+      Input to cluster_otus is a FASTA file containing
+      <a href="readqualfiltering.html">
+       quality filtered
+      </a>
+      ,
+      <a href="global_trimming.html">
+       globally trimmed
+      </a>
+      and
+      <a href="upp_derep.html">
+       dereplicated
+      </a>
+      reads from a marker gene amplicon sequencing experiment, e.g. 16S or ITS. It is generally recommended that
+      <a href="singletons.html">
+       singleton reads should be discarded
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      See
+      <a href="uparse_pipeline.html">
+       OTU / denoising pipeline
+      </a>
+      for discussion of how to prepare reads before clustering. It is
+      <strong>
+       <span class="auto-style1">
+        strongly recommended
+       </span>
+      </strong>
+      that you follow the pipeline recommentations, otherwise the accuracy of the OTUs will probably be compromised.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      Input sequence labels must have
+      <a href="size_annot.html">
+       size annotations
+      </a>
+      giving the abundance of the unique sequence. Size annotations are generated by the -sizeout option of clustering commands; typically
+      <a href="cmd_fastx_uniques.html">
+       fastx_uniques
+      </a>
+      is used.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -minsize option  can be used to specify a minimum abundance. Default value is 2, which
+      <a href="singletons.html">
+       discards singleton unique sequences
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The identity threshold is fixed at 97%. See
+      <a href="otus.html">
+       defining and intepreting OTUs
+      </a>
+      for discussion. See
+      <a href="uparse_otu_radius.html">
+       UPARSE OTU radius
+      </a>
+      for making OTUs at different identities.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -
+      <a href="opt_otus.html">
+       otus
+      </a>
+      option specifies a FASTA output file for the OTU representative sequences. By default, OTUs labels are taken from the input file, with
+      <a href="size_annot.html">
+       size annotations
+      </a>
+      stripped.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -
+      <a href="opt_relabel.html">
+       relabel
+      </a>
+      option specifies a string that is used to re-label OTUs. If -relabel xxx is specified, then the labels are xxx followed by 1, 2 ... up to the number of OTUs. OTU identifiers in the labels is required for making an OTU table with the
+      <a href="cmd_otutab.html">
+       otutab command
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -
+      <a href="opt_uparseout.html">
+       uparseout
+      </a>
+      option specifies a tabbed text output file documenting how the input sequences were classified.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -uparsealnout option species a text file containing a human-readable alignment of each query sequence to its
+      <a href="uparseref_algo.html">
+       UPARSE-REF
+      </a>
+      model.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <a href="parsimony_params.html">
+       Parsimony score options
+      </a>
+      are supported.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <a href="aln_params.html">
+       Alignment parameters
+      </a>
+      and
+      <a href="aln_heuristics.html">
+       heuristics
+      </a>
+      are supported.
+     </span>
+    </p>
+    <p>
+     <span class="ManText c2">
+      Example
+     </span>
+    </p>
+    <p>
+     <span class="ManCode">
+      usearch -cluster_otus uniques.fa -otus otus.fa -uparseout uparse.txt -relabel Otu
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

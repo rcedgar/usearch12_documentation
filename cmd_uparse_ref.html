@@ -1,0 +1,215 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     uparse_ref command
+    </h1>
+    <span class="ManText">
+     <strong>
+      See also
+     </strong>
+     <br/>
+     <a href="DELETE_URL">
+      annot command
+     </a>
+     <br/>
+     <br/>
+     Annotation of amplicon sequences using the
+     <a href="uparseref_algo.html">
+      UPARSE-REF algorithm
+     </a>
+     . This command is designed for use in validating mock community sequencing experiments where the sequences of the designed community are known. An important limitation of this approach is that sequences due to contaminants and
+     <a href="DELETE_URL">
+      cross-talk
+     </a>
+     are not distinguished from reads with high error rates. The new
+     <a href="DELETE_URL">
+      annot command
+     </a>
+     is now recommended as the first choice for mock community analysis, though uparse_ref can be useful as an independent check using a different underlying algorithm.
+    </span>
+    <p>
+     <span class="ManText">
+      A
+      <a href="db_files.html">
+       database file
+      </a>
+      of nucleotide sequences must be specified using the -
+      <a href="db_files.html">
+       db
+      </a>
+      option. The database may be in FASTA or UDB format. The reference database should include all biological sequences that are expected to appear in the input set. The database should be complete and correct as far as possible, and should not be any larger than necessary.
+      <span class="c2">
+       Do not use a large reference database
+      </span>
+      such as Greengenes, SILVA or the gold reference database for
+      <a href="uchime_algo.html">
+       UCHIME
+      </a>
+      .
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      The uparse_ref command does
+      <span class="c2">
+       not perform well on benchmarks
+      </span>
+      developed to validate ChimeraSlayer and UCHIME. It is
+      <span class="c2">
+       not designed for use as a general-purpose chimera detection or chimera filtering method.
+      </span>
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      The -
+      <a href="opt_strand.html">
+       strand
+      </a>
+      option is required and must be specified as -strand plus. This means that the database must be oriented on the same strand as the query sequences (or contain both forward and reverse-complemented reference sequences).
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -
+      <a href="opt_uparseout.html">
+       uparseout
+      </a>
+      option specifies a tabbed text output file documenting how the input sequences were classified..
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -fastaout option specifies a FASTA output file containing all input sequences with
+      <a href="uparse_fastaout.html">
+       labels annotated
+      </a>
+      according to their
+      <a href="uparseref_algo.html">
+       UPARSE-REF
+      </a>
+      models. Generally, the -uparseout file is recommended because it is easier to understand and parse, but the -fastaout file provides more information
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      The -uparsealnout option species a text file containing a human-readable alignment of each query sequence to its UPARSE-REF model.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <a href="parsimony_params.html">
+       Parsimony score options
+      </a>
+      are supported.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <a href="aln_params.html">
+       Alignment parameters
+      </a>
+      and
+      <a href="aln_heuristics.html">
+       heuristics
+      </a>
+      are supported.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <a href="multithreading.html">
+       Multithreading
+      </a>
+      is supported.
+     </span>
+    </p>
+    <p>
+     <span class="ManText c3">
+      Example
+     </span>
+    </p>
+    <p>
+     <span class="ManCode">
+      usearch -uparse_ref otus.fasta -db mock_ref.udb 
+  -strand plus -uparseout out.up
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

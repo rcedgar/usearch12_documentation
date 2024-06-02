@@ -1,0 +1,254 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     OTU benchmark results
+    </h1>
+    <span class="ManText">
+     <b>
+      See also
+     </b>
+     <br/>
+     <a href="/uparse">
+      UPARSE home page
+     </a>
+     <br/>
+     <a href="uparse_pipeline.html">
+      OTU / denoising analysis
+     </a>
+     <br/>
+     <a href="hmp_mock_data.html">
+      OTU benchmark methods and data
+     </a>
+     <br/>
+     <br/>
+    </span>
+    <span class="ManText">
+     <b>
+      Introduction
+      <br/>
+     </b>
+     In SSU metagenomics, next-generation reads are clustered into
+     <a href="otus.html">
+      Operational Taxonomic Units
+     </a>
+     (OTUs). This requires
+     <a href="readqualfiltering.html">
+      quality filtering
+     </a>
+     ,
+     <a href="dereplication.html">
+      dereplication
+     </a>
+     ,
+     <a href="singletons.html">
+      discarding singletons
+     </a>
+     (optional), and finally clustering into OTUs, typically at a 97% identity threshold.
+    </span>
+    <p>
+     <span class="ManText">
+      <b>
+       Benchmark results
+       <br/>
+      </b>
+      The OTU benchmark uses 454 Titanium and Illumina MiSeq reads of Even and Staggered mock communities used for protocol development in the
+      <a href="http://www.hmpdacc.org/HMMC/">
+       Human Microbiome Project (HMP)
+      </a>
+      . USEARCH results were obtained with the same parameters for all samples. The number of reads per sample ranges from 10,000 (Titanium) to two million (MiSeq). The accuracy of
+      <a href="/uparse">
+       UPARSE
+      </a>
+      was compared to recommended procedures (Sept. 2012) for mothur, QIIME and AmpliconNoise.
+      <br/>
+     </span>
+    </p>
+    <div align="left">
+     <table border="1" cellpadding="5" cellspacing="0" summary="Table" width="95%">
+      <tr>
+       <td align="left" class="c4" width="151">
+        <span class="ManText c3">
+         Accuracy measure
+        </span>
+       </td>
+       <td align="left" class="c4" width="210">
+        <span class="ManText c3">
+         Summary
+        </span>
+       </td>
+       <td align="left" class="c4">
+        <span class="ManText">
+         <b>
+          Detailed results
+          <br/>
+         </b>
+         (click on image)
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="left" class="c5" valign="top" width="151">
+        <span class="ManText">
+         <b>
+          Sequence quality
+         </b>
+         <br/>
+         Are OTUs accurate reconstructions of biological sequences?
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top" width="210">
+        <span class="ManText">
+         Most USEARCH OTUs are &gt;=99% identical to a biological sequence.
+        </span>
+        <p>
+         <span class="ManText">
+          Most QIIME, mothur and AmpliconNoise OTUs are &gt;3% diverged from a biological sequence. Roughly half are chimeric.
+         </span>
+        </p>
+       </td>
+       <td align="center" class="c6">
+        <span class="ManText">
+         <a href="hmp_mock_pie.html">
+          <img alt="Image" border="0" src="hmp_pie_small.jpg"/>
+         </a>
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="left" class="c4" valign="top" width="151">
+        <span class="ManText">
+         <b>
+          Diversity
+         </b>
+         <br/>
+         Does the number of OTUs correspond to the number of species?
+        </span>
+       </td>
+       <td align="left" class="c4" valign="top" width="210">
+        <span class="ManText">
+         USEARCH generated from 0.8 to 1.0 OTUs per detectable species.
+        </span>
+        <p>
+         <span class="ManText">
+          Mothur and AmpliconNoised produced 2.3x to 6.7x more OTUs than species.
+         </span>
+        </p>
+        <p>
+         <span class="ManText">
+          QIIME produced thousands of OTUs, far more than the number of species.
+         </span>
+        </p>
+       </td>
+       <td align="left" class="c6" valign="top">
+        <p align="center">
+         <span class="ManText">
+          <br/>
+          <a href="hmp_mock_bar.html">
+           <img alt="Image" border="0" src="otu_cl1.jpg"/>
+          </a>
+         </span>
+        </p>
+       </td>
+      </tr>
+     </table>
+     <p align="left">
+      <span class="Text">
+       <b>
+        Reference
+       </b>
+       <br/>
+       Edgar, R.C. (2013) UPARSE: Highly accurate OTU sequences from microbial amplicon reads,
+       <i>
+        Nature Methods
+       </i>
+       [
+       <a href="http://www.ncbi.nlm.nih.gov/pubmed/23955772">
+        Pubmed:23955772
+       </a>
+       ,
+       <a href="http://dx.doi.org/10.1038/nmeth.2604">
+        dx.doi.org/10.1038/nmeth.2604
+       </a>
+       ].
+       <br/>
+      </span>
+     </p>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,326 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     UC output file
+    </h1>
+    <span class="ManText">
+     <br/>
+     USEARCH cluster format (UC) is a tab-separated text file. UC output is supported by clustering and database search. By convention, the .uc filename extension is used. Each line is either a comment (starts with #) or a record. Every input sequence generates one record (H, S or N); additional record types give information about clusters. If an input sequence matched a target sequence, then the alignment and the identity computed from that alignment are also provided. Fields that do not apply to a given record type are filled with an asterisk placeholder (*).
+     <br/>
+    </span>
+    <div align="left">
+     <table border="0" cellpadding="3" cellspacing="0" summary="Table" width="453">
+      <tr>
+       <td align="right" class="c2" valign="top">
+        <span class="ManText">
+         Field
+        </span>
+       </td>
+       <td class="c3" width="15">
+       </td>
+       <td class="c2" width="364">
+        <span class="ManText">
+         Description
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top">
+        <span class="ManText">
+         1
+        </span>
+       </td>
+       <td class="c4" width="15">
+       </td>
+       <td class="c4" width="364">
+        <span class="ManText">
+         Record type S, H, C or N (see table below).
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top">
+        <span class="ManText">
+         2
+        </span>
+       </td>
+       <td class="c3" width="15">
+       </td>
+       <td class="c3" width="364">
+        <span class="ManText">
+         Cluster number (0-based).
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top">
+        <span class="ManText">
+         3
+        </span>
+       </td>
+       <td class="c4" width="15">
+       </td>
+       <td class="c4" width="364">
+        <span class="ManText">
+         Sequence length (S, N and H) or cluster size (C).
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top">
+        <span class="ManText">
+         4
+        </span>
+       </td>
+       <td class="c3" width="15">
+       </td>
+       <td class="c3" width="364">
+        <span class="ManText">
+         For H records, percent identity with target.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top">
+        <span class="ManText">
+         5
+        </span>
+       </td>
+       <td class="c4" width="15">
+       </td>
+       <td class="c4" width="364">
+        <span class="ManText">
+         For H records, the strand: + or - for nucleotides, . for proteins.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top">
+        <span class="ManText">
+         6
+        </span>
+       </td>
+       <td class="c3" width="15">
+       </td>
+       <td class="c3" width="364">
+        <span class="ManText">
+         Not used, parsers should ignore this field. Included for backwards compatibility.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top">
+        <span class="ManText">
+         7
+        </span>
+       </td>
+       <td class="c4" width="15">
+       </td>
+       <td class="c4" width="364">
+        <span class="ManText">
+         Not used, parsers should ignore this field. Included for backwards compatibility.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top">
+        <span class="ManText">
+         8
+        </span>
+       </td>
+       <td class="c3" width="15">
+       </td>
+       <td class="c3" width="364">
+        <span class="ManText">
+         <a href="compressed_alignments.html">
+          Compressed alignment
+         </a>
+         or the symbol '=' (equals sign). The = indicates that the query is 100% identical to the target sequence (field 10).
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top">
+        <span class="ManText">
+         9
+        </span>
+       </td>
+       <td class="c4" width="15">
+       </td>
+       <td class="c4" width="364">
+        <span class="ManText">
+         Label of query sequence (always present).
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top">
+        <span class="ManText">
+         10
+        </span>
+       </td>
+       <td class="c3" width="15">
+       </td>
+       <td class="c3" width="364">
+        <span class="ManText">
+         Label of target sequence (H records only).
+        </span>
+       </td>
+      </tr>
+     </table>
+     <div align="left">
+      <table border="0" cellpadding="3" cellspacing="0" summary="Table" width="453">
+       <tr>
+        <td align="right" class="c3" valign="top">
+         <span class="ManText c5">
+          Record
+         </span>
+        </td>
+        <td class="c3" width="14">
+        </td>
+        <td class="c3" width="365">
+         <span class="ManText c5">
+          Description
+         </span>
+        </td>
+       </tr>
+       <tr>
+        <td align="right" class="c4" valign="top">
+         <span class="ManText">
+          H
+         </span>
+        </td>
+        <td class="c4" width="14">
+        </td>
+        <td class="c4" width="365">
+         <span class="ManText">
+          Hit. Represents a query-target alignment. For clustering, indicates the cluster assignment for the query. If -maxaccepts &gt; 1, only there is only one H record giving the best hit. To get the other accepts, use another type of
+          <a href="output_files.html">
+           output file
+          </a>
+          , or use the -uc_allhits option (requires version 6.0.217 or later).
+         </span>
+        </td>
+       </tr>
+       <tr>
+        <td align="right" class="c3" valign="top">
+         <span class="ManText">
+          S
+         </span>
+        </td>
+        <td class="c3" width="14">
+        </td>
+        <td class="c3" width="365">
+         <span class="ManText">
+          Centroid (clustering only). There is one S record for each cluster, this gives the centroid (representative) sequence label in the 9th field. Redundant with the C record; provided for backwards compatibility.
+         </span>
+        </td>
+       </tr>
+       <tr>
+        <td align="right" class="c4" valign="top">
+         <span class="ManText">
+          C
+         </span>
+        </td>
+        <td class="c4" width="14">
+        </td>
+        <td class="c4" width="365">
+         <span class="ManText">
+          Cluster record (clustering only). The 3rd field is set to the cluster size (number of sequences in the cluster) and the 9th field is set to the label of the centroid sequence.
+         </span>
+        </td>
+       </tr>
+       <tr>
+        <td align="right" class="c3" valign="top">
+         <span class="ManText">
+          N
+         </span>
+        </td>
+        <td class="c3" width="14">
+        </td>
+        <td class="c3" width="365">
+         <span class="ManText">
+          No hit (for database search without clustering only). Indicates that no accepts were found. In the case of clustering, a query with no hits becomes the centroid of a new cluster and generates an S record instead of an N record.
+         </span>
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

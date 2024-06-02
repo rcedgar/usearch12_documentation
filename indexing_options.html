@@ -1,0 +1,356 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Index parameters
+    </h1>
+    <span class="ManText">
+     <b>
+      See also
+     </b>
+     <br/>
+     <a href="default_index_params.html">
+      Default index parameter values
+     </a>
+     <br/>
+     <a href="memory.html">
+      Memory requirements
+     </a>
+     <br/>
+     <br/>
+     Most USEARCH commands use a database index to enable fast searching. There are two types of index: one for finding matching seeds for the
+     <a href="ublast_algo.html">
+      UBLAST algorithm
+     </a>
+     , and another for fast calculation of common word counts for the
+     <a href="usearch_algo.html">
+      USEARCH algorithm
+     </a>
+     . Clustering uses a USEARCH-style index. Indexing parameters apply to both types of index.
+    </span>
+    <p>
+     <span class="ManText">
+      During search and clustering, indexes are always accessed directly in memory rather than being retrieved from a disk file, in order to maximize speed. The amount of RAM required to store the index is approximately the same as the size of a UDB file created with the same sequences and options. The physical RAM in the computer should be bigger than the index, otherwise virtual memory paging will cause much slower execution.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      Indexes are constructed in three different ways:
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      (1) Loaded from in a UDB file.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      (2) Built from a FASTA file.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      (3) Built dynamically during clustering. The index is initially empty, then grows as centroid sequences are added to the database.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <b>
+       Indexing options
+       <br/>
+      </b>
+      In the following table, "word" refers generically to the fixed-length segment of the database sequence that is indexed. It may be a k-mer or a
+      <a href="patterns.html">
+       pattern
+      </a>
+      . The effective word length is the length of the k-mer or the number of 1s in the pattern.
+     </span>
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="5" cellspacing="0" summary="Table" width="78%">
+      <tr>
+       <td align="right" class="c3" width="112">
+        <span class="ManText c2">
+         Option
+        </span>
+       </td>
+       <td align="center" class="c3" width="29">
+        <span class="ManText c2">
+         Value
+        </span>
+       </td>
+       <td align="left" class="c4">
+        <span class="ManText">
+         Description
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="112">
+        <span class="ManText">
+         -wordlength
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="29">
+        <span class="ManText">
+         N
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         <a href="word_length.html">
+          Word length
+         </a>
+         . If this is given, an all-ones
+         <a href="patterns.html">
+          pattern
+         </a>
+         is assumed and the -pattern option may not be given. For long word lengths, the -slots option can be used to reduce memory use.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="112">
+        <span class="ManText">
+         -pattern
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top" width="29">
+        <span class="ManText">
+         string
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top">
+        <span class="ManText">
+         A
+         <a href="patterns.html">
+          pattern
+         </a>
+         specified as a string of 1s and 0s. A pattern of all ones is equivalent to a kmer of that length and can also be specified by the -wordlength option. It is not valid to specify both -wordlength and -pattern. The default for protein
+         <a href="DELETE_URL">
+          ublast
+         </a>
+         is 10111011. For long patterns, the -slots option can be used to reduce memory use.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="112">
+        <span class="ManText">
+         -alpha
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="29">
+        <span class="ManText">
+         string
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         Alphabet. Either nt (nucleotide), aa (20-letter amino acid alphabet), or a
+         <a href="DELETE_URL">
+          compressed amino acid alphabet
+         </a>
+         expressed as a string containing the 20 standard letters with groups separated by commas. Default for protein
+         <a href="DELETE_URL">
+          ublast
+         </a>
+         is the 10-group alphabet A,KR,DENQ,C,G,H,ILVM,FYW,P,ST. Other indexed search and clustering commands default to the full 20-letter alphabet but support compressed alphabets as an option.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="112">
+        <span class="ManText">
+         -
+         <a href="DELETE_URL">
+          dbstep
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top" width="29">
+        <span class="ManText">
+         N
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top">
+        <span class="ManText">
+         Specifies that every Nth database word should be indexed. Default is N=1, meaning that all words are indexed. Similar to the stride parameter of
+         <a href="http://bioinformatics.oxfordjournals.org/content/24/16/1757.full">
+          MEGABLAST
+         </a>
+         . Setting N&gt;1 saves memory by reducing the size of the index, roughly by a factor of N for large databases.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="112">
+        <span class="ManText">
+         -
+         <a href="DELETE_URL">
+          dbaccelpct
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="29">
+        <span class="ManText">
+         N
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         Specifies an acceleration parameter in the range 0 to 100, similar to the -
+         <a href="DELETE_URL">
+          accel
+         </a>
+         parameter of
+         <a href="DELETE_URL">
+          ublast
+         </a>
+         . Expressed as an integer percentage. Usually it is more effective to use -
+         <a href="DELETE_URL">
+          accel
+         </a>
+         than -dbaccelpct, though this may depend on the database. The main advantage of -dbaccel is reduced memory and UDB file size. This parameter can only be used for
+         <a href="db_files.html">
+          database file
+         </a>
+         indexes, it is not valid for clustering.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="112">
+        <span class="ManText">
+         -
+         <a href="opt_dbmask.html">
+          dbmask
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top" width="29">
+        <span class="ManText">
+         method
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top">
+        <span class="ManText">
+         See
+         <a href="masking_options.html">
+          masking options
+         </a>
+         for supported methods. A word with one or more masked letters is not indexed. Default is fastnucleo or fastamino.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="112">
+        <span class="ManText">
+         -slots
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="29">
+        <span class="ManText">
+         N
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         Use a hashed index with the given number of slots (table entries at the top level of the index).  It is recommended to use a
+         <a href="http://en.wikipedia.org/wiki/Prime_number">
+          prime number
+         </a>
+         as this reduces the frequency of hash collisions. Each slot requires a minimum of several bytes, even of the word corresponding to that slot is not found in the database. By default, if the alphabet size is A and the effective word length is w, the index has A
+         <sup>
+          w
+         </sup>
+         slots. This is the fastest way to do a word lookup, but can use too much memory for long word lengths. For example, a word length of 16 for proteins would require 10
+         <sup>
+          21
+         </sup>
+         slots. A
+         <a href="http://en.wikipedia.org/wiki/Hash_table">
+          hash table
+         </a>
+         index can save memory by using fewer slots, enabling longer word lengths to be used. Index operations become somewhat slower, though the difference in overall search speed is often negligible.
+        </span>
+       </td>
+      </tr>
+     </table>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

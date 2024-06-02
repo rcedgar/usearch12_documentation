@@ -1,0 +1,152 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Can SINTAX predict species?
+    </h1>
+    <p class="ManText">
+     <strong>
+      See also
+      <br/>
+     </strong>
+     Edgar 2018, "Accuracy of taxonomy prediction for 16S rRNA and fungal ITS sequences" (
+     <a href="https://peerj.com/articles/4652/">
+      link to paper
+     </a>
+     ).
+     <br/>
+     Shows that V4 accuracy is ~50%, species prediction is not 
+  possible, better to use small, authoritative reference.
+     <br/>
+     <br/>
+     <strong>
+     </strong>
+     Edgar 2018, "Taxonomy annotations and guide tree errors in 16S rRNA databases" (
+     <a href="https://www.biorxiv.org/content/early/2018/04/09/288654">
+      link to paper
+     </a>
+     ).
+     <br/>
+     Shows that annotation error rate of SILVA and Greengenes is ~17%,
+     <br/>
+    </p>
+    <p class="ManText">
+     On the
+     <a href="sintax_downloads.html">
+      SINTAX data downloads
+     </a>
+     page you will find a link to a version of the
+     <span class="Text">
+      RDP training set with species names. If you use this database with the
+      <a href="cmd_sintax.html">
+       sintax command
+      </a>
+      , you will usually get a species prediction with a bootstrap confidence. (Not always, because there are species annotations only for the 11,424 of 13,212 sequences where I found a 100% identical match to a named strain).
+     </span>
+    </p>
+    <p class="ManText">
+     You should be skeptical of species predictions because it is possible, probably common, to get a high bootstrap value for an incorrect prediction. This happens with genus too, but the problem is worse for species.
+    </p>
+    <p class="ManText">
+     If you're using short tags like V4, then it often happens that two or more species have identical tag sequences, making it impossible to identify which species you're looking at. This scenario might not be detectable from the database because the vast majority of species have not been named by taxonomists and do not appear in the RDP training set, so there could be a novel species with an identical sequence. In other words, the reference database is sparse: it has missing data ---
+     <em>
+      lots
+     </em>
+     of missing data.
+    </p>
+    <p class="auto-style1">
+     <span class="ManText">
+      If you use a "top-hit" classifier like SINTAX or RDP with a sparse reference database, then you get a problem with over-classification as shown in the figure below (taken from the
+      <a href="citation.html">
+       SINTAX paper
+      </a>
+      ). This is what happens: suppose the top hit for your query sequence has 95% identity. Then it probably belongs to a different species. Now suppose the second-best hit has much lower identity, say 90%. The bootstrapping in SINTAX and RDP repeatedly takes a sub-sample of words (8-mers) in the query sequence and checks the top taxonomy when considering only the subset. If there is a big drop in identity between the top hit and second-best hit, then you will get the same top hit every time even if it has relatively low identity, and the result is a high confidence for all ranks in the taxonomy. This is most obvious when the genus is a singleton, i.e. has only one sequence in the database (call it S). Then S is very likely to be the top hit for any species in that genus, even under sub-sampling of the 8-mers, in which case you'll get a spuriously high confidence that the species of your query is the same as S if it belongs to the same genus. About half (1,157 / 2,472) of the genera in the RDP training set v16 are singletons, so this is a significant concern.
+      <br/>
+     </span>
+    </p>
+    <p class="auto-style1">
+     <img alt="Image" class="auto-style2" height="352" src="oc_fig.gif" width="585"/>
+     <br/>
+     (Figure from the
+     <a href="citation.html">
+      SINTAX paper
+     </a>
+     ).
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

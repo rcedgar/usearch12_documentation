@@ -1,0 +1,493 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     fastq_filter command
+    </h1>
+    <span class="ManText">
+     <br/>
+     Performs quality filtering and / or conversion of a
+     <a href="fastq_files.html">
+      FASTQ file
+     </a>
+     to
+     <a href="fasta_files.html">
+      FASTA format
+     </a>
+     .
+    </span>
+    <p class="ManText">
+     <span class="ManText c2">
+      See also
+      <br/>
+     </span>
+     <span class="c3">
+      <a href="http://bioinformatics.oxfordjournals.org/content/early/2015/07/29/bioinformatics.btv401.short">
+       Paper describing expected error filtering and paired read merging (Edgar &amp; Flyvbjerg, 2015).
+      </a>
+     </span>
+     <br/>
+     <a href="topics_bench.html">
+      <span class="auto-style2">
+       Paired read assembler and quality filtering benchmark results
+      </span>
+     </a>
+     <span class="ManText">
+      <b>
+       <br/>
+      </b>
+      <a href="readqualfiltering.html">
+       Read quality filtering
+      </a>
+      <br/>
+      <b>
+      </b>
+      <a href="exp_errs.html">
+       Expected errors
+      </a>
+      <b>
+       <br/>
+      </b>
+      <a href="fastq_params.html">
+       FASTQ format options
+      </a>
+      <br/>
+      <a href="quality_score.html">
+       Quality scores
+      </a>
+     </span>
+     <br/>
+     <span class="ManText">
+      <a href="fastq_choose_filter.html">
+       Choosing FASTQ filter parameters
+      </a>
+     </span>
+     <br/>
+     <a href="merge_badrev.html">
+      Strategies for dealing with low-quality reverse reads (R2s)
+     </a>
+    </p>
+    <p class="auto-style3">
+     The
+     <a href="DELETE_URL">
+      fastx_learn command
+     </a>
+     is useful for checking the error rate after
+     <a href="exp_errs.html">
+      expected error quality filtering
+     </a>
+     , which assumes that the Q scores are accurate. It does not use Q scores so gives an independent check.
+    </p>
+    <p>
+     <span class="ManText c2">
+      Output options
+     </span>
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="5" cellspacing="0" summary="Table" width="78%">
+      <tr>
+       <td align="right" class="c4" width="136">
+        <span class="ManText c2">
+         Option
+        </span>
+       </td>
+       <td align="center" class="c4" width="7">
+       </td>
+       <td align="left" class="c5">
+        <span class="ManText">
+         Description
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c6" valign="top" width="136">
+        <span class="ManText">
+         -fastqout
+         <i>
+          filename
+         </i>
+        </span>
+       </td>
+       <td align="center" class="c6" valign="top" width="7">
+       </td>
+       <td align="left" class="c6" valign="top">
+        <span class="ManText">
+         FASTQ output file. You can use both -fastqout and -fastaout.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top" width="136">
+        <span class="ManText">
+         -fastaout
+         <i>
+          filename
+         </i>
+        </span>
+       </td>
+       <td align="center" class="c4" valign="top" width="7">
+       </td>
+       <td align="left" class="c4" valign="top">
+        <span class="ManText">
+         FASTA output file. You can use both -fastqout and -fastaout.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c6" valign="top" width="136">
+        <span class="ManText">
+         -fastqout_discarded
+         <i>
+          filename
+         </i>
+        </span>
+       </td>
+       <td align="center" class="c6" valign="top" width="7">
+       </td>
+       <td align="left" class="c6" valign="top">
+        <span class="ManText">
+         FASTQ output file for discarded reads. You can use both -fastqout_discarded and -fastaout_discarded.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top" width="136">
+        <span class="ManText">
+         -fastaout_discarded
+         <i>
+          filename
+         </i>
+        </span>
+       </td>
+       <td align="center" class="c4" valign="top" width="7">
+       </td>
+       <td align="left" class="c4" valign="top">
+        <span class="ManText">
+         FASTA output file for discarded reads. You can use both -fastqout_discarded and -fastaout_discarded.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c6" valign="top" width="136">
+        <span class="ManText">
+         -relabel
+         <i>
+          prefix
+         </i>
+        </span>
+       </td>
+       <td align="center" class="c6" valign="top" width="7">
+       </td>
+       <td align="left" class="c6" valign="top">
+        <span class="ManText">
+         Generate new labels for the output sequences. They will be labeled
+         <i>
+          prefix
+         </i>
+         1,
+         <i>
+          prefix
+         </i>
+         2 and so on. For example, if you use -relabel SampleA. then the labels will be SampleA.1, SampleA.2 etc.
+        </span>
+        <p>
+         <span class="ManText">
+          The special value @ indicates that the string should be constructed from the file name by truncating the file name at the first underscore or period and appending a period. With a typical Illumina FASTQ file name, this gives the sample name. So, for example, if the FASTQ file name is Mock_S188_L001_R1_001.fastq, then the string is Mock and the output labels will be Mock.1, Mock.2 etc.
+          <br/>
+         </span>
+        </p>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top" width="136">
+        <span class="ManText">
+         -fastq_eeout
+        </span>
+       </td>
+       <td align="center" class="c4" valign="top" width="7">
+       </td>
+       <td align="left" class="c4" valign="top">
+        <span class="ManText">
+         Append the
+         <a href="exp_errs.html">
+          expected number of errors
+         </a>
+         according to the Q scores to the label in the format "ee=xx;". Expected errors are calculated after truncation, if applicable.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c6" valign="top" width="136">
+        <span class="ManText">
+         -sample
+         <i>
+          string
+         </i>
+        </span>
+       </td>
+       <td align="center" class="c6" valign="top" width="7">
+       </td>
+       <td align="left" class="c6" valign="top">
+        <span class="ManText">
+         Append sample=
+         <i>
+          string
+         </i>
+         ; to the read label.
+         <br/>
+        </span>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <p>
+     <span class="ManText c2">
+      Filtering options
+     </span>
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="5" cellspacing="0" summary="Table" width="78%">
+      <tr>
+       <td align="right" class="ManText c4" width="136">
+        <span class="ManText c2">
+         Option
+        </span>
+       </td>
+       <td align="center" class="ManText c4" width="7">
+       </td>
+       <td align="left" class="ManText c5">
+        <span class="ManText">
+         Description
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="ManText c6" valign="top" width="136">
+        <span class="ManText">
+         -fastq_truncqual N
+        </span>
+       </td>
+       <td align="center" class="ManText c6" valign="top" width="7">
+       </td>
+       <td align="left" class="ManText c6" valign="top">
+        <span class="ManText">
+         Truncate the read at the first position having
+         <a href="quality_score.html">
+          quality score
+         </a>
+         &lt;= N, so that all remaining Q scores are &gt;N.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="ManText c4" valign="top" width="136">
+        <span class="ManText">
+         -fastq_maxee E
+        </span>
+       </td>
+       <td align="center" class="ManText c4" valign="top" width="7">
+       </td>
+       <td align="left" class="ManText c4" valign="top">
+        <span class="ManText">
+         Discard reads with &gt; E total
+         <a href="exp_errs.html">
+          expected errors
+         </a>
+         for all bases in the read after any truncation options have been applied.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="ManText c6" valign="top" width="136">
+        <span class="ManText">
+         -fastq_trunclen L
+        </span>
+       </td>
+       <td align="center" class="ManText c6" valign="top" width="7">
+       </td>
+       <td align="left" class="ManText c6" valign="top">
+        <span class="ManText">
+         Truncate sequences at the L'th base. If the sequence is shorter than L, discard.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="ManText c4" valign="top" width="136">
+        <span class="ManText">
+         -fastq_minlen L
+        </span>
+       </td>
+       <td align="center" class="ManText c4" valign="top" width="7">
+       </td>
+       <td align="left" class="ManText c4" valign="top">
+        <span class="ManText">
+         Discard sequences with &lt; L letters.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="ManText c6" valign="top" width="136">
+        -fastq_stripleft N
+       </td>
+       <td align="center" class="ManText c6" valign="top" width="7">
+       </td>
+       <td align="left" class="ManText c6" valign="top">
+        Delete the first N bases in the read.
+        <br/>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="ManText c4" valign="top" width="136">
+        <span class="ManText">
+         -fastq_maxee_rate E
+        </span>
+       </td>
+       <td align="center" class="ManText c4" valign="top" width="7">
+       </td>
+       <td align="left" class="ManText c4" valign="top">
+        <span class="ManText">
+         Discard reads with &gt; E
+         <a href="exp_errs.html">
+          expected errors
+         </a>
+         per base.Calculated after any truncation options have been applied. For example, with the fastq_maxee_rate option set to 0.01, then a read of length 100 will be discarded if the expected errors is &gt;1, and a read of length 1,000 will be discarded if the expected errors is &gt;10.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="ManText c6" valign="top" width="136">
+        -fastq_maxns k
+       </td>
+       <td align="center" class="ManText c6" valign="top" width="7">
+       </td>
+       <td align="left" class="ManText c6" valign="top">
+        Discard if there are &gt;k Ns in the read.
+        <br/>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <p>
+     <span class="ManText c2">
+      Examples
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      "Raw" conversion of Sanger FASTQ to FASTA with no filtering:
+     </span>
+    </p>
+    <p>
+     <span class="ManCode">
+      usearch -fastq_filter reads.fastq -fastaout reads.fasta -fastq_ascii 64
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      Truncate to length 150, discard if expected errors &gt; 0.5, and convert to FASTA:
+     </span>
+    </p>
+    <p>
+     <span class="ManCode">
+      usearch -fastq_filter reads.fastq -fastq_trunclen 150 -fastq_maxee 0.5 \
+      <br/>
+      -fastaout reads.fasta
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      Truncate a read at length 100 and then discard if it contains a Q&lt;15, output to new FASTQ file:
+     </span>
+    </p>
+    <p>
+     <span class="ManCode">
+      usearch -fastq_filter reads.fastq -fastq_minlen 100 -fastq_truncqual 15 \
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

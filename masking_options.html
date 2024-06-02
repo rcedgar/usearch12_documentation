@@ -1,0 +1,301 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Masking options
+    </h1>
+    <span class="ManText">
+     USEARCH provides several methods for
+     <a href="masking.html">
+      masking
+     </a>
+     . Query and database sequences can be masked independently using masking provided by an external program or one of the built-in masking algorithms.
+    </span>
+    <p>
+     <span class="ManText c2">
+      Masking options
+     </span>
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="5" cellspacing="0" style="width: 60%" summary="Table">
+      <tr>
+       <td align="right" class="c3" style="width: 102px">
+        <span class="ManText c2">
+         Option
+        </span>
+       </td>
+       <td align="center" class="c3" style="width: 28px">
+       </td>
+       <td align="left" class="c4" width="395">
+        <span class="ManText">
+         Description
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" style="width: 102px" valign="top">
+        <span class="ManText">
+         -qmask
+         <i>
+          method
+         </i>
+        </span>
+       </td>
+       <td align="center" class="c5" style="width: 28px" valign="top">
+       </td>
+       <td align="left" class="c5" valign="top" width="395">
+        <span class="ManText">
+         Masking method for the query file. Used for database searches and clustering.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" style="width: 102px" valign="top">
+        <span class="ManText">
+         -dbmask
+         <i>
+          method
+         </i>
+        </span>
+       </td>
+       <td align="center" class="c3" style="width: 28px" valign="top">
+       </td>
+       <td align="left" class="c3" valign="top" width="395">
+        <span class="ManText">
+         Masking method for the
+         <a href="db_files.html">
+          database
+         </a>
+         . Used for
+         <a href="cmd_makeudb_usearch.html">
+          makeudb_usearch
+         </a>
+         and
+         <a href="DELETE_URL">
+          makeudb_ublast
+         </a>
+         and when a database is loaded from a FASTA file. Ignored if the database is a UDB file; the desired masking must be applied when the UDB file is created.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" style="width: 102px" valign="top">
+        <span class="ManText">
+         -
+         <a href="opt_hardmask.html">
+          hardmask
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c5" style="width: 28px" valign="top">
+       </td>
+       <td align="left" class="c5" valign="top" width="395">
+        <span class="ManText">
+         Use hard masking (overwrite with N or X). Default is soft masking (upper case is unmasked, lower case is masked)..
+        </span>
+       </td>
+      </tr>
+     </table>
+     <p align="left">
+      <span class="ManText c2">
+       Masking methods
+      </span>
+     </p>
+     <table border="0" cellpadding="5" cellspacing="0" style="width: 60%" summary="Table">
+      <tr>
+       <td align="right" class="c3" style="width: 72px">
+        <span class="ManText c2">
+         Method
+        </span>
+       </td>
+       <td align="center" class="c4" style="width: 108px">
+        <span class="ManText">
+         Type
+        </span>
+       </td>
+       <td align="left" class="c4" width="338">
+        <span class="ManText">
+         Description
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" style="width: 72px" valign="top">
+        <span class="ManText">
+         fastamino
+        </span>
+       </td>
+       <td align="center" class="c5" style="width: 108px" valign="top">
+        <span class="ManText">
+         protein
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top" width="338">
+        <span class="ManText">
+         Unpublished method. Default for proteins.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" style="width: 72px" valign="top">
+        <span class="ManText">
+         fastnucleo
+        </span>
+       </td>
+       <td align="center" class="c3" style="width: 108px" valign="top">
+        <span class="ManText">
+         nucleotide
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top" width="338">
+        <span class="ManText">
+         Unpublished method. Default for nucleotides.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" style="width: 72px" valign="top">
+        <span class="ManText">
+         seg
+        </span>
+       </td>
+       <td align="center" class="c5" style="width: 108px" valign="top">
+        <span class="ManText">
+         protein
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top" width="338">
+        <span class="ManText">
+         Seg algorithm as used in BLASTP.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" style="width: 72px" valign="top">
+        <span class="ManText">
+         dust
+        </span>
+       </td>
+       <td align="center" class="c3" style="width: 108px" valign="top">
+        <span class="ManText">
+         nucleotide
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top" width="338">
+        <span class="ManText">
+         Dust algorithm as used in BLASTN.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" style="width: 72px" valign="top">
+        <span class="ManText">
+         none
+        </span>
+       </td>
+       <td align="center" class="c5" style="width: 108px" valign="top">
+        <span class="ManText">
+         both
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top" width="338">
+        <span class="ManText">
+         No masking, treat lower case and upper case letters as equivalent. This can be used if the input file has already been hard-masked.
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" style="width: 72px" valign="top">
+        <span class="ManText">
+         user
+        </span>
+       </td>
+       <td align="center" class="c3" style="width: 108px" valign="top">
+        <span class="ManText">
+         both
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top" width="338">
+        <span class="ManText">
+         Assume the input file has already been soft-masked so that lower case letters are masked.
+        </span>
+       </td>
+      </tr>
+     </table>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

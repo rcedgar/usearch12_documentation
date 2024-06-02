@@ -1,0 +1,174 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Global trimming
+    </h1>
+    <p class="ManText">
+     <strong>
+      See also
+      <br/>
+     </strong>
+     <a href="global_trimming_its.html">
+      Global trimming for fungal ITS reads
+     </a>
+     <br/>
+     <a href="global_trimming_and_abundance.html">
+      Defining unique sequence abundance
+     </a>
+     <br/>
+     <a href="otu_qc.html">
+      Quality control for OTU sequences
+     </a>
+    </p>
+    <p class="ManText">
+     The goal of global trimming is to ensure that reads from the same template have the same length. More accurately, it should ensure that sequences start and end at exactly the same position. If you don't do this, then two reads of the same biological sequence may have different lengths, and this causes problems in calculating the abundances of unique sequences.
+    </p>
+    <p class="ManText">
+     Other way to state the goal of global trimming is that 
+  there should be no
+     <a href="terminal_gaps.html">
+      terminal gaps
+     </a>
+     in an 
+  alignment of reads of the same template.
+    </p>
+    <p class="ManText">
+     See
+     <a href="global_trimming_and_abundance.html">
+      defining unique sequence abundance
+     </a>
+     for a technical discussion explaining why this step is essential.
+    </p>
+    <p class="ManText">
+     The appropriate strategy for global trimming depends on your reads. See also
+     <a href="global_trimming_its.html">
+      global trimming for fungal ITS reads
+     </a>
+     .
+    </p>
+    <p class="ManText">
+     <strong>
+      Paired reads which always overlap
+      <br/>
+     </strong>
+     If the read length is long enough that the longest amplicon will given an overlap of at least, say, 32 bases, then you don't need any additional trimming:  fastq_mergepairs does everything you need. Short amplicons will create "staggered" pairs which are correctly truncated during the merging.
+    </p>
+    <p class="ManText">
+     <strong>
+      Paired reads which sometimes or never overlap
+      <br/>
+     </strong>
+     If the read length is not long enough to get overlaps on longer amplicons, then you can't use the reverse reads. The best strategy is simply to discard the reverse reads (R2s) and make OTUs from the forward (R1) reads alone. See below under "Unpaired reads" for the appropriate trimming strategy.
+    </p>
+    <p class="ManText">
+     <strong>
+      Unpaired reads which never reach the reverse primer
+      <br/>
+     </strong>
+     If you have unpaired reads which never reach the reverse primer then they should be trimmed to a fixed length. If the reads are already fixed length (e.g. forward Illumina reads), then no trimming is necessary. You might choose to trim to a shorter length if the read quality is poor towards the end of the read (see
+     <a href="DELETE_URL">
+      fastq_eestats2
+     </a>
+     and
+     <a href="cmd_fastx_truncate.html">
+      fastx_truncate
+     </a>
+     ).
+    </p>
+    <p class="ManText">
+     <strong>
+      <span class="ManText">
+       Unpaired reads which sometimes or always reach the reverse primer
+       <br/>
+      </span>
+     </strong>
+     <span class="ManText">
+      If a read continues past the reverse primer, then it will include adapter sequence and then random junk. The adapter and junk must be discarded. It is probably also a good idea to delete the primer sequence since PCR tends to force the primer-binding locus to match the primer. Unfortunately, there is currently no easy way to do this in USEARCH. You can use
+      <a href="DELETE_URL">
+       search_oligodb
+      </a>
+      to find the reverse primer, but you will need to write your own script to truncate the reads. If this is a real problem for you,
+      <a href="/contact.html">
+       let me know
+      </a>
+      and I'll look into making a new command for you.
+     </span>
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

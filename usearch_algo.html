@@ -1,0 +1,193 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     USEARCH algorithm
+    </h1>
+    <p align="left">
+     <span class="ManText">
+      The USEARCH algorithm searches a database for high-identity hits to one or more database sequences ("targets"). USEARCH is used by the
+      <a href="cmd_usearch_global.html">
+       usearch_global
+      </a>
+      and
+      <a href="cmd_usearch_local.html">
+       usearch_local
+      </a>
+      commands and is used as a subroutine by
+      <a href="cmd_cluster_fast.html">
+       cluster_fast
+      </a>
+      and
+      <a href="cmd_cluster_smallmem.html">
+       cluister_smallmem
+      </a>
+      . This algorithm is fundamentally different from the
+      <a href="ublast_algo.html">
+       UBLAST algorithm
+      </a>
+      that is designed for low identity local searches.
+     </span>
+    </p>
+    <p align="left">
+     <img alt="Image" border="1" height="208" src="usearch_algo.jpg" width="442"/>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      <b>
+       Recommended identity ranges
+       <br/>
+      </b>
+      USEARCH is effective at identities of
+      <span class="c2">
+       ~50% and above for proteins and ~75% and above for nucleotides
+      </span>
+      .
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      <b>
+       Word counts and U-sorting
+       <br/>
+      </b>
+      USEARCH exploits that fact that similar sequences tend to have several short words in common. These words have a fixed length k, and are sometimes called kmers. Unlike other programs that use kmer counting, USEARCH does not attempt to estimate sequence identity from the number of matching kmers. This is because identity correlates only approximately with the word count and does not give an accurate estimate, especially for lower identities. Instead, USEARCH uses the word count to prioritize the database search. Target sequences are compared to the query in order of decreasing unique word count (U). This is the "U" in USEARCH. If a hit above the
+      <a href="opt_id.html">
+       identity threshold
+      </a>
+      exists in the database, it is likely to be found close to the start of the U-sorted list of targets (the "U vector").
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      <b>
+       Accepts and rejects
+       <br/>
+      </b>
+      An "accept" is a target sequence that is above the identity threshold so can be considered a hit. A "reject" is a target sequence that is compared to the query but falls below the threshold. If targets are compared to the query in U-sorted order, then:
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      (i) the first hit that is found is likely to be the best hit that exists in the database, or close to it, and
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      (ii) the more rejects that have occurred without a hit, the less likely it is that a hit exists.
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      This means that the search can be terminated early if (i) a hit is found, or (ii) several rejects have occurred, with only a small loss in sensitivity. The
+      <a href="termination_options.html">
+       termination options
+      </a>
+      -maxaccepts and -maxrejects determine when the search is stopped. This technique can give a dramatic improvement in speed, which is a decisive advantage for the very large sequence datasets that are increasingly common in biology.
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      <b>
+       Word index
+       <br/>
+      </b>
+      USEARCH uses an index on words in the database for rapid calculation of the U vector for a given query.
+      <a href="indexing_options.html">
+       Index options
+      </a>
+      allow fine tuning of speed, sensitivity and memory use. The index can be stored in a
+      <a href="udb_files.html">
+       UDB file
+      </a>
+      , which can be advantageous when a large database will be searched repeatedly. Alternatively, the index can be constructed on the fly, for example when a
+      <a href="db_files.html">
+       database
+      </a>
+      is provided in FASTA format. Indexes are also used by
+      <a href="cmd_cluster_fast.html">
+       cluster_fast
+      </a>
+      and
+      <a href="cmd_cluster_smallmem.html">
+       cluister_smallmem
+      </a>
+      , which use USEARCH as a subroutine to match query sequences to a database of centroids of existing clusters. With clustering, the index is necessarily constructed on the fly since the database is updated as new clusters are identified.
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

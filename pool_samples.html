@@ -1,0 +1,223 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Sample pooling
+    </h1>
+    <p class="auto-style2">
+     <span class="ManText">
+      <strong>
+       See also
+      </strong>
+      <br/>
+      <a class="auto-style1" href="uparse_pipeline.html">
+       OTU / denoising analysis pipeline
+      </a>
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      I recommend pooling samples, i.e. combining all reads for all samples, for generating OTUs and making an OTU table. This applies both to
+      <a href="unoise_algo.html">
+       UPARSE
+      </a>
+      (97% OTU clustering) and
+      <a href="unoise_algo.html">
+       UNOISE
+      </a>
+      (error-correction to obtain "ZOTUs", i.e. all biological sequences in the reads). The only exception is cross-talk, as explained next.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <b>
+       Improved amplicon abundance estimation and singleton detection
+       <br/>
+      </b>
+      The most important motivation for pooling is that it
+      <em>
+       enhances the abundance signal for correct sequences.
+      </em>
+      If samples are pooled, then a sequence that appears as a singleton in one sample may also appear in another sample and will therefore be retained and included in the OTU table. If singletons are discarded after pooling (as usually recommended in order to reduce spurious OTUs), then more low-abundance species will be retained compared with discarding singletons for each sample separately.
+     </span>
+    </p>
+    <p class="ManText">
+     <strong>
+      Cross-talk detection
+      <br/>
+     </strong>
+     To detect
+     <a href="DELETE_URL">
+      cross-talk
+     </a>
+     manually or by using the
+     <a href="DELETE_URL">
+      UNCROSS algorithm
+     </a>
+     , it is important to include
+     <strong>
+      all
+     </strong>
+     reads from
+     <strong>
+      one
+     </strong>
+     sequencer run
+     <strong>
+      ,
+     </strong>
+     even if the samples are from different environments. Each sequencing run should be analysed separately. If one run contains unrelated samples, e.g. if your sequencing center did one run with samples from several users, then you should get the reads for the other samples for cross-talk analysis but not for other analyses as explained below.
+    </p>
+    <p class="ManText">
+     <strong>
+      OTU clustering and denoising
+     </strong>
+     <br/>
+     For OTU clustering and denoising, it is usually better to include reads from
+     <strong>
+      all related samples
+     </strong>
+     , e.g. all samples from a given environment, even if they were sequenced in more than one run or were sequenced together with other environments (e.g., a sequencing center did one run with samples from several users).
+    </p>
+    <p>
+     <span class="ManText">
+      <b>
+       Comparing samples
+      </b>
+      <br/>
+      Creating a single set of OTUs is the most natural and intuitive basis for sample comparison, e.g. using a
+      <a href="DELETE_URL">
+       beta diversity metric
+      </a>
+      . If you create separate 97% OTUs for each sample, they are not directly comparable because the clustering will give different results in each sample even if they contain mostly the same biological sequences. With denoising, comparing OTUs from different samples is less of a problem because if the same biological sequence is found in two samples, it should be found in both cases. However, see this doesn't always work correctly and better results are obtained by pooling as explained under "Error detection" below.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <b>
+       Chimera detection
+       <br/>
+      </b>
+      The
+      <a href="uparseotu_algo.html">
+       UPARSE-OTU
+      </a>
+      and
+      <a href="unoise_algo.html">
+       UNOISE
+      </a>
+      algorithms both require that a chimera has lower read abundance than its parents. Chimeras are not detected if a parent has the same number or fewer reads. This most often happens with low-abundance parents, e.g. when a chimera and one of its parents are both present in exactly two reads. If samples are pooled, parent abundances usually increase because they are found in multiple samples, while chimeras are only rarely reproduced so will usually be found only in a single sample. Even if chimeras are reproduced, pooling will tend to increase both chimera and parent abundances, leading to a more accurate reflection of amplicon abundance so that parent abundances become greater than their chimeras. Conversely, pooling is highly unlikely to increase the abundance of a chimera relative to its parents. Pooling is therefore effective in reducing the number of spurious OTUs due to chimeras.
+     </span>
+    </p>
+    <p>
+     <strong>
+      <span class="ManText">
+       Error detection
+       <br/>
+      </span>
+     </strong>
+     <span class="ManText">
+      The
+      <a href="unoise_algo.html">
+       UNOISE algorithm
+      </a>
+      uses unique sequence abundances to detect bad reads. If a read (R) with low abundance that is very similar to a read with much higher abundance (H), then R is probably a bad read with correct sequence H. This is most effective when all samples are pooled together to give the highest possible abundances for correct reads.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <strong>
+       When to pool in your pipeline
+      </strong>
+      <br/>
+      Samples should be combined
+      <b>
+       after
+      </b>
+      non-biological sequences such as barcodes have been stripped from the reads, and
+      <b>
+       before
+      </b>
+      <a href="upp_derep.html">
+       dereplication
+      </a>
+      . This is required so that dereplication reflects the abundances of unique biological sequences across all samples.
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

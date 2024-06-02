@@ -1,0 +1,191 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     -id option
+    </h1>
+    <span class="ManText">
+     <b>
+      See also
+      <br/>
+     </b>
+     <a href="identity.html">
+      Sequence identity
+     </a>
+     <br/>
+     <a href="identity.html">
+      Definition of identity
+     </a>
+     <br/>
+     <a href="more_clusters.html">
+      Identity and clustering
+     </a>
+     <br/>
+     <a href="accept_options.html">
+      Accept options
+     </a>
+     <br/>
+     <a href="aln_params.html">
+      Alignment parameters
+     </a>
+     <br/>
+     <a href="masking.html">
+      Masking
+     </a>
+    </span>
+    <p>
+     <span class="ManText">
+      The -id option is an
+      <a href="accept_options.html">
+       accept option
+      </a>
+      that specifies the minimum
+      <a href="identity.html">
+       sequence identity
+      </a>
+      of a hit. It is expressed as a fraction between 0.0 and 1.0, meaning from 0% to 100% as a percentage. It is supported by most search and clustering commands. Identity is the fraction of columns in an alignment with matching letters.
+     </span>
+    </p>
+    <p>
+     <span class="ManText c2">
+      Example
+      <br/>
+     </span>
+     <span class="ManCode">
+      usearch -cluster_fast reads.fasta -centroids c.fasta -id 0.90
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <b>
+       Rules for wildcards and matching letters (version 8 and later)
+       <br/>
+      </b>
+      Case is ignored for calculating identity, so an upper case letter can match a lower case letter. (See
+      <a href="masking.html">
+       Masking
+      </a>
+      for discussion of lower-case for indexing). Wildcards match, so for example in a amino acid alignment, a column containing AX is an identity, and in a nucleotide alignment AN and AW are identities (because W is the
+      <a href="IUPAC_codes.html">
+       IUPAC ambiguity symbol
+      </a>
+      for A or T). Two wildcard letters match each other if they represent at least one identical residue, so for example NN matches in a nucleotide alignment, and MR matches in a nucleotide alignment (because both M and R include A).  Identical letters always match, even if they are not part of a known alphabet. These rules for matching wildcards give an upper bound on the identity of the true sequences when wildcards are replaced by fully specified residues. Other rules are possible, e.g. always considering wildcards to be mismatches (which would give a lower bound), or ignoring columns containing wildcards. There is no one best rule for dealing with wildcards; all possible rules have advantages and disadvantages in different situations.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <b>
+       Identity in global alignments
+       <br/>
+      </b>
+      In
+      <a href="local_global.html">
+       global alignments
+      </a>
+      , columns containing
+      <a href="terminal_gaps.html">
+       terminal gaps
+      </a>
+      are discarded before identity is calculated, while internal gaps always count as differences. The example below has a terminal gap of length 3 at the end of the alignment, the identity is therefore calculated over the remaining seven columns which contain six matches and the identity is 6/7 = 0.86.
+     </span>
+    </p>
+    <p class="ManCode">
+     <span class="ManCode">
+      GATTACA---
+      <br/>
+      ||| |||
+      <br/>
+      GATAACAATC
+      <br/>
+     </span>
+    </p>
+    <p class="ManCode">
+     <span class="ManText">
+      <b>
+       Fractional identity vs. percentage identity
+       <br/>
+      </b>
+      To convert between fractional identity and percentage identity, multiply or divide by 100, as appropriate. Since percentage identity is much more commonly used in practice, using fractional identity was a minor design mistake -- it would have been better to use percentage. The historical reason is that the USEARCH code began with UCLUST, motivated as an attempt to improve on CD-HIT, and CD-HIT is one of the few programs to use fractional identity (its -c option). Note that CD-HIT uses a
+      <a href="DELETE_URL">
+       problematic non-standard definition of identity
+      </a>
+      .
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

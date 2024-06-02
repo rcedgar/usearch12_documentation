@@ -1,0 +1,810 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     accept options
+    </h1>
+    <p class="ManText">
+     <span class="ManText">
+      <b>
+       See also
+      </b>
+      <br/>
+      <a href="termination_options.html">
+       Termination options
+      </a>
+      <p>
+       <span class="ManText">
+        Accept criteria determine whether an alignment is a hit, also called an accept. See also
+        <a href="DELETE_URL">
+         weak hits
+        </a>
+        . Hits are written to the
+        <a href="output_files.html">
+         output files
+        </a>
+        . The -maxhits
+        <i>
+         N and
+        </i>
+        -top_hits_only options specify that only the best hits are to be reported. Note that two or more hits may be tied for the best score or identity. Accepted hits are written to an output file sorted by decreasing alignment score (local alignments) or by decreasing identity (global alignments).
+       </span>
+      </p>
+      <p>
+       <span class="ManText">
+        In clustering commands based on
+        <a href="uclust_algo.html">
+         UCLUST
+        </a>
+        (
+        <a href="cmd_cluster_fast.html">
+         cluster_fast
+        </a>
+        and
+        <a href="cmd_cluster_smallmem.html">
+         cluster_smallmem
+        </a>
+        ), accept options determine whether or not a sequence matches a cluster centroid and should be assigned to that cluster. A sequence can match only one centroid; this is usually the first accepted centroid, but this can be changed by increasing the -maxaccepts, in which case it will be the centroid with highest identity (see
+        <a href="termination_options.html">
+         termination options
+        </a>
+        ).
+       </span>
+      </p>
+      <p>
+       <span class="ManText">
+        Accept criteria do not have default values. If a given accept option is not specified, then the corresponding value is not computed or tested. So for example if -id is the only option given, then identity is the only value that is calculated from the alignment.
+       </span>
+      </p>
+      <p>
+       <span class="ManText">
+        If more than one accept option is specified, they are combined with AND, so all of them must be satisfied.
+       </span>
+      </p>
+      <p>
+       <span class="ManText">
+        Criteria that do not require an alignment, e.g. -idprefix and -minqt, are tested before an alignment is computed; these can give significant improvements in speed because a target can be rejected without the overhead of computing an alignment. Most of these are not supported by local search commands (
+        <a href="DELETE_URL">
+         ublast
+        </a>
+        ,
+        <a href="cmd_usearch_local.html">
+         usearch_local
+        </a>
+        and
+        <a href="DELETE_URL">
+         search_local
+        </a>
+        ).
+       </span>
+      </p>
+      <p>
+       <span class="ManText">
+        The -acceptall option specifies that all hits should be accepted, overriding any other accept options.
+        <br/>
+       </span>
+      </p>
+      <div align="left">
+       <table border="0" cellpadding="5" cellspacing="0" summary="Table" width="80%">
+        <tr>
+         <td align="right" class="c3" width="91">
+          <span class="ManText c2">
+           Option
+          </span>
+         </td>
+         <td align="center" class="c3" width="44">
+          <span class="ManText">
+           Real/
+           <br/>
+           Integer
+          </span>
+         </td>
+         <td align="center" class="c3" width="44">
+          <span class="ManText">
+           Global/
+           <br/>
+           Local
+          </span>
+         </td>
+         <td align="center" class="c3" width="44">
+          <span class="ManText">
+           Need aln?
+          </span>
+         </td>
+         <td align="left" class="c3" width="360">
+          <span class="ManText c2">
+           Description
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManText">
+           -
+           <a href="opt_evalue.html">
+            evalue
+           </a>
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           R
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           L
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           Y
+          </span>
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          <span class="ManText">
+           Maximum
+           <a href="karlin_altschul.html">
+            E-value
+           </a>
+           . Required for most commands that use local alignments.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManText">
+           -
+           <a href="opt_id.html">
+            id
+           </a>
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           R
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           GL
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           Y
+          </span>
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          <span class="ManText">
+           Minimum
+           <a href="identity.html">
+            identity
+           </a>
+           . Required for most commands that use global alignments.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManText">
+           -query_cov
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           R
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           GL
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           Y
+          </span>
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          <span class="ManText">
+           Fraction of the query sequence that is aligned, in the range 0.0 to 1.0. With local alignments, this test is applied AFTER a local alignment is already created, so the effect is to reject local alignments that are too short, NOT to extend them further. With global alignments, columns containing
+           <a href="terminal_gaps.html">
+            terminal gaps
+           </a>
+           are discarded before the test is applied.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManText">
+           -target_cov
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           R
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           GL
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           Y
+          </span>
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          <span class="ManText">
+           Fraction of the target sequence that is aligned, in the range 0.0 to 1.0.With local alignments, this test is applied AFTER a local alignment is already created, so the effect is to reject local alignments that are too short, NOT to extend them further. With global alignments, columns containing
+           <a href="terminal_gaps.html">
+            terminal gaps
+           </a>
+           are discarded before the test is applied.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManText">
+           -idprefix
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           I
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           G
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           N
+          </span>
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          <span class="ManText">
+           First N letters are identical.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManText">
+           -idsuffix
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           R
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           G
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           N
+          </span>
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          <span class="ManText">
+           Last N letters are identical.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManText">
+           -minqt
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           R
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           G
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           N
+          </span>
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          <span class="ManText">
+           Minimum value of query_seq_length / target_seq_length.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManText">
+           -maxqt
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           R
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           G
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           N
+          </span>
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          <span class="ManText">
+           Maximum value of query_seq_length / target_seq_length.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManText">
+           -minsl
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           R
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           G
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           N
+          </span>
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          <span class="ManText">
+           Minimum value of shorter_seq_length / longer_seq_length.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManText">
+           -maxsl
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           R
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           G
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           N
+          </span>
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          <span class="ManText">
+           Maximum value of shorter_seq_length / longer_seq_length.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManText">
+           -leftjust
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           G
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           Y
+          </span>
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          <span class="ManText">
+           No terminal gaps at start of alignment.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManText">
+           -rightjust
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           G
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManText">
+           Y
+          </span>
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          <span class="ManText">
+           No terminal gaps at end of alignment.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManText">
+           -self
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           GL
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManText">
+           N
+          </span>
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          <span class="ManText">
+           Reject if labels are identical (i.e., reject self-hits).
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManIndText">
+           -selfid
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManIndText">
+           G
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          <span class="ManIndText">
+           N
+          </span>
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          <span class="ManIndText">
+           Reject if sequences are identical (i.e., don't want self-hits).
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManIndText">
+           -maxid
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManIndText">
+           R
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManIndText">
+           GL
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          <span class="ManIndText">
+           Y
+          </span>
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          <span class="ManIndText">
+           Reject if identity is greater. Example: to select hits that are 97% identical to two significant figures use -id
+          </span>
+          <span class="c7">
+          </span>
+          <span class="ManIndText">
+           0.965 -maxid 0.975.
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManIndText">
+           -minsizeratio
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          R
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          GL
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          N
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          Minimum query_size / target_size (see
+          <a href="size_annot.html">
+           size annotations
+          </a>
+          ).
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManIndText">
+           -maxsizeratio
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          R
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          GL
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          N
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          Maximum query_size / target_size (see
+          <a href="size_annot.html">
+           size annotations
+          </a>
+          ).
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManIndText">
+           -maxdiffs
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          I
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          GL
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          Y
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          Maximum number of differences between the sequences, i.e. the maximum
+          <a href="http://en.wikipedia.org/wiki/Edit_distance">
+           edit distance
+          </a>
+          . A difference is defined to be an alignment column containing a gap or a substitution.
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManIndText">
+           -maxsubs
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          I
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          GL
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          Y
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          Maximum number of alignment columns containing substitutions.
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManIndText">
+           -maxgaps
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          I
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          GL
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          Y
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          Maximum number of alignment columns containing internal gaps (terminal gaps do not count).
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManIndText">
+           -mincols
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          I
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          GL
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          Y
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          Minimum alignment length, i.e. minimum number of columns in the alignment.
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManIndText">
+           -maxqsize
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          I
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          GL
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          N
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          Maximum query
+          <a href="size_annot.html">
+           size annotation
+          </a>
+          .
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c4" valign="top" width="91">
+          <span class="ManIndText">
+           -mintsize
+          </span>
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          I
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          GL
+         </td>
+         <td align="center" class="ManText c5" valign="top" width="44">
+          N
+         </td>
+         <td align="left" class="ManText c4" valign="top" width="360">
+          Minimum target
+          <a href="size_annot.html">
+           size annotation
+          </a>
+          .
+         </td>
+        </tr>
+        <tr>
+         <td align="right" class="ManText c3" valign="top" width="91">
+          <span class="ManIndText">
+           -mid
+          </span>
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          R
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          GL
+         </td>
+         <td align="center" class="ManText c6" valign="top" width="44">
+          Y
+         </td>
+         <td align="left" class="ManText c3" valign="top" width="360">
+          Minimum match percent identity, defined as (number of columns containing identities) / (number of columns containing letter pars). Gapped columns are ignored. This is percent identity, not fractional identity like -id, so is in the range 0.0 to 100.0.
+         </td>
+        </tr>
+       </table>
+      </div>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,194 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     OTU coverage
+    </h1>
+    <p class="auto-style1">
+     <strong>
+      <img alt="Image" class="c2" src="coverage_venn.jpg"/>
+      See also
+     </strong>
+     <br/>
+     <a href="uparse_pipeline.html">
+      OTU / denoising analysis pipeline
+     </a>
+     <br/>
+     <a href="otu_qc.html">
+      Quality control for OTUs
+     </a>
+     <br/>
+     <a href="faq_cmp_otus.html">
+      Comparing two sets of OTUs for the same reads
+     </a>
+    </p>
+    <div>
+     <p class="ManText c3">
+      <strong>
+       Explaining your data
+       <br/>
+      </strong>
+      Measuring coverage attempts to answer the question "what fraction of the reads is explained by my OTUs?". This gives a sense of whether the OTUs have good coverage. For example, if 95% of your reads can be explained by the OTUs, then you might feel that the coverage is good. The 5% of reads which are not explained probably contain a mix of rare biological sequences and artifacts such as sequencer errors and chimeras, but with low-abundance sequences these cannot be reliably distinguished so we have to accept some loss in sensitivity to get a reasonably low rate of spurious OTUs.
+     </p>
+    </div>
+    <p class="ManText">
+     Analyzing a
+     <a href="otu_qc_controls.html">
+      control sample
+     </a>
+     such as a staggered mock community can be used to calibrate parameters to get the highest sensitivity with an acceptable rate of spurious OTUs.
+    </p>
+    <p class="ManText">
+     This page describes how you can investigate coverage indepedently of control samples, e.g. because you didn't sequence any.
+    </p>
+    <p class="ManText">
+     <strong>
+      Classifying reads
+      <br/>
+     </strong>
+     Reads can be divided into five groups as shown in the figure.
+    </p>
+    <p class="ManText">
+     (a) Reads that map to OTUs. If we assume that the OTUs are correct biological sequences, then these reads are correct or within 3% of a correct sequence. These are the reads which are counted in the OTU table if you follow my recommendations for
+     <a href="pipe_otutab.html">
+      mapping reads to OTUs
+     </a>
+     . I think it is reasonable to consider these reads explained by the OTUs, while acknowledging that there may be some cases where multiple species are lumped into a single OTU.
+    </p>
+    <p class="ManText">
+     (b) Reads of an OTU with &gt;3% errors. The vast majority of these will have been discarded because they do not map to an OTU.
+    </p>
+    <p class="ManText">
+     (c) Correct reads of chimeric amplicons. Most likely, only a small minority of OTU sequences will be chimeric because the cluster_otus and unoise3 commands have very effective chimera filters. If a chimera is &lt;3% diverged from an OTU, some or all of its reads will be mapped to that OTU. I consider this to be harmless for all practical purposes because chimeras are much less abundant than their parents, so the number of chimeric reads added to the OTU count will be small compared to other fluctuations. The large majority, or perhaps all, chimeras in your reads will have parents that are in the OTUs because chimeras are strongly biased to form between high-abundance parents, for pretty obvious reasons.
+    </p>
+    <p class="ManText">
+     (d) Chimeric reads with errors. If a chimeric read has errors, say &gt;3% compared with the true chimeric amplicon sequence, then it is impossible to distinguish it reliably from a noisy read of one of the parent sequences or a biological sequence missing from the OTUs.
+    </p>
+    <p class="ManText">
+     (e) Reads of biological sequences that are not in the OTUs. We would like to estimate the size of this set, but this cannot be done reliably because the only way to do that is to estimate the sizes of (a) through (d) and see what is left over, but the uncertainties in those sizes are comparable with the size of (e). The calculation ends up being something like (e) = 100% minus (90% +/- 10%), so you really don't have much of an idea how big (e) is -- it could be anywhere between 0% and 20%.
+    </p>
+    <p class="ManText">
+     <strong>
+      Accounting for reads which do not map to an OTU at 97% identity
+      <br/>
+     </strong>
+     Make a FASTQ file for the unmapped reads by using the -notmatchedfq option of the
+     <a href="cmd_otutab.html">
+      otutab command
+     </a>
+     .
+    </p>
+    <p class="ManText">
+     We can safely assume that a large majority of low-quality reads which did not map belong to the OTUs and chimeras formed from the OTUs. This is because the OTUs represent the most abundant template sequences, and most bad reads will be derived from those templates just as most good reads are. With this in mind, pick an expected error threshold, say 2, and consider the reads above the threshold to be explained as noisy reads of known OTUs.
+    </p>
+    <p class="ManCode">
+     usearch -fastq_filter unmapped.fq -fastq_maxee 2.0 -fastaout unmapped_hiqual.fa \
+     <br/>
+     -fastaout_discarded unmapped_loqual.fa
+    </p>
+    <p class="ManText">
+     Now let's try to find chimeric reads. Use the -chimeras option of
+     <a href="cmd_unoise3.html">
+      unoise3
+     </a>
+     to get the predicted chimeric amplicons. Do this even if you're only using 97% OTUs in your analysis, because this is the best way to get an accurate set of chimera predictions.
+    </p>
+    <p class="ManText">
+     If an unmapped read is within, say, 5% of a chimera or an OTU, then it is probably a noisy read with more errors than expected from its Phred scores. Combine the OTUs and chimeras into one database file and use this command to check.
+    </p>
+    <p class="ManCode">
+     usearch -usearch_global unmapped_hiqual.fa -db otus_chimeras.fa -strand plus -id 0.95 \
+     <br/>
+     -matched unmatched_noisy.fa -notmatched unmatched_hiqual_other.fa
+    </p>
+    <p class="ManText">
+     Now you have the number of mapped reads and counts of low quality reads and noisy reads with apparently high quality. If you add these up, it should account for most of your data.
+    </p>
+    <p class="ManText">
+     One way (the only way?) to check for valid biological sequences that are not accounted for in the OTUs is to search the remainng reads against a large database like SILVA, e.g.
+    </p>
+    <p class="ManCode">
+     usearch -usearch_global unmatched_hiqual_other.fa -db silva.udb -strand both \
+     <br/>
+     -id 0.99 -alnout unmapped_silva.aln
+    </p>
+    <p class="ManText">
+     I specified a high identity threshold because if you use a lower threshold, say 0.97, you may get spurious alignments from noisy reads. If the identity is much below 100%, it is difficult to decide..
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

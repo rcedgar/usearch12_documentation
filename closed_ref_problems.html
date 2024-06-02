@@ -1,0 +1,228 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Problems with closed- and open-reference OTU assignment
+    </h1>
+    <strong>
+     See also
+    </strong>
+    <br/>
+    <a href="closed_ref_algo.html">
+     Closed-reference OTU algorithm
+    </a>
+    <br/>
+    <a href="cmd_closed_ref.html">
+     closed_ref command
+    </a>
+    <br/>
+    <br/>
+    I have performed a detailed assessment of closed- and open-reference OTU assignment, which identified several problems summarized below. A manuscript is in submission. If you are interested, please let me know and I will send you a copy. I have not posted a preprint because I don't know if public preprints are allowed by the journal. Unless otherwise stated, all results were obtained with QIIME v1.9 using default / recommended parameters.
+    <br/>
+    <br/>
+    Specific species and strains mentioned below were chosen because they are in the HMP mock community which has been sequenced as a control in several different studies, providing test data both with and without experimental error because high-quality full-length genome sequences are available.
+    <br/>
+    <br/>
+    <strong>
+     Error-free sequences for one species are often split over several OTUs
+     <br/>
+    </strong>
+    A single strain often contains two or more 16S paralogs, i.e. separate copies of the 16S gene (see
+    <a href="copynr_dist.html">
+     16S copy number
+    </a>
+    ). Sometimes these paralogs have different sequences, espeically when there is variation between different strains of the same species. I found that the known sequences in single strains are often split over two or more closed-reference OTUs. For example, the known V4 sequences in
+    <em>
+     C. beijerinckii
+    </em>
+    strain NCIMB 8052 are split over two OTUs (555688 and 238205). This splitting occurs with correct sequences, so is not due to sequencing or PCR errors.
+    <br/>
+    <strong>
+     <br/>
+     <a href="DELETE_URL">
+      <img alt="Image" class="c2" src="DELETE_URL"/>
+     </a>
+     Splitting is severe in practice, which can grossly inflate diversity estimates
+     <br/>
+    </strong>
+    When errors due to sequencing and PCR are present, a single strain is often split over tens to hundreds of OTUs by the recommended QIIME protocol. On Illumina V4 reads of a mock community with 22 strains (
+    <a href="https://www.nature.com/nmeth/journal/v10/n1/abs/nmeth.2276.html">
+     Bokulich
+     <em>
+      et al.
+     </em>
+     2013
+    </a>
+    ), 4,482 OTUs were generated. Even when rarefied to 1,000 reads per sample (using the -
+    <em>
+     a
+    </em>
+    option of
+    <em>
+     core_diversity_analysis.py
+    </em>
+    ), which is very shallow by current standards, the number of OTUs was ~100, inflating richness by a factor of ~5x. (
+    <a href="DELETE_URL">
+     Figure
+    </a>
+    ).
+    <br/>
+    <br/>
+    <strong>
+     Well-known species often fail (are not assigned to a closed-reference OTU)
+     <br/>
+    </strong>
+    Sequences that are present in the full Greengenes database before clustering are often not assigned to a closed-reference OTU. These
+    <em>
+     <span class="auto-style1">
+      are
+     </span>
+     fails
+    </em>
+    , in QIIME terminology. With the HMP mock community, the known sequences for one species (
+    <em>
+     S. aureus
+    </em>
+    ) fail on the V4 region and four out of 21 species fail on the V3-V5 region (
+    <em>
+     L. monocytogenes, S. mutans, N. meningitidis and P. aeruginosa
+    </em>
+    ).
+    <br/>
+    <br/>
+    <strong>
+     Non-overlapping regions in most species are assigned to different closed-reference OTUs
+     <br/>
+    </strong>
+    The QIIME documentation states "You must use closed-reference OTU picking if you are comparing non-overlapping amplicons, such as the V2 and the V4 regions of the 16S rRNA" (
+    <a href="http://qiime.org/tutorials/otu_picking.html">
+     http://qiime.org/tutorials/otu_picking.html
+    </a>
+    accessed 25 April 2017). Presumably, this is based on the assumption that non-overlapping tags for a given species will usually be assigned to the same OTU by closed-reference. However, the probability that two non-overlapping tags from the same full-length sequence will be assigned to the same OTU is only ~30%. If three or more tags are used, the probability is lower.
+    <br/>
+    <br/>
+    <strong>
+     Invalid taxonomy
+    </strong>
+    <br/>
+    In QIIME v1.9, taxonomy annotations for closed-reference OTUs are in
+    <a href="https://github.com/biocore/qiime-default-reference/blob/master/qiime_default_reference/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt.gz">
+     gg_13_8_otus/97_otu_taxonomy.txt
+    </a>
+    . In these annotations, 36 genera are placed in two or more families, violating the structure required for a valid taxonomy. To give some examples, genus Rhodospirillum is placed in family Rhodospirillaceae (e.g. in the annotation for OTU 326714), which is correct according to Bergey's Manual, and also in family Alcaligenaceae (OTU 119663). Genus Vibrio is in Vibrionaceae (OTU 9303, correct), and Pseudoalteromonadaceae (OTU 1115975). Genus Flexibacter is placed in three families: Cytophagaceae (OTU 1142767, correct), Flammeovirgaceae (OTU 4447268), and Flavobacteriaceae (OTU 1136639).
+    <br/>
+    <span class="ManText">
+     <br/>
+     <strong>
+      Reference (please cite)
+     </strong>
+     <br/>
+     <span class="ManText">
+      R.C. Edgar (2017), Accuracy of microbial community diversity estimated by closed- and open-reference OTUs,
+      <a href="https://doi.org/10.7717/peerj.3889">
+       PeerJ 5:e3889
+      </a>
+     </span>
+     <span style="font-size:9pt; line-spacing:9pt;">
+      <br/>
+      <i>
+       • QIIME closed- and open-reference clustering generates huge numbers of spurious OTUs
+      </i>
+     </span>
+     <span style="font-size:9pt; line-spacing:9pt;">
+      <br/>
+      <i>
+       • Closed-reference OTU assignment splits strains and species even when no sequence errors
+      </i>
+     </span>
+     <span style="font-size:9pt; line-spacing:9pt;">
+      <br/>
+      <i>
+       • Closed-reference fails to assign different hyper-variable regions to the same OTU
+      </i>
+     </span>
+     <span style="font-size:9pt; line-spacing:9pt;">
+      <br/>
+      <i>
+       • Closed-reference discards many well-known species that are present in Greengenes
+      </i>
+     </span>
+     <br/>
+     <br/>
+    </span>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,220 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     fastq_mergepairs options
+    </h1>
+    <p>
+     <span class="ManText">
+      <strong>
+       See also
+       <br/>
+      </strong>
+      <a href="cmd_fastq_mergepairs.html">
+       fastq_mergepairs command
+      </a>
+      <strong>
+       <br/>
+       <br/>
+       Input files
+       <br/>
+       -
+      </strong>
+      fastq_mergepairs  Forward FASTQ filename(s).
+      <strong>
+       <br/>
+      </strong>
+      -reverse  Reverse FASTQ filename(s). If not given, constructed by replacing R1 with R2
+      <strong>
+       .
+       <br/>
+      </strong>
+      -interleaved  Forward and reverse reads are interleaved in the same file (sometimes produced by SRA fastq-dump).
+      <strong>
+       <br/>
+       <br/>
+       Output files
+       <br/>
+       -
+      </strong>
+      fastqout  FASTQ filename for merged reads.
+      <br/>
+      -fastaout  FASTA filename for merged reads.
+      <br/>
+      -fastqout_notmerged_fwd  FASTQ filename for forward reads which were not merged.
+      <br/>
+      -fastaout_notmerged_fwd  FASTA filename for forward reads which were not merged.
+      <br/>
+      -fastqout_notmerged_rev  FASTQ filename for reverse reads which were not merged.
+      <br/>
+      -fastaout_notmerged_rev  FASTA filename for reverse reads which were not merged.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <strong>
+       Reports
+       <br/>
+      </strong>
+      -report   Filename for summary report. See
+      <a href="merge_report.html">
+       Reviewing a fastq_mergepairs report to check for problems
+      </a>
+      .
+      <br/>
+      -tabbedout  Tabbed text file containing detailed information about merging process for each pair including reason for discarding.
+      <br/>
+      -alnout  Human-readable alignments. Useful for
+      <a href="merge_troubleshoot.html">
+       trouble-shooting
+      </a>
+      .
+      <br/>
+      <br/>
+      <strong>
+       Merged read labels
+       <br/>
+      </strong>
+      -relabel  Prefix string for output labels. The read number 1, 2, 3... is appended after the prefix.
+      <br/>
+      -relabel @ Relabel using prefix string constructed from FASTQ filename, this will be understood as the sample identifier.
+      <br/>
+      <strong>
+      </strong>
+      -sample  xxx Append sample identifier to read label using sample=xxx; format. This is an alternative method for adding sample ids.
+      <br/>
+      -fastq_eeout  Add ee=xxx; annotation with the number of expected errors in the merged read.
+      <br/>
+      -label_suffix  Suffix to append to merged read label. Can be used e.g. to add sample=xxx; type of
+      <a href="upp_labels_sample.html">
+       sample identifier annotations
+      </a>
+      .
+      <br/>
+      <br/>
+      <strong>
+       Filtering
+      </strong>
+      <br/>
+      <strong>
+      </strong>
+      -fastq_maxdiffs  Maximum number of mismatches in the alignment. Default 5. Consider increasing if you have long overlaps.
+      <br/>
+      -fastq_pctid  Minimum %id of alignment. Default 90. Consider decreasing if you have long overlaps.
+      <br/>
+      -fastq_nostagger  Discard
+      <a href="merge_stagger.html">
+       staggered pairs
+      </a>
+      . Default is to trim overhangs (non-biological sequence).
+      <br/>
+      -fastq_minmergelen  Minimum length for the merged sequence. See
+      <a href="merge_length_range.html">
+       Filtering artifacts by setting a merge length range
+      </a>
+      .
+      <br/>
+      -fastq_maxmergelen  Maximum length for the merged sequence.
+      <br/>
+      -fastq_minqual  Discard merged read if any merged Q score is less than the given value. (No minimum by default).
+      <br/>
+      -fastq_minovlen  Discard pair if alignment is shorter than given value. Default 16.
+      <br/>
+      <br/>
+      <strong>
+       Pre-processing of reads before alignment
+       <br/>
+      </strong>
+      -fastq_trunctail  Truncate reads at the first Q score with &lt;= this value. Default 2.
+      <br/>
+      -fastq_minlen  Discard pair if either read is shorter than this, after truncating by -fastq_trunctail if applicable. Default 64.
+      <br/>
+      <br/>
+      <strong>
+       Multi-threading
+       <br/>
+      </strong>
+      -threads
+      <a href="multithreading.html">
+       Specifies the number of threads
+      </a>
+      . Default 10, or the number of CPU cores, which ever is less.
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,285 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Choosing FASTQ filter parameters
+    </h1>
+    <p class="ManText">
+     <span class="ManText">
+      <b>
+       See also
+       <br/>
+      </b>
+      <a href="readqualfiltering.html">
+       Read quality filtering
+      </a>
+      <b>
+       <br/>
+      </b>
+      <a href="fastq_params.html">
+       FASTQ format options
+      </a>
+      <br/>
+      <a href="quality_score.html">
+       Quality scores
+      </a>
+     </span>
+     <br/>
+     <a href="global_trimming.html">
+      Global trimming
+     </a>
+    </p>
+    <p class="ManText">
+     If possible, parameters for the
+     <a href="cmd_fastq_filter.html">
+      fastq_filter
+     </a>
+     command should be chosen manually for each sequencing run by examining the distribution of read length and Phred scores by position in the read, as these characteristics can vary considerably and can have a large impact on downstream analysis. The report given by
+     <a href="DELETE_URL">
+      fastq_eestats2
+     </a>
+     can be a useful starting point for this exercise. Parameters are chosen to balance conflicting objectives summarized in the table below.
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="5" cellspacing="0" summary="Table" width="608">
+      <tr>
+       <td align="left" class="ManText c3" width="151">
+        <span class="ManText c2">
+         Objective
+        </span>
+       </td>
+       <td align="right" class="ManText c3" width="4">
+       </td>
+       <td align="left" class="ManText c3">
+        <span class="ManText c2">
+         Comments
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="left" class="ManText c4" valign="top" width="151">
+        <span class="ManText">
+         Keep as many reads as possible.
+        </span>
+       </td>
+       <td align="right" class="ManText c4" valign="top" width="4">
+       </td>
+       <td align="left" class="ManText c4" valign="top">
+        <span class="ManText">
+         This is achieved by specifying a short length for truncation (fastq_trunclen) and a low quality threshold (fastq_truncqual) or high expected error threshold (fastq_maxee). However, shorter lengths reduce phylogenetic discrimination, and lower
+         <a href="quality_score.html">
+          quality
+         </a>
+         / higher
+         <a href="exp_errs.html">
+          expected errors
+         </a>
+         will tend to increase the error rate and can lead to problems such as spurious OTUs.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="left" class="ManText c3" valign="top" width="151">
+        Keep as many read positions as possible.
+       </td>
+       <td align="right" class="ManText c3" valign="top" width="4">
+       </td>
+       <td align="left" class="ManText c3" valign="top">
+        More bases means better phylogenetic discrimination. However, quality tends to drop towards the end of an unpaired read, so keeping more bases may increase the number of errors. With paired reads that overlap, this usually isn't a problem if you merge the reads using
+        <a href="cmd_fastq_mergepairs.html">
+         fastq_mergpairs
+        </a>
+        before filtering.
+        <br/>
+       </td>
+      </tr>
+      <tr>
+       <td align="left" class="ManText c4" valign="top" width="151">
+        Reduce the number of read errors.
+       </td>
+       <td align="right" class="ManText c4" valign="top" width="4">
+       </td>
+       <td align="left" class="ManText c4" valign="top">
+        Errors are reduced by (1) truncating the read at a shorter length (if unpaired), and/or (2) by having a more stringent quality threshold (higher Q or lower
+        <a href="exp_errs.html">
+         expected errors
+        </a>
+        ). However, these will reduce the total number of bases available for downstream analysis, which may reduce sensitivity as explained above.
+        <br/>
+       </td>
+      </tr>
+     </table>
+     <p align="left" class="ManText">
+      <b>
+       Filter by minimum or average quality score or maximum expected errors?
+       <br/>
+      </b>
+      In the UPARSE paper, I used a minimum quality score (
+      <a href="cmd_fastq_filter.html">
+       fastq_filter
+      </a>
+      command with the fastq_truncqual option) to show that a single pipeline with a single set of parameters gave high accuracy with enormously different input data, from two million Illumina paired and unpaired reads (forward or reverse) to a few thousand 454 reads per sample. Given the wide range of input data used in the UPARSE paper, I could not find a single value of
+      <span class="ManText">
+       -
+      </span>
+      fastq_maxee that worked well with all sets of reads, and I did not want to give the appearance of tuning (or over-tuning) to the mock community datasets. However, in practice I would usually recommend using an
+      <a href="exp_errs.html">
+       expected error
+      </a>
+      filter as I have found this to be a better predictor of read error rates in most cases.
+     </p>
+     <p align="left" class="ManText">
+      <b>
+       Paired reads with overlap
+       <br/>
+      </b>
+      If you have paired reads with an overlap that is long enough to merge them using
+      <a href="cmd_fastq_mergepairs.html">
+       fastq_mergepair
+      </a>
+      s, then it is usually best to merge first, then quality filter with
+      <a href="cmd_fastq_filter.html">
+       fastq_filter
+      </a>
+      using a maximum expected errors threshold with no length truncation.
+     </p>
+     <p align="left" class="ManText">
+      <b>
+       Paired reads with no overlap
+       <br/>
+      </b>
+      If there is no overlap, or the overlap is too short to obtain reliable alignments, then it is usually best to discard the reverse reads. Typically the reverse reads have lower quality, and I do not believe the information in the reverse read can be used effectively (assuming these are amplicon reads). So I recommend just using the forward reads, i.e. treating them as unpaired (see next).
+     </p>
+     <p align="left" class="ManText">
+      <b>
+       Unpaired reads that cover the full amplicon length
+       <br/>
+      </b>
+      If you have unpaired reads that cover the full length of the amplicons, i.e. include both primers, then you have two choices: you can truncate at the second primer (which usually means keeping the full-length reads, unless they extend further into a non-biological sequence such as an adapter), or you can choose a shorter length. It may be better to choose a shorter length if the read quality deteriorates towards the end.
+     </p>
+     <p align="left" class="ManText">
+      <b>
+       Unpaired reads that cover partial amplicons
+       <br/>
+      </b>
+      If you have unpaired amplicon reads that do not extend to the second primer, or have low quality towards the end of the read, then you should truncate to a fixed length before performing OTU clustering (see
+      <a href="global_trimming.html">
+       global trimming
+      </a>
+      for an explanation).
+     </p>
+     <p align="left" class="ManText">
+      <b>
+       Choosing parameters
+       <br/>
+      </b>
+      The simplest way to choose parameters is by trial and error. Set the maximum expected error parameter (fastq_maxee) to a few reasonable values (say, 0.25, 0.5 and 1), and similarly for the truncation length (say, 50%, 75%, 100% and 125% of the median read length), and measure how many reads are passed by the filter. The number of reads in a FASTQ file can be determined by using
+      <a href="http://en.wikipedia.org/wiki/Wc_(Unix)">
+       wc -l
+       <i>
+        filename
+       </i>
+      </a>
+      to determine the number of lines in the file; divide by 4 to get the number of reads. The report generated by
+      <a href="DELETE_URL">
+       fastq_stats
+      </a>
+      can be helpful in guessing suitable parameters.
+     </p>
+    </div>
+    <p class="ManText">
+     <b>
+      Example: Analysis of 454 reads
+     </b>
+     <br/>
+     The figure below shows an analysis of 454 reads from the UPARSE paper (Supplementary Note 3). The average number of expected errors over all reads if truncated at each position was calculated from the Q scores (red line, right-hand y axis) using the
+     <a href="DELETE_URL">
+      fastq_stats
+     </a>
+     command. Four different quality filters are considered with different quality score thresholds (Qmin, corresponding to one less than the -fastq_truncqual option of
+     <a href="cmd_fastq_filter.html">
+      fastq_filter
+     </a>
+     ). The fraction of reads passing each filter if truncated each position is shown (left-hand y axis). The truncation length L=250 and Qmin=16 values (black dot) were selected as a compromise between stringent quality filtering to suppress errors (high Q), keeping as many reads as possible to increase sensitivity to low-abundance sequences (small L and low Q), keeping as many positions as possible to increase phylogenetic discrimination (large L), truncating in order to discard lower-quality regions towards the end of the reads (small L).
+    </p>
+    <p class="ManText c5">
+     <img alt="Image" border="1" src="fastq_choose.jpg"/>
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

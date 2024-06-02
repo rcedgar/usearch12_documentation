@@ -1,0 +1,187 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     closed_ref command
+    </h1>
+    <p class="ManText">
+     <strong>
+      See also
+      <br/>
+     </strong>
+     <a href="closed_ref_algo.html">
+      Closed-reference OTU algorithm
+     </a>
+     <br/>
+     <strong>
+     </strong>
+     <a href="download_gg97.html">
+      Download QIIME-compatible Greegenes 97% OTU database
+     </a>
+     <br/>
+     <a href="closed_ref_problems.html">
+      Problems with closed- and open-reference OTU assignment
+     </a>
+    </p>
+    <p>
+     <span class="ManText">
+      The closed_ref command performs closed-reference OTU assignment using a similar strategy to
+      <a href="http://qiime.org/scripts/pick_closed_reference_otus.html">
+       <em>
+        pick_closed_reference_otus.py
+       </em>
+      </a>
+      in QIIME.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      You can download the
+      <a href="download_gg97.html">
+       default database here
+      </a>
+      .
+      <br/>
+      <br/>
+      I am providing this command because a few users have asked for it, but
+      <span class="auto-style1">
+       <strong>
+        I do not recommend closed- or open- reference
+       </strong>
+      </span>
+      OTU assignment because my tests show that
+      <a href="closed_ref_problems.html">
+       closed- and open-reference methods have fundamental flaws
+      </a>
+      .
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The main use of the closed_ref command is to generate OTUs that are compatible with analyses that require closed-reference, in particular
+      <a href="http://picrust.github.io/picrust/">
+       PICRUSt
+      </a>
+      . Given the problems with closed-reference, and the difficulty in predicting traits by comparing short 16S reads to sparse reference databases (see discussion in the
+      <a href="DELETE_URL">
+       SINAPS algorithm page
+      </a>
+      ), I am skeptical that reliable predictions are possible with the PICRUSt approach.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The closed_ref command can be used as an alternative to the QIIME
+      <em>
+       pick_closed_reference_otus.py
+      </em>
+      script, but the results will not be exactly the same. The database search method used in QIIME (at least as of v1.9) is the old uclust program (the predecessor of usearch) with default parameters which were designed primarily to maximize speed, while the closed_ref command in usearch uses an improved implementation of the
+      <a href="usearch_algo.html">
+       USEARCH algorithm
+      </a>
+      with settings designed to increase sensitivity and report ties where two or more reference sequences have the same identity.
+     </span>
+    </p>
+    <p class="ManText">
+     The -strand option is required; it can be set to -strand plus (search only on the plus strand) or -strand both (search both strands). You can use -strand plus if you know the reads are on the same strand as the database (makes the search a bit faster).
+    </p>
+    <p class="ManText">
+     Minimum sequence identity is specified by the -id option, default is 0.97. Value is between 0.0 and 1.0, so 0.97 corresponds to 97% identity.
+    </p>
+    <p class="ManText">
+     Standard
+     <a href="otutab_output.html">
+      OTU table output files
+     </a>
+     are supported.
+    </p>
+    <p class="ManText">
+     The -tabbedout file reports one line per query sequence. Fields are query label, OTU label, identity and a list of ties if more than one OTU has the same identity.
+    </p>
+    <p>
+     <span class="ManText">
+      <strong>
+       Example
+      </strong>
+     </span>
+    </p>
+    <p class="ManCode">
+     usearch -closed_ref reads.fastq -db gg97.fa -otutabout otutab.txt -strand plus -tabbedout closed.txt
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

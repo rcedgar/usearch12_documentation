@@ -1,0 +1,199 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Quality (Phred) scores
+    </h1>
+    <br/>
+    <b>
+     <span class="ManText">
+      See also
+      <br/>
+     </span>
+    </b>
+    <span class="ManText">
+     <a href="fastq_files.html">
+      FASTQ files
+     </a>
+     <br/>
+     <a href="avgq.html">
+      Average Q is a bad idea!
+     </a>
+     <br/>
+     <a href="exp_errs.html">
+      Expected errors
+     </a>
+     <br/>
+     <a href="readqualfiltering.html">
+      Quality filtering
+     </a>
+    </span>
+    <p class="ManText">
+     <span class="ManText">
+      The quality score of a base, also known as a
+      <a href="http://en.wikipedia.org/wiki/Phred_quality_score">
+       Phred
+      </a>
+      or Q score, is an integer value representing the estimated probability of an error, i.e. that the base is incorrect. If P is the error probability, then:
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="ManText">
+      <i>
+      </i>
+      P = 10
+      <sup>
+       <span class="c2">
+        -
+       </span>
+       Q/10
+      </sup>
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="ManText">
+      <sup>
+      </sup>
+      Q = -10 log
+      <sub>
+       10
+      </sub>
+      (P)
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="ManText">
+      Q scores are often represented as ASCII characters. The rule for converting an ASCII character to an integer varies, see
+      <a href="fastq_params.html">
+       FASTQ options
+      </a>
+      for details. Tables converting between integer Q scores,
+      <a href="http://www.asciitable.com/">
+       ASCII characters
+      </a>
+      and error probabilities are shown in the table below ASCII_BASE 33, which is now almost universally used, and ASCII_BASE 64 which is used in some older Illumina data.
+     </span>
+    </p>
+    <p>
+     <img alt="Image" src="qscores.gif"/>
+    </p>
+    <p class="ManText">
+     <span class="ManText">
+      <b>
+       What kind of error?
+       <br/>
+      </b>
+      There is an important difference between Q scores in reads from 454 and Illumina. In effect, 454 ignores the possibility of substitution errors and Illumina ignores indels. With 454, the Q score is the estimated probability that the length of the homopolymer is wrong, and with Illumina the Q score is the probability that the base call is incorrect. In the case of Illumina, this is reasonable because indel errors are very rare. But with 454, substitution errors are quite common, occurring with comparable frequency to homopolymer errors. This means that 454 Q scores are not as informative as Illumina Q scores, but are still useful in practice. See
+      <a href="readqualfiltering.html">
+       quality filtering
+      </a>
+      for further discussion.
+     </span>
+    </p>
+    <p class="ManText">
+     <span class="ManText">
+      <b>
+       Small Q scores
+       <br/>
+      </b>
+      Note that a Q score of 3 means P=0.5, meaning that there is a 50% chance the base is wrong, and lower values represent even higher probabilities of error. Q=0 means P=1, i.e. that the base call is certainly wrong, so this is rarely used, though might be appropriate for an undetermined base (often represented as 'N'). I have never seen a FASTQ file with Q=0, but since the format is not standardized I can't be sure. The lowest value usually found in practice is Q=2 (P=0.63), which means the base call is more likely to be wrong than correct.
+     </span>
+    </p>
+    <p>
+     <strong>
+      <span class="ManText">
+       Recognizing the format
+       <br/>
+      </span>
+     </strong>
+     <span class="ManText">
+      The
+      <a href="DELETE_URL">
+       fastx_info
+      </a>
+      and
+      <a href="DELETE_URL">
+       fastq_chars
+      </a>
+      commands can be used to determin the format. The most important parameter is ASCII_BASE, which as far as I know is always 33 or 64. With a typical range from Q2 to Q40, this gives a range of ASCII values from 35 to 73 with ASCII_BASE=33 and from 66 to 104 with ASCII_BASE=64. These ranges overlap from ASCII 66 to 73. Also, values &gt;Q40 may be produced by some machine software and by some post-processing software such as paired read assemblers. So if we see ASCII values &gt;73 that doesn't necessarily mean that we have ASCII_BASE=64, these could be high quality scores with ASCII_BASE=33. The only sure way to distinguish for sure is if we see ASCII values &lt; 64, in which case we know ASCII_BASE=33. A quick way to check visually is to look for # and $, which means ASCII_BASE=33 or lower-case letters which probably implies ASCII_BASE=64.
+     </span>
+     <span class="ManText">
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

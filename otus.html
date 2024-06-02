@@ -1,0 +1,456 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Defining and interpreting OTUs
+    </h1>
+    <p class="ManText">
+     <strong>
+      See also
+      <br/>
+     </strong>
+     <a href="otu_count_interpret.html">
+      Interpreting counts and frequencies in OTU tables
+     </a>
+    </p>
+    <p class="ManText">
+     <strong>
+      Sneath-Sokal OTUs
+      <br/>
+     </strong>
+     The concept of an Operational Taxonomic Unit (OTU) was introduced by Peter Sneath and Robert Sokal in the 1960s through a series of books and articles which founded the field of
+     <a href="https://en.wikipedia.org/wiki/Numerical_taxonomy">
+      numerical taxonomy
+     </a>
+     (
+     <span class="reference-text">
+      see e.g. Sneath &amp; Sokal:
+      <i>
+       Numerical Taxonomy
+      </i>
+      , W.H. Freeman, 1973)
+     </span>
+     . Their goal was to develop a quantitative strategy for classifying organisms into groups based on observed characters, creating a hierarchical classification reflecting the evolutionary relationships between the organisms as faithfully as possible. Sneath-Sokal OTUs were constructed by making a table of observed traits which could be described by numerical values; e.g.1=present, 0=absent. A hierarchy (tree) was built by repeatedly merging the most similar groups according to the number of traits they had in common. This is an early example of a
+     <a href="DELETE_URL">
+      agglomerative clustering algorithm
+     </a>
+     applied to biological classification. Sokal and Sneath were working before DNA sequences were available, and before the development of more accurate trait- and sequence-based
+     <a href="https://en.wikipedia.org/wiki/Computational_phylogenetics">
+      phylogenetic tree construction algorithms
+     </a>
+     such as
+     <a href="https://en.wikipedia.org/wiki/Neighbor_joining">
+      neighbor-joining
+     </a>
+     and
+     <a href="https://en.wikipedia.org/wiki/Computational_phylogenetics#Maximum_likelihood">
+      maximum likelihood
+     </a>
+     .
+    </p>
+    <p class="ManText">
+     <strong>
+      Historical 97% identity threshold
+      <br/>
+     </strong>
+     In 16S sequencing, OTUs are typically constructed using an identity threshold of 97%. To the best of my knowledge, the first mention of this threshold is in (
+     <a href="http://dx.doi.org/10.1099/00207713-44-4-846">
+      Stackebrandt and Goebel 1994
+     </a>
+     ). If you know of an earlier reference for the magic number 97, please let me know. Stackebrandt and Goebel found that 97% similarity of 16S sequences corresponded approximately to a DNA reassociation value of 70%, which had previously been accepted as a working definition for bacterial species (
+     <a href="http://dx.doi.org/10.1099/00207713-37-4-463">
+      Wayne et al. 1987
+     </a>
+     ).
+    </p>
+    <p class="ManText">
+     <strong>
+      Modern OTU identity thresholds
+      <br/>
+     </strong>
+     An 
+  analysis done in 2014 found that the optimal threshold was 98.5% for 
+  approximating species by clustering full-length 16S sequences (
+     <a href="https://doi.org/10.1038/nrmicro3330">
+      Yarza et al. 2014
+     </a>
+     ). 
+  However, this study was done using CD-HIT (
+     <a href="https://doi.org/10.1093/bioinformatics/btl158">
+      Li and Godzik 2006
+     </a>
+     ), which 
+  has a
+     <a href="DELETE_URL">
+      problematic non-standard definition of sequence identity
+     </a>
+     , 
+  based on taxonomy predictions in the SILVA database of which roughly one in 
+  five are wrong (
+     <a href="https://peerj.com/articles/5030/">
+      Edgar 2018a
+     </a>
+     ). 
+  In a more recent paper, I showed that the optimal clustering threshold is ~99% 
+  identity for full-length sequences and ~100% for V4
+     <a href="https://doi.org/10.1093/bioinformatics/bty113">
+      (Edgar 2018b)
+     </a>
+     .
+    </p>
+    <p class="ManText">
+     <strong>
+      OTUs constructed by clustering 16S sequences
+      <br/>
+     </strong>
+     The earliest software program I'm aware of for clustering 16S sequences is FastGroup (
+     <a href="https://dx.doi.org/10.1186/1471-2105-2-9">
+      Seguritan and Rohwer 2001
+     </a>
+     ). FastGroup used a greedy clustering algorithm similar to
+     <a href="uclust_algo.html">
+      UCLUST
+     </a>
+     . The identity threshold was 97%, for which the authors cite Stackebrandt and Goebel. DOTUR (
+     <a href="https://doi.org/10.1128/AEM.71.3.1501-1506.2005">
+      Schloss and Handlesman 2005
+     </a>
+     ), the forerunner of
+     <a href="https://www.mothur.org/">
+      mothur
+     </a>
+     (
+     <a href="https://doi.org/10.1128/AEM.01541-09">
+      Schloss et al. 2009
+     </a>
+     ), used
+     <a href="DELETE_URL">
+      agglomerative clustering
+     </a>
+     with options to use maximum, minimum or average
+     <a href="linkage.html">
+      linkage
+     </a>
+     . DOTUR and mothur generate OTUs at a range of identity thresholds, noting (DOTUR paper) that "[s]sequences with greater than 97% identity are typically assigned to the same species, those with 95% identity are typically assigned to the same genus, and those with 80% identity are typically assigned to the same phylum, although these distinctions are controversial".
+     <a href="http://qiime.org">
+      QIIME
+     </a>
+     (
+     <a href="https://doi.org/10.1038/nmeth.f.303">
+      Caporaso et al. 2010
+     </a>
+     ) uses the 97% threshold almost exclusively. Early versions of QIIME used CD-HIT as the default OTU clustering method, which was later replaced by
+     <a href="uclust_algo.html">
+      UCLUST
+     </a>
+     (
+     <a href="http://dx.doi.org/10.1038/nmeth.2604">
+      Edgar 2013
+     </a>
+     ). I have not found any description of the intended interpretation of QIIME OTUs in their papers or documention (please let me know if I missed it).
+     <br/>
+     <br/>
+     <strong>
+      OTUs as a working definition of species
+     </strong>
+     <br/>
+     Imagine it is the 1990s, and we have 16S sequences obtained by PCR and Sanger sequencing. At that time, relatively few 16S sequences were available in public repositories, so most could not be identified by database search. A pragmatic alternative is to make clusters at 97% identity. These clusters can be treated as Sneath-Sokal OTUs which tentatively assign sequences to species and higher-level groups.
+     <span class="auto-style3">
+      <strong>
+       This is a reasonable approach if, but only if, experimental errors in the sequences are not significant
+      </strong>
+     </span>
+     <span class="auto-style2">
+      . In the early literature, errors are rarely (never?) considered. Presumably, this is because
+      <a href="https://en.wikipedia.org/wiki/Sanger_sequencing">
+       Sanger sequencing
+      </a>
+      has a very low error rate, and also because the importance of errors due to PCR, especially chimeras, was not widely known in the '90s (
+      <a href="https://doi.org/10.1128/AEM.71.12.7724-7736.2005">
+       Ashelford et al. 2005
+      </a>
+      ).
+     </span>
+    </p>
+    <p class="ManText">
+     <strong>
+      OTUs with next-generation reads
+      <br/>
+     </strong>
+     Next-generation sequencing (NGS) emerged in the late 1990s (
+     <a href="https://en.wikipedia.org/wiki/DNA_sequencing">
+      Wikipedia, DNA sequencing
+     </a>
+     ) and revolutionized microbiology by enabling low-cost, high-throughput sequencing of the 16S gene. These advantages came at the expense of shorter read lengths and higher error rates compared to Sanger sequencing. OTU clustering methods were applied to NGS reads, but it gradually became clear that these methods were generating many spurious OTUs due to experimental error, causing inflated estimates of diversity (see e.g.,
+     <a href="https://dx.doi.org/10.1111/j.1462-2920.2010.02193.x">
+      Huse et al. 2010
+     </a>
+     ). Some widely-used methods continue to generate large numbers of spurious OTUs at the time of writing (mid-2017), notably QIIME which
+     <a href="DELETE_URL">
+      reports hundreds or thousands of OTUs
+     </a>
+     from Illumina reads of mock communities with ~20 species using recommended procedures.
+    </p>
+    <p class="ManText">
+     <strong>
+      Westcott and Schloss OTUs
+      <br/>
+     </strong>
+     In a
+     <a href="https://doi.org/10.1128/mSphereDirect.00073-17">
+      recent paper
+     </a>
+     , Westcott and Schloss proposed a
+     <a href="ws17_rule.html">
+      definition of OTUs
+     </a>
+     based on the
+     <a href="DELETE_URL">
+      Matthews Correlation Coefficient (MCC)
+     </a>
+     . However, their definition has
+     <a href="mcc_fail.html">
+      problems in practice
+     </a>
+     .
+     <br/>
+     <br/>
+     <strong>
+      Goals for making OTUs as clusters of reads
+      <br/>
+     </strong>
+     Here, I suggest some goals for making OTUs.
+     <br/>
+     <br/>
+     <em>
+      Operational definition of species-like groups
+      <br/>
+     </em>
+     Sneath-Sokal classification of the sequences. This is the historical motivation for making 16S OTUs.
+     <br/>
+     <br/>
+     <em>
+      Merging variation within a single strain into one cluster
+      <br/>
+     </em>
+     Bacterial chromosomes often contain
+     <a href="copynr_dist.html">
+      multiple copies of the 16S gene
+     </a>
+     (paralogs). Paralogs often have small sequence differences. Clustering tends to merge paralogs into a single OTU. This is a good thing if the goal is to get one OTU per phenotype, which makes sense for most analyses.
+    </p>
+    <p class="ManText">
+     <em>
+      Merging variation between strains of a single species into one cluster
+      <br/>
+     </em>
+     Different strains of a given species, say
+     <em>
+      E. coli
+     </em>
+     , often have differences in their 16S sequences. This adds a level of variation within a species on top of the variation that may occur within a single strain due to paralogs. Clustering tends to merge both levels of variation to create a single OTU, or at least fewer OTUs, for the species. This is not such a good thing if the goal is to get one OTU per phenotype, because different strains can have important differences in phenotype (e.g., pathogenic or not). Also, while the concept of a strain is reasonably well-defined (minimal variation in the compete genome), the concept of a species is problematic for bacteria (
+     <a href="https://doi.org/10.1038/nrmicro1236">
+      Gevers et al. 2005
+     </a>
+     ,
+     <a href="https://dx.doi.org/10.1186/gb-2006-7-9-116">
+      Doolittle and Pakpke 2006
+     </a>
+     ), so the goal of having one OTU per species is not so well-defined or useful.
+     <br/>
+     <br/>
+     <em>
+      Merging variation due to experimental error into one cluster
+     </em>
+     <br/>
+     Errors due to PCR sequencing error cause sequence variation in the reads which is not biological in origin. Clustering tends to merge bad sequences with correct biological sequences. To be effective, this requires that sequences with &gt;3% error are rare, because they always induce spurious OTUs (see e.g.
+     <a href="http://bioinformatics.oxfordjournals.org/content/early/2015/07/01/bioinformatics.btv401">
+      Edgar and Flyvbjerg 2014
+     </a>
+     ). A sequence with &lt;3% error can also cause a spurious OTU, depending on whether the corresponding correct sequence is close to the center of the cluster (probably not) or close to the edge (more likely).
+     <br/>
+     <br/>
+     <strong>
+      Interpreting results obtained using OTUs
+      <br/>
+     </strong>
+     To do meaningful biology with OTUs, you need to know which goals are intended (those I suggest above? others?), and how well those goals are achieved in practice. This can be problematic, because authors are often vague about their goals and sloppy in validating their methods. For example, one approach found in the literature is to test the method on artificial ("mock") communities with known composition, and measure alpha diversity / richness from the number of OTUs reported. If the number of OTUs is approximately the same as the number of species, the method is declared to be accurate. Some of these papers are deeply flawed. Algorithm parameters may be tuned on the mock community data used for testing, which could result in
+     <a href="https://en.wikipedia.org/wiki/Overfitting">
+      over-fitting
+     </a>
+     . The right number of OTUs could be obtained for the wrong reasons; for example, because some of the OTUs have several species lumped into the same cluster, while others are spurious, e.g. chimeric. In other cases, authors attempt to use mock community diversity for validation, find that far too many OTUs are generated, then ignore, downplay or obfuscate the result without investigating where the spurious OTUs come from. If sources of error are not understood and accounted for, then biological inferences are unreliable and naive estimates of statistical significance can be misleading because low P-values can be obtained for false hypotheses (
+     <a href="https://www.google.com/search?q=isbn+093570275X&amp;ie=utf-8&amp;oe=utf-8">
+      Taylor 1997
+     </a>
+     ).
+     <br/>
+     <br/>
+     <strong>
+      My definition of OTUs
+      <br/>
+     </strong>
+     In USEARCH, my algorithms are designed to report OTUs which are
+     <span class="auto-style3">
+      <strong>
+       correct biological sequences
+      </strong>
+     </span>
+     . By this definition, the connection to biology is clear and an OTU can be objectively verified or falsified, especially in mock community tests where the biological sequences are known.
+    </p>
+    <p class="ManText">
+     <strong>
+      UPARSE OTUs
+     </strong>
+     <br/>
+     In the case of the
+     <a href="uparseotu_algo.html">
+      UPARSE-OTU algorithm
+     </a>
+     (
+     <a href="cmd_cluster_otus.html">
+      cluster_otus command
+     </a>
+     ), the goal is to report a
+     <strong>
+      <span class="auto-style3">
+       subset of the correct biological sequences
+      </span>
+     </strong>
+     such that (a) all pairs of OTUs are &lt;97% identical to each other, and (b) the OTU sequence is the most abundant in its neighborhood. These can be interpreted as Sneath-Sokal OTUs giving an operational approximation to species.
+    </p>
+    <p class="ManText">
+     <strong>
+      Denoised OTUs (ZOTUs)
+     </strong>
+     <br/>
+     With the
+     <a href="unoise_algo.html">
+      UNOISE algorithm
+     </a>
+     (
+     <a href="cmd_unoise3.html">
+      unoise3 command
+     </a>
+     ), the goal is to report
+     <strong>
+      <span class="auto-style3">
+       all correct biological sequences
+      </span>
+     </strong>
+     in the reads. These are called zero-radius OTUs, or ZOTUs. It is expected that some species may be split over several ZOTUs due to intra-species variation (differences between paralogs and differences between strains). The advantage of ZOTUs is that they enable resolution of closely related strains with potentially different phenotypes that would be lumped into the same cluster by 97% OTUs.
+     <br/>
+     <br/>
+     <strong>
+      OTU abundances
+      <br/>
+     </strong>
+     By my definition, OTUs are sequences, not clusters. Traditional OTU analysis is usually based on an
+     <a href="otu_table.html">
+      OTU table
+     </a>
+     , which requires an abundance or frequency for each OTU in each sample. I calculate abundances by counting reads, while emphasizing that
+     <a href="read_cell_correl.html">
+      read abundance has very low correlation with species abundance
+     </a>
+     , and therefore the
+     <a href="otu_count_interpret.html">
+      biological interpretation of these abundances is unclear
+     </a>
+     .
+    </p>
+    <p class="ManText">
+     For denoised sequences, the abundance of a ZOTU is intended to be the number of reads derived from that (one, unique) biological template sequence, counting correct reads and reads with errors.
+    </p>
+    <p class="ManText">
+     With 97% OTUs (UPARSE), the abundance of an OTU is intended to be the number of reads derived from all biological sequences that are &gt;=97% identical to the OTU sequence, counting correct reads and reads with errors. This definition is not quite enough, because a read can match two or more OTUs. If there is more than one choice, the read is assigned to the OTU with highest identity (not highest abundance) because
+     <a href="mapreadstootus.html">
+      the OTU with highest identity is more likely to belong to the same species
+     </a>
+     . If the choice is still ambiguous because two or more OTUs are tied for highest identity, the tie is broken systematically by choosing the first OTU in database file order. This procedure ensures that reads for a given strain should be consistently assigned to the same OTU.
+    </p>
+    <p class="ManText">
+     <span class="ManText">
+      In practice, for both OTUs and ZOTUs, abundances are calculated by aligning reads to OTUs at a 97% identity threshold using the
+      <a href="cmd_otutab.html">
+       otutab command
+      </a>
+      . A read is assigned to the most similar OTU sequence, breaking ties systematically. In the case of 97% OTUs, the motivation for using a 97% identity threshold is self-explanatory. With ZOTUs, the motivation is to allow up to 3% errors due to sequencing and PCR. It is expected that the ZOTUs already contain the true biological variation and the most similar ZOTU will almost always be the correct biological sequence for a read with errors.
+     </span>
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

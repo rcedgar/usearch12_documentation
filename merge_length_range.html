@@ -1,0 +1,121 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Filtering artifacts by a merge length range
+    </h1>
+    <p class="ManText">
+     <strong>
+      See also
+     </strong>
+     <br/>
+     <a href="cmd_fastq_mergepairs.html">
+      fastq_mergepairs command
+     </a>
+     <br/>
+     <a href="merge_options.html">
+      fastq_mergepairs options
+     </a>
+     <br/>
+     <br/>
+     With next-generation amplicon sequencing, the PCR reaction often creates artifacts which are not correctly constructed, i.e., do not contain an intended full-length biological sequence. Such artifacts can be due to primers binding to a different region of the genome, secondary structure formation in the reaction, and so on. Usually, these amplicons are shorter or longer than expected and can therefore be filtered by setting a length range for the merged read. This is supported by the -fastq_mimmergelen and -fastq_maxmergelen options.
+    </p>
+    <p class="ManText">
+     <strong>
+      Length range for 16S V4
+      <br/>
+     </strong>
+     Currently, a popular method is 2 x 250 reads of the 16S V4 hypervariable region. This region has well-conserved length, unlike other 16S hypervariable regions. You can therefore set a narrow range of length to exclude artifacts; With the typical primers V4F (GTGCCAGCMGCCGCGGTAA) and V4R (GGACTACHVGGGTWTCTAAT) I set a length range of 230 to 270. These values exceed the known variation in length to allow novel outliers.
+     <br/>
+     <br/>
+     <strong>
+      How to determine the length range for a primer pair
+      <br/>
+     </strong>
+     The
+     <a href="DELETE_URL">
+      search_pcr command
+     </a>
+     can generate amplicon sequences given primer sequences and a database of known genes (or genomes). The length range in the predicted amplicons can be determined by the
+     <a href="DELETE_URL">
+      fastx_info command
+     </a>
+     . Be careful to include or exclude the primer sequences in the total length depending on whether they will appear in the reads (typically they do, but there are many variations in the library preparation protocols). I recommend using a range which exceeds the measured minimum and maximum because there may be novel outliers which are not in the database.
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

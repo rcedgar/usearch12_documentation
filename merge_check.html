@@ -1,0 +1,187 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Validating merged reads to check for problems
+    </h1>
+    <p class="ManText">
+     <strong>
+      See also
+      <br/>
+     </strong>
+     <a href="otu_qc.html">
+      Quality control for OTU sequences
+     </a>
+     <strong>
+      <br/>
+     </strong>
+     <a href="cmd_fastq_mergepairs.html">
+      fastq_mergepairs command
+     </a>
+     <br/>
+     <a href="merge_options.html">
+      fastq_mergepairs options
+     </a>
+     <br/>
+     <span class="ManText">
+      <a href="merge_report.html">
+       Reviewing a fastq_mergepairs report to check for problems
+      </a>
+     </span>
+     <br/>
+     <a href="merge_troubleshoot.html">
+      Trouble-shooting problems with fastq_mergepairs
+     </a>
+    </p>
+    <p class="ManText">
+     A paired read assembler makes two types of error: false negatives and false positives. This page explains how you can check for these errors. See also
+     <a href="otu_qc.html">
+      quality control for OTU sequences
+     </a>
+     .
+     <br/>
+     <br/>
+     <strong>
+      Merging errors may not matter
+     </strong>
+     <br/>
+     If you are using a UPARSE or UNOISE pipeline, then errors by the merger may not matter. Typically, the errors are pretty random so the large majority are
+     <a href="singletons.html">
+      singletons and should therefore be discarded
+     </a>
+     before making OTUs. Wrong alignments often have many mismatches, causing low Q scores and hence
+     <a href="exp_errs.html">
+      expected errors
+     </a>
+     &gt; 1 so that the mis-aligned reads will be discarded during quality filtering. Errors by the merger matter only if they are reproduced frequently enough, and have high enough Q scores, that they propogate through the complete pipeline and generate spurious OTUs. You can verify this by doing
+     <a href="otu_qc.html">
+      quality control on your OTU sequences
+     </a>
+     .
+    </p>
+    <p class="ManText">
+     <strong>
+      1. False negatives
+     </strong>
+     <br/>
+     A false negative is a read pair that has a valid alignment, but is discarded. If you have a low rate of merged reads, and you believe the amplicons are short enough that the pairs should overlap, then you may have a problem with false negatives. The way to check this is to
+     <a href="merge_report.html">
+      review the merge report
+     </a>
+     to identify the most common reason(s) that pairs are discarded.
+     <span class="ManText">
+      The simplest way to investigate is to use the
+     </span>
+     <span class="Text ManText">
+      -fastqout_notmerged_fwd and -fastqout_notmerged_rev options to get the pairs which did not merge, then (if needed) use fastx_subsample to get a small subset for manual investigation. If there are several different reasons, then y
+     </span>
+     ou can
+     <a href="merge_tabbed_check.html">
+      use the tabboutout file
+     </a>
+     to find some examples of pairs that failed for a given reason. Take the example pairs and experiment with different parameters. You can use
+     <a href="DELETE_URL">
+      ublast
+     </a>
+     as an independent check for alignments, and / or align the unpaired reads to a reference database of full-length sequences (see
+     <a href="merge_troubleshoot.html">
+      trouble-shooting problems with fastq_mergepairs
+     </a>
+     for more discussion). These tests should show if there are good alignments that fastq_mergepairs is missing, and suggest changes to the parameters which might improve the merge rate.
+    </p>
+    <p class="ManText">
+     <strong>
+      2. False positives
+      <br/>
+     </strong>
+     A false positive caused when the alignment is wrong. There are two cases.
+     <br/>
+     <br/>
+     (A) The pair does not in fact overlap, but a spurious alignment is found due to a spurious similarity between short segments at the end of R1 and the start of the reverse-complemented R2.
+     <br/>
+     <br/>
+     (B) The pair does overlap, but the alignment is wrong (too long or too short because it is offset compared to the correct position). This tends to happen more often when the true overlaps are short.
+     <br/>
+     <br/>
+     The way to check for false positives is to align the merged sequences to a reference database of full-length sequences. An incorrect alignment is then visible as a gap. If the pair does not in fact overlap, then the alignment will show a gap in the merged sequence. If the alignment is offset compared to the correct alignment, then this can create a gap in the merged sequence or in the full-length sequence, depending on whether the alignment is too long or too short. Keep in mind that gaps may be valid biological insertions or deletions. The clearest cases are where the segments on both sides of the gap have high identity, especially in a highly conserved gene such as 16S.
+     <br/>
+     <br/>
+     It is usually impractical to manually review a large number of aligments to look for such gaps. You can deal with this by spot-checking, or by writing scripts to search for suspicious gaps which you can review manually. If you are running an OTU (or denoising) pipeline, then you could spot-check the sequences for some low-abundance OTUs, because these where most problems are found.
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

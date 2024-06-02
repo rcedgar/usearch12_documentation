@@ -1,0 +1,385 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Alignment parameters
+    </h1>
+    <span class="ManText">
+     <strong>
+      See also
+      <br/>
+     </strong>
+     <a href="aln_heuristics.html">
+      Alignment heuristics
+     </a>
+     <strong>
+      <br/>
+     </strong>
+     <br/>
+     These parameters determine the score of an alignment. They include substitution scores and gap penalties. These are distinct from
+     <a href="aln_heuristics.html">
+      heuristic parameters
+     </a>
+     , which control fast but approximate methods for finding the alignment with the highest score. Ideally, changing heuristic parameters would not change the reported alignment (because the best alignment would always be found). By contrast, changing alignment scoring parameters will tend to change the alignment, e.g. increasing gap penalties will reduce the number of gaps. All scoring parameters are floating-point values and may be specified as integers or real numbers.
+    </span>
+    <p>
+     <span class="ManText">
+      If local alignment parameters are changed, then the
+      <a href="karlin_altschul.html">
+       Karlin-Altschul
+      </a>
+      K and Lambda parameters must also be changed in order to get correct
+      <a href="opt_evalue.html">
+       E-values
+      </a>
+      .
+      <br/>
+     </span>
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="5" cellspacing="0" style="width: 78%" summary="Table">
+      <tr>
+       <td align="right" class="c3" width="136">
+        <span class="ManText c2">
+         Option
+        </span>
+       </td>
+       <td align="center" class="c3" width="115">
+        <span class="ManText">
+         <b>
+          L
+         </b>
+         ocal/
+         <b>
+          G
+         </b>
+         lobal
+         <br/>
+         <b>
+          P
+         </b>
+         rotein/
+         <b>
+          N
+         </b>
+         ucleotide
+        </span>
+       </td>
+       <td align="center" class="c3" width="104">
+        <span class="ManText c2">
+         Default
+        </span>
+       </td>
+       <td align="left" class="c4">
+        <span class="ManText">
+         Description
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="136">
+        <span class="ManText">
+         -lopen
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="115">
+        <span class="ManText">
+         L PN
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="104">
+        <span class="ManText">
+         10.0
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         Local gap open
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="136">
+        <span class="ManText">
+         -lext
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top" width="115">
+        <span class="ManText">
+         L PN
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top" width="104">
+        <span class="ManText">
+         1.0
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top">
+        <span class="ManText">
+         Local gap extend
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="136">
+        <span class="ManText">
+         -match
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="115">
+        <span class="ManText">
+         LG N
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="104">
+        <span class="ManText">
+         +1.0
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         Match score
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="136">
+        <span class="ManText">
+         -mismatch
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top" width="115">
+        <span class="ManText">
+         LG N
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top" width="104">
+        <span class="ManText">
+         -2.0
+        </span>
+       </td>
+       <td align="left" class="c3" valign="top">
+        <span class="ManText">
+         Mismatch score
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="136">
+        <span class="ManText">
+         -
+         <a href="opt_matrix.html">
+          matrix
+         </a>
+         <i>
+          filename
+         </i>
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="115">
+        <span class="ManText">
+         LG PN
+        </span>
+       </td>
+       <td align="center" class="c5" valign="top" width="104">
+        <span class="ManText">
+         BLOSUM62 (aa)
+         <br/>
+         +1/-2 (nt)
+        </span>
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         Substitution matrix in NCBI BLAST format. See
+         <a href="BLOSUM62.html">
+          BLOSUM62
+         </a>
+         for an example.
+        </span>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <p>
+     <span class="ManText">
+      <b>
+       Gap penalties for global alignments
+       <br/>
+      </b>
+      With global alignments, gap penalties are specified using the -gapopen and -gapext options. Up to 12 separate penalties can be specified: all combinations of query / target, left / interior / terminal, and open / extend can be assigned different penalties.
+     </span>
+    </p>
+    <p align="left">
+     <img alt="Image" border="1" height="138" src="gap_penalties.jpg" width="410"/>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      Default penalties are shown in the following table.
+     </span>
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="5" cellspacing="0" style="width: 39%" summary="Table">
+      <tr>
+       <td align="right" class="c3" width="136">
+        <span class="ManText c2">
+         Penalty
+        </span>
+       </td>
+       <td align="right" class="c3" width="4">
+       </td>
+       <td align="left" class="c3">
+        <span class="ManText c2">
+         Default
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="136">
+        <span class="ManText">
+         Interior gap open
+        </span>
+       </td>
+       <td align="right" class="c5" valign="top" width="4">
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         10.0 nucleotides, 17.0 proteins
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="136">
+        <span class="ManText">
+         End gap open
+        </span>
+       </td>
+       <td align="right" class="c3" valign="top" width="4">
+       </td>
+       <td align="left" class="c3" valign="top">
+        <span class="ManText">
+         1.0
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top" width="136">
+        <span class="ManText">
+         Interior gap extend
+        </span>
+       </td>
+       <td align="right" class="c5" valign="top" width="4">
+       </td>
+       <td align="left" class="c5" valign="top">
+        <span class="ManText">
+         1.0
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="136">
+        <span class="ManText">
+         End gap extend
+        </span>
+       </td>
+       <td align="right" class="c3" valign="top" width="4">
+       </td>
+       <td align="left" class="c3" valign="top">
+        <span class="ManText">
+         0.5
+        </span>
+       </td>
+      </tr>
+     </table>
+     <p align="left">
+      <span class="ManText">
+       The nucleotide defaults would be set using these options:
+       <br/>
+       <br/>
+      </span>
+      <span class="ManCode">
+       -gapopen 10.0I/1.0E -gapext 1.0I/0.5E
+       <br/>
+      </span>
+      <span class="ManText">
+       <br/>
+       A numerical value for a penalty is optionally followed by one or more letters that specify particular types of gap. Here, "10.0I" means "Interior gap=10.0", and "1.0E" means "End gap=1.0". If no letters are given after the numerical value, then the penalty applies to all gaps. More than one letter can be specified, so for example "0.5IE" means "Interior and End gap=0.5", which is the same as all gaps. Following are valid letters: I=Interior, E=End, L=Left, R=Right, Q=Query and T=Target. If more than one numerical value is specified, then they must be separated by a slash character '/'. White space is not allowed. If a star (*) is used as the numerical value, then the gap is forbidden. Using * in an open penalty means that the gap will never be allowed, using * in an extension penalty means that gaps longer than one will be forbidden. So, for example, *LQ in -gapopen means "left end-gaps in the query are not allowed". A sign (plus or minus) is not allowed in the numerical value, which can be integer or floating-point (in which case a period '.' must be used for the decimal point). The -gapopen and -gapext options are interpreted first by setting the defaults, then by scanning the string left-to-right. Later values override previous values.
+       <br/>
+      </span>
+     </p>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

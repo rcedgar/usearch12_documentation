@@ -1,0 +1,432 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     termination options
+    </h1>
+    <span class="ManText">
+     <b>
+      See also
+     </b>
+     <br/>
+     <a href="DELETE_URL">
+      weak hits
+     </a>
+     <br/>
+     <a href="opt_maxhits.html">
+      maxhits
+     </a>
+     option.
+    </span>
+    <b>
+    </b>
+    <p class="ManText">
+     <b>
+      The maxaccepts and maxrejects options
+     </b>
+     <br/>
+     The termination options -maxaccepts and -maxrejects are supported by most search and clustering commands. These options cause the search for a given query sequence to stop if a given number of accepts (target sequences that meet the
+     <a href="accept_options.html">
+      accept criteria
+     </a>
+     ) or rejects (target sequences that were processed but failed to meet those criteria) have occurred. Early search termination can give dramatic improvements in speed, often with minimal or no cost in sensitivity. See
+     <a href="usearch_algo.html">
+      USEARCH algorithm
+     </a>
+     for discussion of why "U-sorting" with termination is an effective speed optimization.
+    </p>
+    <p class="ManText">
+     Other termination options
+     <br/>
+     -termid terminate search when a target identity drops below the given value, specified as a fractional identity in range 0.0 to 1.0.
+     <br/>
+     <br/>
+     -termidd terminate when the difference (maxid - minid) exceeds the given value, when maxid (minid) is the maximum (minimum) identity found so far.
+    </p>
+    <p class="ManText">
+     <b>
+      Comprehensive search
+      <br/>
+     </b>
+     Roughly speaking, a search of the complete database is specified by disabling the maxaccepts and maxrejects termination options. This is done by setting -maxaccepts 0 -maxrejects 0. This is the default for the
+     <a href="DELETE_URL">
+      ublast command
+     </a>
+     , but not for clustering and search based on the USEARCH algorithm. See table below for default values for each command. However, this is not strictly true: with commands based on the USEARCH and UBLAST algorithms, a database sequence will not be aligned if it has no words (or seeds) in common with the query sequence. For a truly comprehensive search, use
+     <a href="DELETE_URL">
+      search_global
+     </a>
+     or
+     <a href="DELETE_URL">
+      search_local
+     </a>
+     .
+    </p>
+    <p>
+     <span class="ManText">
+      <b>
+       Discussion
+       <br/>
+      </b>
+      Termination conditions are combined with OR, so the first one to be satisfied causes the search to stop. (Unlike accept criteria, which are combined with AND).
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      By default, termination options are enabled only for clustering and search commands based on the USEARCH algorithm. This is because USEARCH tests database sequences (targets) in order of decreasing number of words in common between the query and target sequence. This order correlates well with sequence similarity, so the best hit(s) are likely to be found quickly.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      With
+      <a href="DELETE_URL">
+       ublast
+      </a>
+      ,
+      <a href="DELETE_URL">
+       search_local
+      </a>
+      and
+      <a href="DELETE_URL">
+       search_global
+      </a>
+      , targets are compared to the query in an order that does not correlate with sequence similarity or E-value. With these commands, the first accepted hit is not expected to be close to the best possible hit. However, termination options can still be useful; see
+      <a href="DELETE_URL">
+       weak hits
+      </a>
+      for discussion and examples.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      If maxaccepts is set to a value &gt; 1, then more than one hit may be reported per query. In this case, it is usually recommended to increase maxrejects also, because it will often be necessary to search further into the list of candidate target sequences to find more than one hit.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The maxaccepts and maxrejects options can be used to tune speed against sensitivity. Smaller values of both parameters tend to improve speed by reducing the number of alignments that must be computed per query. For example, with
+      <a href="cmd_cluster_fast.html">
+       cluster_fast
+      </a>
+      , the default value of maxrejects is reduced from 32 to 8 in order to achieve higher speed. Increasing either value tends to result in slower execution because more alignments must be computed. Increasing maxrejects tends to improve sensitivity by reducing the number of false negatives, i.e. target sequences that would be accepted but are not tested because they are too far down the list in word-count order.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      With
+      <a href="translated_search.html">
+       translated searches
+      </a>
+      , termination conditions apply to each
+      <a href="orfs.html">
+       ORF
+      </a>
+      separately. This is because the nucleotide query sequence might span more than one gene.
+     </span>
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="5" cellspacing="0" summary="Table" width="74%">
+      <tr>
+       <td align="right" class="c2" width="100">
+        <span class="ManText">
+         Command
+        </span>
+       </td>
+       <td align="center" class="c2" width="102">
+        <span class="ManText">
+         Uses
+         <a href="usearch_algo.html">
+          USEARCH
+         </a>
+         ?
+        </span>
+       </td>
+       <td align="center" class="c3" width="132">
+        <span class="ManText">
+         <b>
+          maxaccepts default
+          <br/>
+         </b>
+         (0 = disabled)
+        </span>
+       </td>
+       <td align="center" class="c3">
+        <span class="ManText">
+         <b>
+          maxrejects default
+          <br/>
+         </b>
+         (0 = disabled)
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top" width="100">
+        <span class="ManText">
+         <a href="cmd_usearch_global.html">
+          usearch_global
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c4" width="102">
+        <span class="ManText">
+         Yes
+        </span>
+       </td>
+       <td align="center" class="c4" width="132">
+        <span class="ManText">
+         1
+        </span>
+       </td>
+       <td align="center" class="c4" valign="top">
+        <span class="ManText">
+         32
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="100">
+        <span class="ManText">
+         <a href="cmd_usearch_local.html">
+          usearch_local
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c3" width="102">
+        <span class="ManText">
+         Yes
+        </span>
+       </td>
+       <td align="center" class="c3" width="132">
+        <span class="ManText">
+         1
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top">
+        <span class="ManText">
+         32
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top" width="100">
+        <span class="ManText">
+         <a href="cmd_cluster_smallmem.html">
+          cluister_smallmem
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c4" width="102">
+        <span class="ManText">
+         Yes
+        </span>
+       </td>
+       <td align="center" class="c4" width="132">
+        <span class="ManText">
+         1
+        </span>
+       </td>
+       <td align="center" class="c4" valign="top">
+        <span class="ManText">
+         32
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="100">
+        <span class="ManText">
+         <a href="cmd_cluster_fast.html">
+          cluster_fast
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c3" width="102">
+        <span class="ManText">
+         Yes
+        </span>
+       </td>
+       <td align="center" class="c3" width="132">
+        <span class="ManText">
+         1
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top">
+        <span class="ManText">
+         8
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top" width="100">
+        <span class="ManText">
+         <a href="DELETE_URL">
+          ublast
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c4" width="102">
+        <span class="ManText">
+         No
+        </span>
+       </td>
+       <td align="center" class="c4" width="132">
+        <span class="ManText">
+         0
+        </span>
+       </td>
+       <td align="center" class="c4" valign="top">
+        <span class="ManText">
+         0
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top" width="100">
+        <span class="ManText">
+         <a href="DELETE_URL">
+          search_local
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c3" width="102">
+        <span class="ManText">
+         No
+        </span>
+       </td>
+       <td align="center" class="c3" width="132">
+        <span class="ManText">
+         0
+        </span>
+       </td>
+       <td align="center" class="c3" valign="top">
+        <span class="ManText">
+         0
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c4" valign="top" width="100">
+        <span class="ManText">
+         <a href="DELETE_URL">
+          search_global
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c4" width="102">
+        <span class="ManText">
+         No
+        </span>
+       </td>
+       <td align="center" class="c4" width="132">
+        <span class="ManText">
+         0
+        </span>
+       </td>
+       <td align="center" class="c4" valign="top">
+        <span class="ManText">
+         0
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" width="100">
+        <span class="ManText">
+         <a href="cmd_otutab.html">
+          otutab
+         </a>
+         ,
+         <a href="cmd_closed_ref.html">
+          closed_ref
+         </a>
+        </span>
+       </td>
+       <td align="center" class="c3" width="102">
+        <span class="ManText">
+         Yes
+        </span>
+       </td>
+       <td align="center" class="c3" width="132">
+        4 (v10), 8 (v11)
+       </td>
+       <td align="center" class="c3">
+        64 (v10), 256 (v11)
+       </td>
+      </tr>
+     </table>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

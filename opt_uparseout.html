@@ -1,0 +1,274 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     -uparseout option
+    </h1>
+    <p>
+     <span class="ManText">
+      Output file, UPARSE tabbed format. Supported by
+      <a href="cmd_cluster_otus.html">
+       cluster_otus
+      </a>
+      and
+      <a href="cmd_uparse_ref.html">
+       uparse_ref
+      </a>
+      . There are five or six fields, as shown in the following table.
+     </span>
+    </p>
+    <div align="left">
+     <table border="0" cellpadding="3" cellspacing="0" summary="Table" width="577">
+      <tr>
+       <td align="right" class="c2" valign="top">
+        <span class="ManText">
+         Field
+        </span>
+       </td>
+       <td class="c3" valign="top" width="5">
+       </td>
+       <td class="c3" valign="top" width="512">
+        <span class="ManText c4">
+         Description
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top">
+        <span class="ManText">
+         1
+        </span>
+       </td>
+       <td class="c5" width="5">
+       </td>
+       <td class="c5" width="512">
+        <span class="ManText">
+         Query
+         <a href="sequence_labels.html">
+          label
+         </a>
+         .
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top">
+        <span class="ManText">
+         2
+        </span>
+       </td>
+       <td class="c3" width="5">
+       </td>
+       <td class="c3" width="512">
+        <span class="ManText">
+         <a href="mock_classes.html">
+          Classification
+         </a>
+         .
+        </span>
+        <p>
+         <span class="ManText">
+          For cluster_otus, this field is otu, match or chimera.
+          <br/>
+          <b>
+           otu
+          </b>
+          : New OTU. Sequence is &lt;97% to existing OTU and is not chimeric.
+          <br/>
+          <b>
+           match
+          </b>
+          : Assigned to existing OTU (&gt;= 97% match).
+          <br/>
+          <b>
+           chimera
+          </b>
+          : Sequence is chimeric.
+         </span>
+        </p>
+        <p>
+         <span class="ManText">
+          For uparse_ref, it is perfect, good, noisy, chimera or other.
+          <br/>
+          <b>
+           perfect
+          </b>
+          : 100% match to a reference sequence.
+          <br/>
+          <b>
+           good
+          </b>
+          : &gt;=99% match to reference sequence.
+          <br/>
+          <b>
+           noisy
+          </b>
+          : &gt;= 97% match to reference sequence
+          <br/>
+          <b>
+           chimera
+          </b>
+          : matches chimeric model constructed from reference sequences
+          <br/>
+          <b>
+           other
+          </b>
+          : &lt; 97% match and not chimeric.
+          <br/>
+         </span>
+        </p>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top">
+        <span class="ManText">
+         3
+        </span>
+       </td>
+       <td class="c5" width="5">
+       </td>
+       <td class="c5" width="512">
+        <span class="ManText">
+         Percent
+         <a href="identity.html">
+          identity
+         </a>
+         between the query sequence and the top hit in the reference database. With cluster_otus, the reference database is the current set of OTUs. If no hit was found, this field is set to *,
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c3" valign="top">
+        <span class="ManText">
+         4
+        </span>
+       </td>
+       <td class="c3" width="5">
+       </td>
+       <td class="c3" width="512">
+        <span class="ManText">
+         Percent identity between the query sequence and the
+         <a href="uparseref_algo.html">
+          maximum parsimony model
+         </a>
+         . If no model is made, e.g. because the database is empty, then this field is set to *.
+         <br/>
+        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="right" class="c5" valign="top">
+        <span class="ManText">
+         5
+        </span>
+       </td>
+       <td class="c5" width="5">
+       </td>
+       <td class="c5" width="512">
+        <span class="ManText">
+         OTU label(s). If the model is chimeric, then the labels and start-end segment coordinates are given. Otherwise, the label of the reference sequence. For cluster_otus, this will be the label of an existing OTU. If no model is constructed, this field is set to *.
+         <br/>
+        </span>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <p>
+     <span class="ManText c4">
+      Example output
+     </span>
+    </p>
+    <p class="ManCode">
+     <span class="ManCode">
+      Even1.7;size=4383;   otu      *     *       OTU_1
+      <br/>
+      Even1.145;size=21;   otu      *     *       OTU_2
+      <br/>
+      Even1.1733;size=20;  match    99.5  *       OTU_2
+      <br/>
+      Even1.942;size=20;   chimera  94.0  100.0   OTU_1(1-141)+OTU_2(142-200)
+      <br/>
+      Even1.1821;size=20;  match    98.5  *       OTU_1
+      <br/>
+      Even1.1415;size=19;  match    97.0  *       OTU_2
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

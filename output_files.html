@@ -1,0 +1,484 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Output files for search and clustering commands
+    </h1>
+    <p class="ManText">
+     <b>
+      Hit selection options
+     </b>
+     <br/>
+     The
+     <a href="accept_options.html">
+      accept
+     </a>
+     and
+     <a href="termination_options.html">
+      termination
+     </a>
+     options determine how many hits USEARCH will store internally before stopping the search for a given query sequence. Hit selection options determine which of the accepted hits will be written to the output files. See also
+     <a href="DELETE_URL">
+      weak hits
+     </a>
+     . Hits are reported in order of decreasing identity (global) or decreasing alignment score (local).
+    </p>
+    <table border="0" cellpadding="5" cellspacing="0" summary="Table" width="88%">
+     <tr>
+      <td align="right" class="ManText c3">
+       <span class="ManText c2">
+        Option
+       </span>
+      </td>
+      <td align="right" class="ManText c4" width="6">
+      </td>
+      <td class="ManText c5" width="212">
+       <span class="ManText">
+        Description
+       </span>
+      </td>
+      <td class="ManText c6" width="100">
+       Option
+      </td>
+      <td class="ManText c4" width="4">
+      </td>
+      <td class="ManText c5" width="235">
+       <span class="ManText">
+        Description
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c7">
+       <a href="opt_top_hit_only.html">
+        top_hit_only
+       </a>
+      </td>
+      <td align="right" class="ManText c8" width="6">
+      </td>
+      <td class="ManText c8" width="212">
+       Top hit only (break ties).
+      </td>
+      <td align="right" class="ManText c8">
+       <a href="DELETE_URL">
+        cover_query
+       </a>
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" width="235">
+       Sufficient hits to cover query.
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c3">
+       <a href="opt_top_hits_only.html">
+        top_hits_only
+       </a>
+      </td>
+      <td align="right" class="ManText c4" width="6">
+      </td>
+      <td class="ManText c4" width="212">
+       All top hits.
+      </td>
+      <td align="right" class="ManText c4">
+       <a href="DELETE_URL">
+        mosaic
+       </a>
+      </td>
+      <td align="right" class="ManText c4" width="4">
+      </td>
+      <td class="ManText c4" width="235">
+       Mosaic cover of query.
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c7">
+       <a href="opt_maxhits.html">
+        maxhits
+       </a>
+       <i>
+        N
+       </i>
+      </td>
+      <td align="right" class="ManText c8" width="6">
+      </td>
+      <td class="ManText c8" width="212">
+       At most
+       <i>
+        N
+       </i>
+       hits.
+      </td>
+      <td align="right" class="ManText c8">
+       <a href="opt_output_no_hits.html">
+        output_no_hits
+       </a>
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" width="235">
+       Report queries with no hits
+      </td>
+     </tr>
+    </table>
+    <p class="ManText">
+     <b>
+      <br/>
+      Output files
+     </b>
+     <br/>
+     Most output files report hits, i.e. query-target alignments that meet the
+     <a href="accept_options.html">
+      accept criteria
+     </a>
+     . Any number of output files may be specified, enabling several different types of output to be generated from one run.
+     <br/>
+    </p>
+    <table border="0" cellpadding="5" cellspacing="0" summary="Table" width="88%">
+     <tr>
+      <td align="right" class="ManText c3">
+       <span class="ManText c2">
+        Option
+       </span>
+      </td>
+      <td align="right" class="ManText c4" width="4">
+      </td>
+      <td class="ManText c5" style="width: 237px">
+       <span class="ManText">
+        Description
+       </span>
+      </td>
+      <td class="ManText c4" width="100">
+       <span class="ManText c2">
+        Option
+       </span>
+      </td>
+      <td class="ManText c4" width="4">
+      </td>
+      <td class="ManText c5" width="235">
+       <span class="ManText">
+        Description
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c7">
+       <span class="ManText">
+        <a href="opt_alnout.html">
+         alnout
+        </a>
+       </span>
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" style="width: 237px">
+       <span class="ManText">
+        Human-readable alignments.
+       </span>
+      </td>
+      <td align="right" class="ManText c8">
+       <span class="ManText">
+        matched
+       </span>
+       <br/>
+       matchedfq
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" width="235">
+       <span class="ManText">
+        Queries that matched DB (FASTA or FASTQ).
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c3">
+       <span class="ManText">
+        <a href="opt_userout.html">
+         userout
+        </a>
+       </span>
+      </td>
+      <td align="right" class="ManText c4" width="4">
+      </td>
+      <td class="ManText c4" style="width: 237px">
+       <span class="ManText">
+        User-defined tabbed, see
+        <a href="userfields.html">
+         userfields
+        </a>
+        .
+       </span>
+      </td>
+      <td align="right" class="ManText c4">
+       <span class="ManText">
+        notmatched
+       </span>
+       <br/>
+       notmatchedfq
+      </td>
+      <td align="right" class="ManText c4" width="4">
+      </td>
+      <td class="ManText c4" width="235">
+       <span class="ManText">
+        Queries that did not match DB (FASTA or FASTQ).
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c7">
+       <span class="ManText">
+        <a href="opt_uc.html">
+         uc
+        </a>
+       </span>
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" style="width: 237px">
+       <span class="ManText">
+        UCLUST-format tabbed text.
+       </span>
+      </td>
+      <td align="right" class="ManText c8">
+       <span class="ManText">
+        dbmatched
+       </span>
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" width="235">
+       <span class="ManText">
+        DB sequences that matched (FASTA).
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c3">
+       <span class="ManText">
+        fastapairs
+       </span>
+      </td>
+      <td align="right" class="ManText c4" width="4">
+      </td>
+      <td class="ManText c4" style="width: 237px">
+       <span class="ManText">
+        Pair-wise alignments (FASTA).
+       </span>
+      </td>
+      <td align="right" class="ManText c4">
+       <span class="ManText">
+        dbnotmatched
+       </span>
+      </td>
+      <td align="right" class="ManText c4" width="4">
+      </td>
+      <td class="ManText c4" width="235">
+       <span class="ManText">
+        DB sequences not matched (FASTA).
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c7">
+       <span class="ManText">
+        centroids
+       </span>
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" style="width: 237px">
+       <span class="ManText">
+        Cluster centroids (FASTA).
+       </span>
+      </td>
+      <td align="right" class="ManText c8">
+       <span class="ManIndText">
+        msaout
+       </span>
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" width="235">
+       <span class="ManIndText">
+        Multiple alignments of clusters (FASTA).
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c3">
+       <span class="ManText">
+        <a href="DELETE_URL">
+         consout
+        </a>
+       </span>
+      </td>
+      <td align="right" class="ManText c4" width="4">
+      </td>
+      <td class="ManText c4" style="width: 237px">
+       <span class="ManText">
+        Cluster consensus seqs. (FASTA).
+       </span>
+      </td>
+      <td align="right" class="ManText c4">
+       <span class="ManIndText">
+        samout
+       </span>
+      </td>
+      <td align="right" class="ManText c4" width="4">
+      </td>
+      <td class="ManText c4" width="235">
+       <span class="ManIndText">
+        <a href="sam_files.html">
+         SAM format
+        </a>
+        .
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c7">
+       <span class="ManText">
+        <a href="opt_blast6out.html">
+         blast6out
+        </a>
+       </span>
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" style="width: 237px">
+       <span class="ManText">
+        BLAST tabbed format.
+       </span>
+      </td>
+      <td align="right" class="ManText c8">
+       nastout
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" width="235">
+       <a href="DELETE_URL">
+        NAST format
+       </a>
+       .
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c3">
+       qsegout
+      </td>
+      <td align="right" class="ManText c4" width="4">
+      </td>
+      <td class="ManText c4" style="width: 237px">
+       Query segments (FASTA).
+      </td>
+      <td align="right" class="ManText c4">
+       tsegout
+      </td>
+      <td align="right" class="ManText c4" width="4">
+      </td>
+      <td class="ManText c4" width="235">
+       Target segments (FASTA).
+      </td>
+     </tr>
+     <tr>
+      <td align="right" class="ManText c7">
+       <a href="opt_clusters.html">
+        clusters
+       </a>
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" style="width: 237px">
+       Directory to store FASTA files, one per cluster (
+       <a href="cmd_cluster_fast.html">
+        cluster_fast
+       </a>
+       only).
+      </td>
+      <td align="right" class="ManText c8">
+      </td>
+      <td align="right" class="ManText c8" width="4">
+      </td>
+      <td class="ManText c8" width="235">
+      </td>
+     </tr>
+    </table>
+    <br/>
+   </div>
+  </div>
+ </body>
+</html>

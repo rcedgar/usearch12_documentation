@@ -1,0 +1,261 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     fastq_mergepairs command
+    </h1>
+    <span class="ManText">
+     <br/>
+     <strong>
+      See also
+      <br/>
+     </strong>
+     <a href="merge_pair.html">
+      Introduction to paired read merging
+     </a>
+     <br/>
+     <a href="merge_options.html">
+      fastq_mergepairs options
+     </a>
+     <br/>
+     <a href="merge_report.html">
+      Reviewing a fastq_mergepairs report to check for problems
+     </a>
+     <br/>
+     <a href="merge_tabbed_check.html">
+      Using the tabbedout file to investigate merging problems
+     </a>
+     <br/>
+     <a href="merge_check.html">
+      Validating merged reads to check for problems
+     </a>
+     <br/>
+     <a href="merge_length_range.html">
+      Filtering artifacts by setting a merge length range
+     </a>
+     <br/>
+     <strong>
+     </strong>
+     <a href="long_v4.html">
+      Long overlaps are not needed so 2 x 250 can do better than V4
+     </a>
+     <br/>
+     <strong>
+     </strong>
+     <a href="merge_troubleshoot.html">
+      Trouble-shooting fastq_mergepairs problems
+     </a>
+     <br/>
+     <strong>
+     </strong>
+     <a href="merge_stagger.html">
+      Staggered read pairs
+     </a>
+     <br/>
+     <strong>
+     </strong>
+     <a href="merge_qual.html">
+      Quality filtering while merging (not recommended)
+     </a>
+     <br/>
+     <a href="merge_badrev.html">
+      Strategies for dealing with low-quality reverse reads (R2s)
+     </a>
+     <strong>
+      <br/>
+      <br/>
+      Common cases
+      <br/>
+     </strong>
+     <a href="merge_2x250_long.html">
+      2 x 250 reads with long overlap, e.g. 16S V4
+     </a>
+     <br/>
+     <a href="merge_2x300_short.html">
+      2 x 300 reads with short overlap, e.g. 16S V3-V5
+     </a>
+     <br/>
+     <strong>
+      <br/>
+     </strong>
+     The fastq_mergepairs command merges (assembles) paired-end reads to create consensus sequences and, optionally, consensus quality scores. This command has many features and options so I recommend spending some time browsing the documentation to get familiar with the capabilities of fastq_mergepairs and issues that arise in read merging.
+     <br/>
+     <br/>
+     In the examples below, the forward read FASTQs have "R1" in the filename and the reverse FASTQs have "R2" as this is the convention currently used by Illumina.
+     <br/>
+     <br/>
+     <strong>
+      Basic usage
+      <br/>
+     </strong>
+     The simplest way to use fastq_mergepairs is to specify the the forward and reverse FASTQ filenames and an output FASTQ filename.
+     <br/>
+     <br/>
+    </span>
+    <span class="ManCode">
+     usearch -fastq_mergepairs SampleA_R1.fastq -reverse SampleA_R2.fastq -fastqout merged.fq
+    </span>
+    <span class="ManText">
+     <br/>
+     <br/>
+     <strong>
+      Automatic R2 filename
+      <br/>
+     </strong>
+     If the -reverse option is omitted, the reverse FASTQ filename is constructed by replacing R1 with R2. The following command line is equivalent to the example above.
+     <br/>
+     <br/>
+     <span class="ManCode">
+      usearch -fastq_mergepairs SampleA_R1.fastq -fastqout merged.fq
+      <br/>
+      <br/>
+     </span>
+     <strong>
+      Merging multiple FASTQ file pairs in a single command
+      <br/>
+     </strong>
+     You can specify two or more FASTQ filenames following -fastq_mergepairs. In the following example, SampleA and SampleB are both merged. The R2 filenames are constructed automatically as explained above, or can be given explicitly using the -reverse option.
+     <br/>
+     <strong>
+      <br/>
+     </strong>
+    </span>
+    <span class="ManCode">
+     usearch -fastq_mergepairs SampleA_R1.fastq SampleB_R1.fastq -fastqout merged.fq
+    </span>
+    <span class="ManText">
+     <br/>
+     <br/>
+     <strong>
+      Using shell wildcards to merge multiple FASTQ file pairs in a single command
+      <br/>
+     </strong>
+     You can use shell wildcards (* and ?) to give a pattern that matches the FASTQ files you want to merge. For example, this will merge all R1 files in the current directory:
+     <br/>
+     <br/>
+     <span class="ManCode">
+      usearch -fastq_mergepairs *R1*.fastq -fastqout merged.fq
+     </span>
+     <br/>
+     <br/>
+     <strong>
+      Adding sample identifiers to read labels
+      <br/>
+     </strong>
+     If multiple samples are combined into a single file as shown in some of the above examples, then you lose track of which read came from which sample. This is addressed by adding a
+     <a href="upp_labels_sample.html">
+      sample identifier
+     </a>
+     to each read label. The simplest method is to use the -sample option, e.g.
+     <br/>
+     <br/>
+     <span class="ManText">
+      usearch -fastq_mergepairs SampleA_R1.fastq -fastqout merged.fq -sample SampleA
+      <br/>
+      <br/>
+      The string sample=SampleA; will be added at the end of the read label.
+     </span>
+     <br/>
+     <br/>
+     <strong>
+      Getting the sample identifier from the FASTQ filename
+     </strong>
+     <br/>
+     FASTQ filenames are often based on the sample identifier, e.g. SampleA_R1.fastq. If you specify  -relabel @ then fastq_mergepairs gets the sample identifier from the FASTQ file name by truncating at the first underscore (_) or period (.). A period and the read number is added after the sample identifier to make the new read label, which replaces the original label. This differs from the -sample option, which adds the sample= annotation at the end of the label. The usearch_global command understands both of these methods for putting sample identifiers into read labels..
+     <br/>
+     <br/>
+     <span class="ManCode">
+      usearch -fastq_mergepairs SampleA_R1.fastq -fastqout merged.fq  -relabel @
+      <br/>
+      <br/>
+     </span>
+     <span class="auto-style1">
+      <strong>
+       Merging multiple files with sample identifiers
+      </strong>
+      <br/>
+      By using wildcards and the  -relabel @ option you can merge multiple files and add sample identifiers to the read labels, for example:
+      <br/>
+      <br/>
+      <span class="ManCode">
+       usearch -fastq_mergepairs *R1*.fastq -fastqout merged.fq  -relabel @
+      </span>
+     </span>
+     <br/>
+    </span>
+   </div>
+  </div>
+ </body>
+</html>

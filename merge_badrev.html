@@ -1,0 +1,166 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     Strategies for dealing with low-quality reverse reads (R2s)
+    </h1>
+    <p>
+     <span class="ManText">
+      <strong>
+       See also
+      </strong>
+      <br/>
+      <a href="cmd_fastq_mergepairs.html">
+       fastq_mergepairs command
+      </a>
+      <br/>
+      <a href="merge_options.html">
+       fastq_mergepairs options
+      </a>
+      <br/>
+      <a href="cmd_fastq_filter.html">
+       fastq_filter command
+      </a>
+      <br/>
+      <br/>
+      Sometimes, reverse reads have substantially lower quality than forward reads, especially when the read length is longer. This can cause a low rate of merged reads and / or a large number of reads to be discarded by quality filtering. Following are some strategies that can help.
+     </span>
+    </p>
+    <p class="ManText">
+     <strong>
+      Truncate all R2s to a shorter fixed length
+      <br/>
+     </strong>
+     Typically quality drops towards the end of the read. You can check for this using the
+     <a href="DELETE_URL">
+      fastq_eestats2 command
+     </a>
+     . You can then consider truncating all R2s before
+     <a href="merge_pair.html">
+      merging
+     </a>
+     by using the
+     <a href="cmd_fastx_truncate.html">
+      fastx_truncate command
+     </a>
+     .
+    </p>
+    <p class="ManText">
+     <strong>
+      Truncate R2s using a minimum Q score
+      <br/>
+     </strong>
+     Usually, quality filtering that gives variable length reads is not recommended (see
+     <a href="global_trimming.html">
+      global trimming
+     </a>
+     for discussion). However, if the reads will be
+     <a href="merge_pair.html">
+      merged
+     </a>
+     then truncating the forward or reverse reads to discard low-quality bases can be effective because the merged sequence will be globally trimmed regardless of end trimming.
+    </p>
+    <p class="ManText">
+     The fastq_trunctail option, default value 2, truncates both the forward and reverse read before the first base with the given quality score. Q=2 means a probability of 63% that the base call is wrong, so this is a pretty conservative threshold. You might consider increasing it to 3, 4 or 5. Note that this will truncate both the R1 and R2.
+    </p>
+    <p class="ManText">
+     There are two alternative ways to do this which allows setting different Q score thresholds for the R1s and R2s: the
+     <a href="cmd_fastq_filter.html">
+      fastq_filter command
+     </a>
+     with the fastq_truncqual option or the fastq_mergepairs command with the fastq_minqual option. Note that the definitions of these options are different:fastq_truncqual truncates at the first Q score which is less than or equal to the given value, while fastq_minqual truncates at the first Q score which is less than the given value.
+    </p>
+    <p class="ManText">
+     Using fastq_filter has the advantage that you can analyze the FASTQ output using commands such as
+     <a href="DELETE_URL">
+      fastq_eestats2
+     </a>
+     , this is useful for choosing the minimum Q score -- try different values and review the results. If you filter forward and reverse reads separately then you will get different sets of reads. Or, you can use fastq_filter to tune the value of fastq_truncqual (Q) then set the fastq_minqual option of fastq_mergepairs to Q+1.
+    </p>
+    <p class="ManText">
+     I suggest trying minimum Q score values between 2 and 5.
+    </p>
+    <p class="ManText">
+     <strong>
+      Discard reverse reads and make OTUs from forward reads only
+     </strong>
+     <br/>
+     Sometimes, the reverse reads are so bad that it is better to discard them and make OTUs from the forward reads only. This can be a difficult decision because it is hard to throw expensive data away. One approach is to make several sets of OTUs using different strategies (e.g., forward only, merged) and compare the results. The trade-off is between better phylogenetic resolution with more bases versus reduced sensitivity to low-abundance species with fewer reads. Sometimes, it is reasonable to use different sets of OTUs for different types of analysis.
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,156 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     OTU table
+    </h1>
+    <p class="ManText">
+     <strong>
+      <img alt="Image" class="c2" src="otu_table.jpg" style="margin-left: 10px; margin-right: 10px"/>
+      See also
+      <br/>
+     </strong>
+     <a href="cmd_otutab.html">
+      Making an OTU table (otutab command)
+     </a>
+     <br/>
+     <a href="otu_count_interpret.html">
+      Interpreting an OTU table
+     </a>
+     <br/>
+     <a href="DELETE_URL">
+      Diversity analysis
+     </a>
+     <br/>
+    </p>
+    <p class="ManText">
+     An OTU table is a matrix that gives the number of reads per sample per OTU. One entry in the table is usually a number of reads, also called a "count", or a frequency in the range 0.0 to 1.0.
+    </p>
+    <p class="ManText">
+     It is often assumed that read counts in OTU tables are approximately equivalent to observations of species in traditional ecology. However,
+     <a href="otu_count_interpret.html">
+      interpreting OTU reads counts is actually much more difficult
+     </a>
+     because of biases and errors introduced by PCR and sequencing.
+    </p>
+    <p class="ManText">
+     OTU tables are often stored as a tabbed text files in which OTUs are rows and samples are columns; e.g. the
+     <a href="qiime_classic.html">
+      QIIME classic format
+     </a>
+     . A notable exception is the
+     <a href="mothur_shared_file.html">
+      mothur "shared" file format
+     </a>
+     which does the opposite: rows are samples and columns are OTUs. The mothur format can be hard to review visually in a text editor or spreadsheet because there are usually many more OTUs than samples so you have to a lot of horizontal scrolling. That's why I prefer QIIME classic. The BIOM formats are much more complicated and have no practical advantages in my opinion. You can use the
+     <a href="DELETE_URL">
+      otutab2biom command
+     </a>
+     to create a BIOM file that is compatible with other software packages that don't support QIIME classic.
+    </p>
+    <p class="ManText">
+     Tables stored as tabbed text can be viewed and edited in a spreadsheet program such as Excel.
+    </p>
+    <p class="ManText">
+     <span class="ManText">
+      Common file formats for storing OTU tables include:
+      <br/>
+      <br/>
+      <a href="qiime_classic.html">
+       QIIME classic tabbed text
+      </a>
+      <br/>
+      <a href="qiime_mapfile.html">
+       QIIME map file
+      </a>
+      <br/>
+      <a href="mothur_shared_file.html">
+       Mothur "shared" file
+      </a>
+      <br/>
+      <a href="http://biom-format.org/documentation/format_versions/biom-1.0.html">
+       BIOM v1 (JSON)
+      </a>
+      <br/>
+      <a href="http://biom-format.org/documentation/format_versions/biom-2.1.html">
+       BIOM v2 (HDF5)
+      </a>
+     </span>
+     <br/>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

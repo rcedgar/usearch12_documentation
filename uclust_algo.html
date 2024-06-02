@@ -1,0 +1,268 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     UCLUST algorithm
+    </h1>
+    <p align="left">
+     <span class="ManText">
+      <br/>
+      <b>
+       See also
+       <br/>
+      </b>
+      <a href="dereplication.html">
+       Dereplication
+      </a>
+      <br/>
+      <a href="uclust_sortorder.html">
+       UCLUST sort order
+      </a>
+      <br/>
+      <br/>
+      The UCLUST algorithm divides a set of sequences into clusters. UCLUST is
+      <strong>
+       <span class="auto-style1">
+        not
+       </span>
+      </strong>
+      designed for OTU 
+  clustering. See
+      <a href="uparse_pipeline.html">
+       recommended protocols for OTU 
+  analysis
+      </a>
+      .
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      The
+      <a href="cmd_cluster_fast.html">
+       cluster_fast
+      </a>
+      and
+      <a href="cmd_cluster_smallmem.html">
+       cluster_smallmem
+      </a>
+      commands are based on UCLUST. A cluster is defined by one sequence, known as the centroid or representative sequence. Every sequence in the cluster must have similarity above a given
+      <a href="opt_id.html">
+       identity threshold
+      </a>
+      with the centroid, as shown in the figure below. In previous versions centroids were called seed sequences; this term is no longer used to avoid confusion with alignment seeds (matching words) in algorithms such as BLAST and
+      <a href="ublast_algo.html">
+       UBLAST
+      </a>
+      . The identity threshold (T) can be viewed as the radius of a cluster. Clustering commands include
+      <a href="cmd_cluster_fast.html">
+       cluster_fast
+      </a>
+      and
+      <a href="cmd_cluster_smallmem.html">
+       cluister_smallmem
+      </a>
+      .
+     </span>
+    </p>
+    <p align="left">
+     <img alt="Image" border="1" height="252" src="uclust_algo2.jpg" width="553"/>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      <b>
+       Recommended identity ranges
+       <br/>
+      </b>
+      UCLUST is effective at identities of
+      <span class="c2">
+       ~50% and above for proteins and ~75% and above for nucleotides
+      </span>
+      . At lower identities, this type of method is questionable because (i) alignment quality degrades and (ii) homology cannot be reliably determined from an alignment.
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      <b>
+       Clustering criteria
+       <br/>
+      </b>
+      UCLUST is designed to find a set of clusters such that:
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      (1) All centroids have similarity &lt; T to each other, and
+      <br/>
+      (2) All member sequences have similarity &gt;= T to a centroid.
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      With default parameters, the algorithm is heuristic and condition (1) is not guaranteed to hold, though in practice false negatives (two centroids with similarity &gt;= T) are rare. Note that in general, many different clusterings will satisfy these criteria. For example, a sequence may match two different centroids with identity &gt; T. Ideally, it will be assigned to the closest centroid, but there may be two or more at same distance, in which case the best
+      <a href="cluster_ambig.html">
+       cluster assignment is ambiguous
+      </a>
+      and an arbitrary choice must be made.
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      Identities are computed using a global alignment. Clustering based on local alignments could easily be implemented in the USEARCH software, but I believe
+      <a href="local_clustering.html">
+       local clustering is fundamentally flawed
+      </a>
+      . If you have a application that really needs it, I'll add support for local clustering.
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      <b>
+       Input sequence order
+       <br/>
+      </b>
+      UCLUST is a
+      <a href="http://en.wikipedia.org/wiki/Greedy_algorithm">
+       greedy algorithm
+      </a>
+      , and the order of the input sequences is important. In the
+      <a href="cmd_cluster_smallmem.html">
+       cluister_smallmem
+      </a>
+      command, sequences are processed in the order they appear in the input file. If the next sequence matches an existing centroid, it is assigned to that cluster, otherwise it becomes the centroid of a new cluster. This means that sequences should be ordered so that the most appropriate centroids tend to appear earlier in the file. The best order depends on the application; see
+      <a href="uclust_sortorder.html">
+       UCLUST sort order
+      </a>
+      for further discussion.  The
+      <a href="cmd_cluster_fast.html">
+       cluster_fast
+      </a>
+      command can use the input sequence order (this is the default), or can sort by sequence length or by
+      <a href="size_annot.html">
+       size annotation
+      </a>
+      by specifying -sort length or -sort size, respectively..
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      <b>
+       Searching the centroid database
+       <br/>
+      </b>
+      A fundamental step in UCLUST is to compare an  input sequence with the centroids identified so far. This is done using the
+      <a href="usearch_algo.html">
+       USEARCH algorithm
+      </a>
+      . Most USEARCH parameters, including
+      <a href="indexing_options.html">
+       indexing options
+      </a>
+      , can be used with clustering commands in order to control sensitivity, memory use and speed.
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      <b>
+       Clustering fragments
+       <br/>
+      </b>
+      If both full-length sequences and fragments are present in the input, then sorting sequences by decreasing length is effective (see
+      <a href="uclust_sortorder.html">
+       sort order
+      </a>
+      ,
+      <a href="DELETE_URL">
+       sortbylength
+      </a>
+      ). Fragments usually make poor centroids because two full-length sequences may be similar to a fragment over one segment while being more diverged over the rest of their length. If the fragment is a centroid, this could result in highly divergent full-length sequences being assigned to the same cluster.
+     </span>
+    </p>
+    <p align="left">
+     <span class="ManText">
+      <b>
+       OTU clustering
+       <br/>
+      </b>
+      Clustering sequences into Operational Taxonomic Units (OTUs) is a specialized problem. A length sort is not appropriate as this tends to choose centroids that are biological outliers, splitting species and genera into different clusters and inflating alpha diversity. See
+      <a href="otu_bench.html">
+       OTU clustering
+      </a>
+      for a recommended procedure for creating OTUs with USEARCH.
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

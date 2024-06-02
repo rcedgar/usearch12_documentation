@@ -1,0 +1,183 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+ <head>
+  <meta content="en-us" http-equiv="Content-Language"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+  <meta content="no-cache" http-equiv="Pragma"/>
+  <meta content="0" http-equiv="Expires"/>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+  </script>
+  <title>
+   allpairs_global command
+  </title>
+  <link href="stylesx.css" rel="stylesheet" type="text/css"/>
+  <style type="text/css">
+   body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {font-weight: bold}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+  </style>
+ </head>
+ <body style="background-color:#c0c0c0;">
+  <div>
+   <a href="https://drive5.com/usearch">
+    <img alt="USEARCH v11" src="usearch11_banner.jpg" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;"/>
+   </a>
+  </div>
+  <div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+   <div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+     <a class="SideButton" href="index.html">
+      Docs home
+     </a>
+     <br/>
+     <hr style="border:0; border-bottom: 1px solid white;"/>
+     <a class="SideButton" href="cmds_all.html">
+      Commands
+     </a>
+     <br/>
+     <a class="SideButton" href="topics.html">
+      Topics
+     </a>
+     <br/>
+     <a class="SideButton" href="citation.html">
+      Publications
+     </a>
+     <br/>
+    </div>
+   </div>
+   <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+    <h1>
+     fastx_uniques command
+    </h1>
+    <span class="ManText">
+     <br/>
+     <strong>
+      See also
+      <br/>
+     </strong>
+     <a href="DELETE_URL">
+      search_exact command
+     </a>
+     <br/>
+     <a href="DELETE_URL">
+      fastx_uniques_persample command
+     </a>
+     <br/>
+     <br/>
+     Find the set of unique sequences in an input file, also called
+     <a href="dereplication.html">
+      dereplication
+     </a>
+     . Input is a FASTA or FASTQ file. Sequences are compared letter-by-letter and must be identical over the full length of both sequences (substrings do not match). Case is ignored, so an upper-case letter matches a lower-case letter.
+     <br/>
+     <br/>
+     All 26 letters of the English alphabet are treated in the same way, so there is no concept of a biological alphabet or of wildcard matching (unless strand -both is used).
+    </span>
+    <p>
+     <span class="ManText">
+      <a href="multithreading.html">
+       Multithreading
+      </a>
+      is supported.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -fastaout option specifies a FASTA output file for the unique sequences. Sequences are sorted by decreasing abundance.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -fastqout option specifies a FASTQ output file for the unique sequences. Sequences are sorted by decreasing abundance.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -tabbedout option specifies an output file in tabbed text format. The fields are: 1. input label, 2. output label (this is the input label of the first occurrence of the sequence, or the new label assigned to it if the -relabel option is used), 3. cluster number (zero-based, so 0 is the first unique sequence found, 1 is the second etc.), 4. member number in the cluster (zero -based), 5. input label of the first occurrence of the sequence (only if -relabel is specified).
+      <br/>
+      <br/>
+      The -
+      <a href="opt_uc.html">
+       uc output file
+      </a>
+      is supported, but not other standard output files.
+      <br/>
+      <br/>
+      The -
+      <a href="opt_sizeout.html">
+       sizeout
+      </a>
+      option specifies that
+      <a href="size_annot.html">
+       size annotations
+      </a>
+      should be added to the output sequence labels.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -relabel option specifies a string that is used to re-label the dereplicated sequences. An integer is appended to the label.
+      <br/>
+      E.g., -relabel Uniq will generate sequences labels Uniq1, Uniq2 ... etc. By default, the label of the first occurrence of the sequence is used.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -minuniquesize option sets a minimum abundance. Unique sequences with a lower abundance are discarded. Default is 1, which means that all unique sequences are output.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      The -topn N option specifies that only the first N sequences in order of decreasing abundance will be written to the output file
+     </span>
+     <span class="ManIndText">
+      .
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      Reverse-complemented matching for nucleotide sequences is supported by specifying -strand both.
+     </span>
+    </p>
+    <p>
+     <span class="ManText c2">
+      Example
+     </span>
+    </p>
+    <p>
+     <span class="ManCode">
+      usearch -fastx_uniques input.fasta -fastaout uniques.fasta -sizeout -relabel Uniq
+      <br/>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
