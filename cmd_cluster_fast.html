@@ -77,26 +77,22 @@
      cluster_fast command
     </h1>
     <span class="ManText">
-     <br/>
-     <b>
-      See also
-      <br/>
-     </b>
-     <a href="cmd_cluster_smallmem.html">
-      cluster_smallmem
-     </a>
-     <br/>
-     <a href="cmd_cluster_otus.html">
-      cluster_otus
-     </a>
-     <br/>
-     <a href="DELETE_URL">
-      cluster_agg
-     </a>
-     <br/>
-     <a href="DELETE_URL">
-      cluster_aggd
-     </a>
+        <br />
+        <b>
+            See also
+            <br />
+        </b>
+        <a href="cmd_cluster_fast.html">
+            cluster_fast
+        </a>
+        <br />
+        <a href="cmd_cluster_smallmem.html">
+            cluster_smallmem
+        </a>
+        <br />
+        <a href="cmd_cluster_otus.html">
+            cluster_otus
+        </a>
     </span>
     <p>
      <span class="ManText">
@@ -112,7 +108,7 @@
       <a href="uclust_algo.html">
        UCLUST algorithm
       </a>
-      designed to maximize speed.
+      designed to maximize speed by multi-threading. It can be much faster than cluster_fast, depending on the input data.
      </span>
     </p>
     <p>
@@ -130,28 +126,12 @@
     </p>
     <p>
      <span class="ManText">
-      Sequences are processed in the order specified by the -
-      <a href="opt_sort.html">
-       sort option
-      </a>
-      , which may be other (the default), length or size. See
-      <a href="uclust_sortorder.html">
-       UCLUST sort order
-      </a>
-      for discussion. If -sort length is specified, then sequences are processed in order of decreasing length. This is most appropriate when fragments are present together with full-length sequences. If -sort size is specified, then sequences are processed in order of decreasing
-      <a href="size_annot.html">
-       size annotation
-      </a>
-      . This can be useful for clustering of amplicon reads such as 16S or ITS tags, though
-      <a href="cmd_cluster_otus.html">
-       cluster_otus
-      </a>
-      is usually recommended for this task. If -sort other is used (the default), then the input sequences are processed in the order they appear in the input file.
+      Sequences are processed in the order they appear in the input file.
      </span>
     </p>
     <p>
      <span class="ManText">
-      Reverse-complemented matching for nucleotide sequences can be specified by using -strand both.
+      Reverse-complemented matching for nucleotide sequences using -strand both is not supported.
      </span>
     </p>
     <p>

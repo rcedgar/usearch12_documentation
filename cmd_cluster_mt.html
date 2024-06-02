@@ -74,65 +74,131 @@
    </div>
    <div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
     <h1>
-     usearch_local command
+     cluster_mt command
     </h1>
     <span class="ManText">
-     Search for one (default) or a few high-identity hits to a database using the
-     <a href="usearch_algo.html">
-      USEARCH algorithm
-     </a>
-     . Alignments are local. To get more than one hit, increase -maxaccepts. The USEARCH algorithm is generally best suited for global alignments, but local searches may sometimes be appropriate and effective. This is the case when the local alignments cover a large enough fraction of both the query and target sequence that the common word count between the full-length sequences correlates with similarity in the region. Increasing -maxrejects may improve sensitivity when this assumption holds less well.
-     <br/>
+        <br />
+        <b>
+            See also
+            <br />
+        </b>
+        <a href="cmd_cluster_fast.html">
+            cluster_fast
+        </a>
+        <br />
+        <a href="cmd_cluster_smallmem.html">
+            cluster_smallmem
+        </a>
+        <br />
+        <a href="cmd_cluster_otus.html">
+            cluster_otus
+        </a>
     </span>
     <p>
      <span class="ManText">
-      An identity threshold must be specified using the -
+      Clusters sequences in a
+      <a href="fasta_files.html">
+       FASTA
+      </a>
+      or
+      <a href="fastq_files.html">
+       FASTQ
+      </a>
+      file using a variant of the
+      <a href="uclust_algo.html">
+       UCLUST algorithm
+      </a>
+      designed to maximize speed.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      An
+      <a href="identity.html">
+       identity
+      </a>
+      threshold must be specified using the -
       <a href="opt_id.html">
        id option
       </a>
-      . An
-      <a href="opt_evalue.html">
-       E-value threshold
-      </a>
-      may also be specified.
+      .
      </span>
     </p>
     <p>
      <span class="ManText">
-      A
-      <a href="db_files.html">
-       database file
+      Sequences are processed in the order specified by the -
+      <a href="opt_sort.html">
+       sort option
       </a>
-      must be specified using the -db option.
+      , which may be other (the default), length or size. See
+      <a href="uclust_sortorder.html">
+       UCLUST sort order
+      </a>
+      for discussion. If -sort length is specified, then sequences are processed in order of decreasing length. This is most appropriate when fragments are present together with full-length sequences. If -sort size is specified, then sequences are processed in order of decreasing
+      <a href="size_annot.html">
+       size annotation
+      </a>
+      . This can be useful for clustering of amplicon reads such as 16S or ITS tags, though
+      <a href="cmd_cluster_otus.html">
+       cluster_otus
+      </a>
+      is usually recommended for this task. If -sort other is used (the default), then the input sequences are processed in the order they appear in the input file.
      </span>
     </p>
     <p>
      <span class="ManText">
-      The -
-      <a href="opt_strand.html">
-       strand
-      </a>
-      option is required for nucleotide databases.
+      Reverse-complemented matching for nucleotide sequences can be specified by using -strand both.
      </span>
     </p>
     <p>
      <span class="ManText">
-      Nucleotide, protein and
-      <a href="translated_search.html">
-       translated searches
+      <a href="size_annot.html">
+       Size annotations
       </a>
-      are supported.
+      may be generated and/or propagated by using the -
+      <a href="opt_sizein.html">
+       sizein
+      </a>
+      and/or -
+      <a href="opt_sizein.html">
+       sizeout
+      </a>
+      options.
      </span>
     </p>
     <p>
      <span class="ManText">
       <b>
-       See also
+       Output files
+       <br/>
       </b>
-      <br/>
       <a href="output_files.html">
-       Standard output file options
+       Standard output files
       </a>
+      are supported. Cluster centroids (representative sequences) are written to a FASTA file specified by the -
+      <a href="opt_centroids.html">
+       centroids
+      </a>
+      option. Consensus sequences are written to a FASTA file specified by -
+      <a href="DELETE_URL">
+       consout
+      </a>
+      and multiple alignments are written to filenames derived from the -
+      <a href="DELETE_URL">
+       msaout option
+      </a>
+      . Note that using -consout and -msaout may add significantly to the compute time and memory required for clustering. You can specify a directory to contain one FASTA file per cluster using the -
+      <a href="opt_clusters.html">
+       clusters
+      </a>
+      option.
+     </span>
+    </p>
+    <p>
+     <span class="ManText">
+      <b>
+       Supported options
+      </b>
       <br/>
      </span>
      <span class="ManText">
@@ -148,12 +214,12 @@
        Indexing options
       </a>
       <br/>
-      <a href="multithreading.html">
-       Multithreading
-      </a>
-      <br/>
       <a href="masking_options.html">
        Masking options
+      </a>
+      <br/>
+      <a href="multithreading.html">
+       Multithreading
       </a>
       <br/>
       <a href="aln_params.html">
@@ -164,20 +230,15 @@
        Alignment heuristics
       </a>
      </span>
-    </p>
-    <p>
+     <br/>
      <span class="ManText c3">
-      Examples
+      <br/>
+      Example
      </span>
     </p>
     <p>
      <span class="ManCode">
-      usearch -usearch_local query.fasta -db proteins.udb -id 0.8 -alnout results.aln
-      <br/>
-      <br/>
-      usearch -usearch_local query.fasta -db ESTs.fasta -id 0.9  -evalue 1e-6 \
-      <br/>
-      -userout hits.txt -userfield query+target+evalue+id
+      usearch -cluster_fast query.fasta -id 0.9 -centroids nr.fasta -uc clusters.uc
       <br/>
      </span>
     </p>

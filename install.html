@@ -1,0 +1,136 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+</script>
+
+<title>Installing USEARCH</title>
+<link rel="stylesheet" type="text/css" href="stylesx.css">
+
+<style type="text/css">
+  body.c7 {background-color:#c0c0c0;}
+  div.c6 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  td.c5 {background-color: #FFFFCC}
+  td.c4 {background-color: #E1E1E1}
+  span.c3 {font-weight: bold}
+  span.c2 {background-color: #FFFF00}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+</style>
+
+</head>
+<body style="background-color:#c0c0c0;">
+
+<div><a href="https://drive5.com/usearch">
+
+<img alt="USEARCH v12" style="position:absolute; top:40px; left:10px; padding:0px; border:0px;" src="usearch12_banner.jpg"></a></div>
+
+<div style="position:absolute; top:115px; left:10px; width:850px; background-color:#ffffff; min-height:500px">
+<div style="position:relative; float:left; background-color:#696969; width:125px; left: 0px; min-height:500px; padding:5px; height: 125px;">
+    <div class="SideButtonPara" style="text-align:center; padding-top:5px;">
+        <a class="SideButton" href="index.html">
+            Docs home
+        </a>
+        <br />
+        <hr style="border:0; border-bottom: 1px solid white;" />
+        <a class="SideButton" href="cmds.html">
+            Commands
+        </a>
+        <br />
+        <a class="SideButton" href="topics.html">
+            Topics
+        </a>
+        <br />
+        <a class="SideButton" href="citation.html">
+            Publications
+        </a>
+        <br />
+    </div>
+</div>
+<div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+
+  <h1>Installing USEARCH</h1>
+  <p class="ManText"><span class="ManText">&nbsp;<br>
+  <b>See also:<br></b> &nbsp;&nbsp; <a href="problems_running.html">Problems installing and running USEARCH</a><br>
+  &nbsp;&nbsp; <a href="bitness.html">32-bit and 64-bit binaries</a><br>
+  &nbsp;&nbsp; <a href="cmdline.html">Command line</a><br>
+  &nbsp;&nbsp; <a href="binary_filename.html">Binary filename</a></span><br>
+  &nbsp;&nbsp; <a href="multiple_versions.html">Installing multiple versions on the same computer</a></p>
+  <p class="ManText"><span class="ManText c3">There is no installer -- <span class="c2">don't double-click on the download filename</span></span><b><span class="c2">!</span><br></b>USEARCH is distributed as one file, known as the binary file or executable file. It is completely self-contained: it does not require configuration files, environment variables, third-party libraries or other external dependencies. There is no setup script or installer because they're not needed. To install it, all you do is download or copy the binary to a directory that is accessible from the computer where you want to run the code. For convenience, you may want to <a href="binary_filename.html">rename the binary file to usearch</a> to avoid typing long names like <span class="ManText">usearch6.0.98_i86linux32.</span></p>
+  <p class="ManText"><span class="ManText"><b>No graphical user interface<br></b> USEARCH does not have a GUI.</span> USEARCH <span class="c2">will not work</span> if you try to start it <span class="c2">in a graphical interface</span> like Windows Explorer or the Mac Finder. You <span class="c2">must run USEARCH from within a command window or shell</span>. <span class="ManText">See table below for how to get a shell prompt. If you're not familiar with using command-line programs, you're probably going to have trouble figuring out how to use USEARCH -- I recommend getting a colleague to help you who is familiar with using command-line programs.</span></p>
+  <p class="ManText"><span class="ManText"><b>Missing DLL problem in Windows<br></b> See here if you get missing a <a href="vcomp100.html">vcomp140.dll error</a>.</span></p>
+  <p class="ManText"><span class="ManText"><b>Execute permissions<br></b> Under Linux and OSX you must ensure that you have read and execute permissions for the binary file. If needed, use the <a href="http://en.wikipedia.org/wiki/Chmod">chmod command</a> to set the execute bit, e.g.:</span></p>
+  <p class="ManText"><span class="ManText">chmod +x /usr/bin/usearch6.0.98_i86linux32</span></p>
+  <p class="ManText"><span class="ManText"><b>PATH or pathname<br></b> The binary file must be in one of the directories specified in your <a href="http://en.wikipedia.org/wiki/PATH_(variable)">PATH</a> variable, or you must type the full path to the file, e.g. for Linux:</span></p>
+  <p class="ManText"><span class="ManCode">/usr/bin/usearch6.0.98_i86linux32 -cluster_fast reads.fasta -id 0.9 -uc results.uc</span></p>
+  <p class="ManText"><span class="ManText">Under the Windows CMD shell, path names are separated by backslashes, e.g.:</span></p>
+  <p class="ManText"><span class="ManCode">C:\MyPrograms\usearch6.2.98_win32.exe -id 0.9 -cluster_fast reads.fasta -uc results.uc<br>
+  &nbsp;<br></span> <b>How to get a shell prompt</b></p>
+  <div align="center">
+    <table summary="Table" border="0" width="80%" cellspacing="0" cellpadding="5">
+      <tr>
+        <td class="c4" width="94" align="right" valign="top"><span class="ManText c3">Platform</span></td>
+        <td class="c4" align="center" width="8" valign="top">&nbsp;</td>
+        <td class="c4" align="left" valign="top"><span class="ManText c3">How to get a command-line interface</span></td>
+      </tr>
+      <tr>
+        <td class="c5" width="94" align="right" valign="top"><span class="ManText">Linux</span></td>
+        <td class="c5" valign="top" align="center" width="8">&nbsp;</td>
+        <td class="c5" valign="top" align="left"><span class="ManText">There are many different graphical interfaces and configurations for Linux and Unix, too many that I can cover them all. Look for an icon labeled something like ''Shell', 'Command window' or 'Terminal'.<br>
+        &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td class="c4" width="94" align="right" valign="top"><span class="ManText">Mac OSX</span></td>
+        <td class="c4" valign="top" align="center" width="8">&nbsp;</td>
+        <td class="c4" valign="top" align="left"><span class="ManText">Look for the Terminal command under Applications &gt; Utilities. This will give you a shell prompt similar to Unix and Linux.<br>
+        &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td class="c5" width="94" align="right" valign="top"><span class="ManText">Windows</span></td>
+        <td class="c5" valign="top" align="center" width="8">&nbsp;</td>
+        <td class="c5" valign="top" align="left"><span class="ManText">You can get a command-prompt by navigating Start &gt; All Programs &gt; Accessories &gt; Command Prompt, or similar, depending on which version of Windows you're using. You can also use Start &gt; Run, and type CMD or CMD.EXE when prompted for the name of the program to run.<br>
+        &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td class="c4" width="94" align="right" valign="top"><span class="ManText">Windows with Cygwin</span></td>
+        <td class="c4" valign="top" align="center" width="8">&nbsp;</td>
+        <td class="c4" valign="top" align="left"><span class="ManText">If you're familiar with using Unix or Linux shells, you might want to check out the <a href="http://cygwin.org">Cygwin</a> environment: it's a really good Linux emulator for Windows that includes shells (sh, bash, csh, tsh etc.) and a huge number of standard Linux utilities (ls, grep, tar, ssh and so on). The *win32.exe or *win64.exe binaries run fine under Cygwin, though there can be subtle issues with file names and path names because the native build doesn't understand Cygwin-specific stuff like mount points. As a general rule, you can use Windows paths under Cygwin, including drive letters. You can use forward- or back-slashes in the path name, though you have to be careful with back-slashes because they're significant for the shell; usually it's easier to use forward slashes.</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>
+&nbsp;&nbsp;&nbsp;
+</body>
+</html>

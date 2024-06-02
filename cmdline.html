@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-50117757-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50117757-1');
+</script>
+
+<title>USEARCH command line</title>
+<link rel="stylesheet" type="text/css" href="stylesx.css">
+
+<style type="text/css">
+  body.c4 {background-color:#c0c0c0;}
+  div.c3 {position:absolute; top:45px; left:20px; width:830px; background-color:#ffffff; border-width:10px; border-style:solid;border-color:white;}
+  span.c2 {background-color: #FFFF00}
+  div.c1 {position:absolute; top:10px; left:20px; width:850px; height:60px;}
+    .TopButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .TopButton           { color:white; }
+    a.TopButton:link     { text-decoration:none; }
+    a.TopButton:visited  { text-decoration:none; }
+    a.TopButton:hover    { color:orange; }
+
+    .NewButtonPara       { color:white; background-color:rgb(50,100,150); border-color:rgb(50,100,150); font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:9pt; text-align:center; border-width:4px; border-style:solid; }
+    .NewButton           { color:white; }
+    a.NewButton:link     { text-decoration:none; }
+    a.NewButton:visited  { text-decoration:none; }
+    a.NewButton:hover    { color:orange; }
+
+    .SideButtonPara       { color:white; font-family:Arial, Helvetica, sans-serif; font-size:9pt; font-weight:normal; text-align:center; line-height:18px; }
+    .SideButton           { color:white; }
+    a.SideButton:link     { text-decoration:none; }
+    a.SideButton:visited  { text-decoration:none; }
+    a.SideButton:hover    { color:orange; }
+</style>
+
+</head>
+<body style="background-color:#c0c0c0;">
+
+<div class="ManText" style="left:20px; position: absolute; left:135px; width:695px; background-color:white; padding:10px">
+
+  <h1>USEARCH command line</h1>
+  <span class="ManCode">&nbsp;<br></span><span class="ManText">A typical USEARCH command line looks like this:</span>
+  <pre>
+<span class="ManCode">usearch -cluster_fast seqs.fasta -id 0.9 -centroids nr.fasta
+^         ^           ^             ^     ^               ^
+|       <a href="cmds.html">Command</a>   Input filename    |  <a href="output_files.html">Output option with filename</a>
+Binary filename or pathname         Parameter option(s)</span>
+</pre>
+  <p><span class="ManText">The command line starts with the binary filename. In this manual, examples are always shown using 'usearch' as the filename. You should use the actual name of your binary file. You can rename your binary file to usearch or use the original name, e.g. usearch11.0.98_i86linux32. 
+  Or, you can set an environment variable to the usearch binary path name, e.g. 
+  $usearch, you can then type $usearch instead of usearch.</span></p>
+  <p><span class="ManText">The binary file must be in a directory in your shell's PATH variable, otherwise you must type the full path name, e.g. (Linux or OSX):</span></p>
+  <p><span class="ManCode">/usr/bin/usearch -cluster_fast seqs.fasta -id 0.9 -centroids nr.fasta</span></p>
+  <p><span class="ManText">Under a Windows command shell, use backslashes and drive letters as needed:</span></p>
+  <p><span class="ManCode">C:\binaries\usearch.exe -cluster_fast seqs.fasta -id 0.9 -centroids nr.fasta</span></p>
+  <p><span class="ManText">If the binary is in your current directory, you can use ./ or .\ (dot-slash or dot-backslash) as the path name:</span></p>
+  <p><span class="ManCode">./usearch -cluster_fast seqs.fasta -id 0.9 -centroids nr.fasta</span></p>
+  <p><span class="ManText"><b>Commands<br></b> A command line must have exactly one <a href="cmds.html">command</a>. The command name is usually followed by the name of an input or query file in <a href="fasta_files.html">FASTA</a> or <a href="fastq_files.html">FASTQ</a> format (the format is automatically determined).</span></p>
+  <p><span class="ManText"><b>Options<br></b> The USEARCH command-line must have one command and may have other options. An option is given after a hyphen (-). <a href="cmds.html">Command names</a> are options, so must also have a hyphen. Two hyphens are allowed (Linux long option form), so both -<a href="opt_id.html">id</a> 0.9 and --id 0.9 are allowed. There <span class="c2">must be a space between the option name and its value</span>, so -id0.9 is not allowed.</span></p>
+  <p><span class="ManText"><b>Unused option warning<br></b> If a command-line option was not used by the given command, a warning message is issued.<br>
+  &nbsp;</span></p>
+</div>
+&nbsp;&nbsp;&nbsp;
+</body>
+</html>
